@@ -76,9 +76,12 @@
   /* Button variants */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 h-11 px-5 bg-teal-500 text-white font-bold rounded-xl text-sm
-           hover:bg-teal-600 hover:shadow-glow-teal hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
+           hover:bg-teal-600 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
            focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2
            transition-all duration-200 shadow-sm cursor-pointer;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 28px -4px rgba(17, 183, 163, 0.45);
   }
 
   .btn-secondary {
@@ -91,9 +94,12 @@
 
   .btn-coral {
     @apply inline-flex items-center justify-center gap-2 h-11 px-5 bg-coral-500 text-white font-bold rounded-xl text-sm
-           hover:bg-coral-600 hover:shadow-glow-coral hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
+           hover:bg-coral-600 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
            focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2
            transition-all duration-200 shadow-sm cursor-pointer;
+  }
+  .btn-coral:hover {
+    box-shadow: 0 0 28px -4px rgba(255, 118, 94, 0.45);
   }
 
   .btn-ghost {
