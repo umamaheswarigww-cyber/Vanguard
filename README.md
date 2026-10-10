@@ -1,4 +1,4 @@
-# FinQuest India 🇮🇳
+# Vanguard India 🇮🇳
 > **Interactive Financial Literacy for Grade 11–12 Students**  
 > *Addressing the Vanguard India "Community Stewardship — Empowering the Next Generation Through Financial Literacy" Challenge*
 
