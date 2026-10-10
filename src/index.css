@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: #14253D;
+    --color-teal: #11B7A3;
+    --color-coral: #FF765E;
+    --color-cream: #FAF8F3;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-cream-100 text-navy-600 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    @apply text-navy-600;
+  }
+
+  /* Telugu font override */
+  .lang-te,
+  .lang-te * {
+    font-family: 'Noto Sans Telugu', system-ui, sans-serif;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline-2 outline-teal-400 outline-offset-2 rounded-sm;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-200 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-300;
+  }
+}
+
+@layer components {
+  /* Card variants */
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-navy-50;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-teal-400 text-white font-semibold rounded-xl
+           hover:bg-teal-500 active:bg-teal-600 
+           focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2
+           transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-navy-600 font-semibold rounded-xl
+           border-2 border-navy-100 hover:border-teal-400 hover:text-teal-500
+           focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2
+           transition-all duration-200;
+  }
+
+  .btn-coral {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-coral-400 text-white font-semibold rounded-xl
+           hover:bg-coral-500 active:bg-coral-600
+           focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2
+           transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-navy-500 font-medium rounded-lg
+           hover:bg-navy-50 hover:text-navy-600
+           focus-visible:ring-2 focus-visible:ring-navy-300 focus-visible:ring-offset-2
+           transition-all duration-200;
+  }
+
+  /* Pill badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-teal {
+    @apply badge bg-teal-50 text-teal-600;
+  }
+
+  .badge-coral {
+    @apply badge bg-coral-50 text-coral-500;
+  }
+
+  .badge-navy {
+    @apply badge bg-navy-50 text-navy-500;
+  }
+
+  .badge-planned {
+    @apply badge bg-neutral-100 text-neutral-500;
+  }
+
+  /* Section headings */
+  .section-eyebrow {
+    @apply text-sm font-bold tracking-widest uppercase text-teal-400;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-navy-600 font-display leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-navy-400 leading-relaxed;
+  }
+
+  /* Lesson stage containers */
+  .stage-card {
+    @apply card p-6 md:p-8 animate-fade-in;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply h-2 bg-navy-50 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-teal-400 rounded-full transition-all duration-500;
+  }
+
+  /* Input styles */
+  .input-base {
+    @apply w-full px-4 py-3 border-2 border-navy-100 rounded-xl text-navy-600
+           focus:outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100
+           placeholder-navy-300 transition-colors bg-white;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    @apply text-xs text-navy-400 bg-navy-50 border border-navy-100 rounded-lg px-3 py-2 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-teal-400 to-navy-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-coral {
+    @apply bg-gradient-to-r from-coral-400 to-coral-600 bg-clip-text text-transparent;
+  }
+
+  .bg-hero {
+    background: linear-gradient(135deg, #14253D 0%, #24476A 50%, #11B7A3 100%);
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(135deg, #FAF8F3 0%, #F2F5F8 100%);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
