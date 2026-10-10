@@ -1,4 +1,4 @@
-# FinQuest India 🇮🇳
+# Vanguard India 🇮🇳
 > **Interactive Financial Literacy for Grade 11–12 Students**  
 > *Addressing the Vanguard India "Community Stewardship — Empowering the Next Generation Through Financial Literacy" Challenge*
 
@@ -13,7 +13,7 @@
 
 ## 🌟 Executive Summary & Product Mission
 
-**FinQuest India** transforms financial education for Grade 11–12 students, specifically addressing underserved communities across Hyderabad. Instead of treating financial literacy as passive memorization or raw mathematical tools, FinQuest creates **an active learning laboratory**:
+**Vanguard India** transforms financial education for Grade 11–12 students, specifically addressing underserved communities across Hyderabad. Instead of treating financial literacy as passive memorization or raw mathematical tools, Vanguard creates **an active learning laboratory**:
 - **Educate, Never Recommend:** Neutral simulations with 100% fictional rupees. Zero product endorsements, zero stock tips.
 - **Mechanism Over Jargon:** Demystifies why markets move, how compounding snowballs, how inflation erodes purchasing power, and how mutual fund NAV is calculated.
 - **Safe Experimentation:** Fully interactive sandboxes (Budget Lab, Compound Explorer, Inflation Visualizer, FD Calculator, SIP Calculator, NAV Lab, and Scam Detective).
@@ -35,7 +35,7 @@
 
 ## 🧮 Verified Financial Mathematics & Conventions
 
-All financial calculations in FinQuest India are implemented as pure TypeScript functions in `src/lib/finance/formulas.ts` and independently verified via unit tests (`src/tests/finance.test.ts`):
+All financial calculations in Vanguard India are implemented as pure TypeScript functions in `src/lib/finance/formulas.ts` and independently verified via unit tests (`src/tests/finance.test.ts`):
 
 1. **Simple Interest:**  
    $$I = P \times r \times t \quad \implies \quad M = P + I$$
@@ -84,7 +84,7 @@ All financial calculations in FinQuest India are implemented as pure TypeScript 
 
 ```bash
 # 1. Navigate to project directory
-cd finquest-india
+cd Vanguard-india
 
 # 2. Install dependencies (if not already installed)
 npm install
