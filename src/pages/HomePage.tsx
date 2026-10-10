@@ -42,118 +42,249 @@ export function HomePage() {
   };
 
   return (
-    <div className="space-y-20 pb-20 bg-cream-50">
+    <div className="space-y-16 pb-20 bg-cream-50">
       {/* ============================================================ */}
-      {/* 1. HERO SECTION WITH REALISTIC GENERATED IMAGE */}
+      {/* 1. HERO SECTION WITH COLORFUL ACCENTS & RICH FINTECH VISUAL */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900 text-white pt-16 pb-24 px-4 sm:px-6 lg:px-8 border-b border-navy-600/40">
-        {/* Glow ambient circles */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-400/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-coral-400/15 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-850 via-navy-800 to-navy-950 text-white pt-12 pb-20 px-4 sm:px-6 lg:px-8 border-b border-navy-700/50">
+        {/* Glow ambient background lights */}
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-teal-400/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[550px] h-[550px] bg-coral-400/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          {/* Left Text */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+          {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-400/20 text-teal-300 text-xs font-bold tracking-wider uppercase border border-teal-400/30">
-              <Sparkles size={14} className="text-teal-300" />
-              {t({ en: 'HACKATHON THEME: YOUTH FINANCIAL EMPOWERMENT', te: 'హ్యాకథాన్ థీమ్: యువత ఆర్థిక సాధికారత' })}
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-400/15 text-teal-300 text-xs font-bold tracking-wider uppercase border border-teal-400/30 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+              <span>{t({ en: 'FINANCIAL CONFIDENCE STARTS HERE', te: 'ఆర్థిక ఆత్మవిశ్వాసం ఇక్కడే ప్రారంభమవుతుంది' })}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-display leading-[1.12] text-white tracking-tight">
-              {t({
-                en: 'Money makes more sense when you explore it.',
-                te: 'డబ్బును అనుభవపూర్వకంగా నేర్చుకున్నప్పుడే సులభంగా అర్థమవుతుంది.',
-              })}
+            {/* Headline with Restrained Colorful Accents */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.12]">
+              <span className="block text-white">Your money.</span>
+              <span className="block bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-200 bg-clip-text text-transparent">
+                Your choices.
+              </span>
+              <span className="block bg-gradient-to-r from-coral-300 via-amber-300 to-coral-400 bg-clip-text text-transparent">
+                Your future.
+              </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-blue-100 max-w-xl leading-relaxed font-normal">
+            {/* Supporting Paragraph */}
+            <p className="text-base sm:text-lg text-navy-100 max-w-xl leading-relaxed font-normal">
               {t({
-                en: 'Built specifically for Grade 11–12 students in Hyderabad and across India. Master budgeting, compounding, mutual funds, and digital safety through real interactive simulations — completely free with zero financial risk.',
-                te: 'హైదరాబాద్ మరియు దేశవ్యాప్తంగా ఉన్న గ్రేడ్ 11-12 విద్యార్థుల కోసం రూపొందించబడింది. బడ్జెట్, చక్రవడ్డీ, మ్యూచువల్ ఫండ్స్ మరియు డిజిటల్ భద్రతను నిజమైన ఇంటరాక్టివ్ సిమ్యులేషన్ల ద్వారా సులభంగా నేర్చుకోండి.',
+                en: 'Learn budgeting, saving, stocks, mutual funds, SIPs and financial safety through interactive experiences designed for young learners in India. Explore with fictional money, experiment freely, and understand the choices behind the numbers.',
+                te: 'భారతదేశంలోని యువ అభ్యాసకుల కోసం రూపొందించిన ఇంటరాక్టివ్ అనుభవాల ద్వారా బడ్జెట్, పొదుపు, స్టాక్స్, మ్యూచువల్ ఫండ్స్, SIPలు మరియు ఆర్థిక భద్రతను నేర్చుకోండి. కల్పిత డబ్బుతో అన్వేషించండి, స్వేచ్ఛగా ప్రయోగాలు చేయండి మరియు సంఖ్యల వెనుక ఉన్న ఎంపికలను అర్థం చేసుకోండి.',
               })}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link to="/investing-made-simple" className="btn-coral text-sm py-3.5 px-7 shadow-lg hover:shadow-xl transition-all font-bold">
-                <Sparkles size={16} />
-                {t({ en: 'Investing Made Simple', te: 'సులభమైన పెట్టుబడులు' })}
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              <Link to="/learn" className="btn-primary text-sm shadow-lg shadow-teal-500/25">
+                <span>{t({ en: 'Start Learning', te: 'నేర్చుకోవడం ప్రారంభించండి' })}</span>
+                <ArrowRight size={16} />
               </Link>
-              <Link to="/money-lab" className="btn-secondary text-sm py-3.5 px-6 border-white/20 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm">
-                <FlaskConical size={16} />
-                {t({ en: 'Launch Money Lab (11 Sims)', te: 'మనీ ల్యాబ్ (11 సిమ్యులేటర్లు)' })}
+              <Link
+                to="/money-lab"
+                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-xl border border-white/25 text-white bg-white/10 hover:bg-white/20 hover:border-teal-300/50 backdrop-blur-sm font-semibold text-sm transition-all active:scale-[0.98] shadow-xs"
+              >
+                <FlaskConical size={16} className="text-teal-300" />
+                <span>{t({ en: 'Explore Money Lab', te: 'మనీ ల్యాబ్‌ను అన్వేషించండి' })}</span>
               </Link>
             </div>
 
-            {/* Micro proof badges */}
-            <div className="flex flex-wrap items-center gap-6 pt-3 text-xs text-blue-200">
-              <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 size={16} className="text-teal-400" />
-                {t({ en: '100% Fictional Rupees', te: '100% కల్పిత రూపాయలు' })}
+            {/* Three Trust Indicators */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs text-navy-200">
+              <span className="flex items-center gap-2 font-medium">
+                <CheckCircle2 size={16} className="text-teal-400 shrink-0" />
+                {t({ en: 'Fictional money, real understanding', te: 'కల్పిత డబ్బు, నిజమైన అవగాహన' })}
               </span>
-              <span className="flex items-center gap-1.5 font-medium">
-                <ShieldCheck size={16} className="text-teal-400" />
-                {t({ en: 'Education, Not Advice', te: 'విద్యా ప్రయోజనం మాత్రమే' })}
+              <span className="flex items-center gap-2 font-medium">
+                <Sparkles size={16} className="text-teal-400 shrink-0" />
+                {t({ en: 'Learn by exploring', te: 'అన్వేషించడం ద్వారా నేర్చుకోండి' })}
               </span>
-              <span className="flex items-center gap-1.5 font-medium">
-                <HeartHandshake size={16} className="text-teal-400" />
-                {t({ en: 'Bilingual (English & Telugu)', te: 'తెలుగు & ఇంగ్లీష్ మద్దతు' })}
+              <span className="flex items-center gap-2 font-medium">
+                <ShieldCheck size={16} className="text-teal-400 shrink-0" />
+                {t({ en: 'Financial education, not investment advice', te: 'ఆర్థిక విద్య మాత్రమే, సలహా కాదు' })}
               </span>
             </div>
           </div>
 
-          {/* Right Hero Realistic Image Card */}
+          {/* Right Column: Purposeful, Rich Interactive Visual Dashboard (No Empty Black Panel) */}
           <div className="lg:col-span-5">
-            <div className="relative group rounded-3xl overflow-hidden border-2 border-teal-400/30 shadow-2xl bg-navy-950">
-              <img
-                src="/images/hero_students.jpg"
-                alt="Indian High School Students in Hyderabad Learning Finance"
-                className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
-              
-              {/* Floating Glassmorphism Badge */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
-                <div className="flex items-center justify-between mb-1">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-teal-400 animate-pulse" />
-                    <span className="text-xs font-bold text-teal-300 uppercase tracking-wide">
-                      {t({ en: 'Hyderabad Classroom Pilot', te: 'హైదరాబాద్ పైలట్ తరగతి' })}
-                    </span>
+            <div className="relative rounded-3xl bg-gradient-to-br from-navy-900/95 via-navy-850 to-navy-950 p-5 sm:p-6 border border-teal-500/30 shadow-2xl overflow-hidden backdrop-blur-xl">
+              {/* Internal subtle glow */}
+              <div className="absolute top-0 right-0 w-44 h-44 bg-teal-400/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-44 h-44 bg-coral-400/10 rounded-full blur-2xl pointer-events-none" />
+
+              {/* Student Classroom Context Bar with Real Photo Thumbnail */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 relative z-10">
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/images/hero_students.jpg"
+                    alt="Hyderabad Students in Financial Literacy Class"
+                    className="w-11 h-11 rounded-xl object-cover border border-teal-400/40 shadow-sm"
+                  />
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs font-bold text-white font-display">Student Sandbox</span>
+                      <span className="text-[10px] bg-teal-500/20 text-teal-300 font-semibold px-2 py-0.5 rounded-full border border-teal-400/30">
+                        Grade 11–12
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-navy-300">{t({ en: 'Hyderabad Pilot Program', te: 'హైదరాబాద్ పైలట్ ప్రోగ్రామ్' })}</p>
                   </div>
-                  <span className="text-[10px] bg-teal-500/20 text-teal-200 px-2 py-0.5 rounded-full border border-teal-400/30">
-                    Grade 11–12
+                </div>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold border border-emerald-500/30">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>VIRTUAL LAB</span>
+                </div>
+              </div>
+
+              {/* Fictional Portfolio Card & Growth Trajectory */}
+              <div className="mt-4 p-4 rounded-2xl bg-white/5 border border-white/10 relative z-10">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-xs font-medium text-navy-300">{t({ en: 'Virtual Portfolio Balance', te: 'వర్చువల్ పోర్ట్‌ఫోలియో బ్యాలెన్స్' })}</span>
+                    <div className="text-2xl sm:text-3xl font-extrabold text-white font-display tracking-tight mt-0.5">
+                      ₹10,000
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-teal-400/20 text-teal-300 text-xs font-bold border border-teal-400/30">
+                      <TrendingUp size={13} />
+                      +₹1,240 (+12.4%)
+                    </span>
+                    <span className="block text-[10px] text-navy-400 mt-1">{t({ en: 'Hypothetical growth', te: 'ఊహాజనిత పెరుగుదల' })}</span>
+                  </div>
+                </div>
+
+                {/* Smooth SVG Compounding Trajectory Chart */}
+                <div className="mt-4 pt-1">
+                  <div className="flex justify-between text-[11px] text-navy-300 mb-1">
+                    <span>{t({ en: 'Compounding Trajectory', te: 'చక్రవడ్డీ వృద్ధి పథం' })}</span>
+                    <span className="text-teal-300 font-semibold">12-Month Horizon</span>
+                  </div>
+                  <svg className="w-full h-16 overflow-visible" viewBox="0 0 300 60" fill="none">
+                    <defs>
+                      <linearGradient id="heroChartGlow" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#11B7A3" stopOpacity="0.35" />
+                        <stop offset="100%" stopColor="#11B7A3" stopOpacity="0.0" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M0 50 Q 80 46, 150 32 T 300 8 L 300 60 L 0 60 Z"
+                      fill="url(#heroChartGlow)"
+                    />
+                    <line x1="0" y1="50" x2="300" y2="50" stroke="#ffffff15" strokeDasharray="3 3" />
+                    <path
+                      d="M0 50 Q 80 46, 150 32 T 300 8"
+                      stroke="#11B7A3"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="0" cy="50" r="3.5" fill="#11B7A3" />
+                    <circle cx="150" cy="32" r="3.5" fill="#11B7A3" />
+                    <circle cx="300" cy="8" r="4.5" fill="#11B7A3" className="animate-pulse" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Segmented Asset Allocation Bar */}
+              <div className="mt-4 space-y-2 relative z-10">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-navy-300 font-medium">{t({ en: 'Diversified Asset Allocation', te: 'వైవిధ్యభరిత పెట్టుబడి కేటాయింపు' })}</span>
+                  <span className="text-white text-[11px] font-semibold">{t({ en: '3 Asset Classes', te: '3 ఆస్తి వర్గాలు' })}</span>
+                </div>
+                <div className="h-3 w-full bg-white/10 rounded-full overflow-hidden flex p-0.5 gap-0.5">
+                  <div className="h-full bg-teal-400 rounded-l-full transition-all" style={{ width: '40%' }} title="Fixed Deposit: 40%" />
+                  <div className="h-full bg-blue-400 transition-all" style={{ width: '40%' }} title="Mutual Funds: 40%" />
+                  <div className="h-full bg-coral-400 rounded-r-full transition-all" style={{ width: '20%' }} title="Stocks: 20%" />
+                </div>
+                <div className="flex items-center justify-between text-[11px] pt-1">
+                  <span className="flex items-center gap-1.5 text-teal-300">
+                    <span className="w-2 h-2 rounded-full bg-teal-400" />
+                    <span>40% Safe FD</span>
+                  </span>
+                  <span className="flex items-center gap-1.5 text-blue-300">
+                    <span className="w-2 h-2 rounded-full bg-blue-400" />
+                    <span>40% Mutual Fund</span>
+                  </span>
+                  <span className="flex items-center gap-1.5 text-coral-300">
+                    <span className="w-2 h-2 rounded-full bg-coral-400" />
+                    <span>20% ABC Equity</span>
                   </span>
                 </div>
-                <p className="text-xs text-blue-100 leading-snug">
-                  {t({
-                    en: 'Empowering first-generation learners to understand compounding, stock markets, and fraud prevention.',
-                    te: 'మొదటి తరం విద్యార్థులకు చక్రవడ్డీ, స్టాక్ మార్కెట్ మరియు ఆన్‌లైన్ మోసాల రక్షణపై అవగాహన.',
-                  })}
-                </p>
+              </div>
+
+              {/* Floating Savings Goal Card with Micro-Motion */}
+              <div className="mt-4 p-3.5 rounded-2xl bg-teal-950/70 border border-teal-500/30 flex items-center justify-between animate-float-slow relative z-10">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-white">{t({ en: 'Goal: Intermediate Laptop', te: 'లక్ష్యం: ఇంటర్మీడియట్ ల్యాప్‌టాప్' })}</span>
+                    <span className="text-[10px] bg-teal-400/20 text-teal-300 px-2 py-0.2 rounded-full font-bold">
+                      81% Funded
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-teal-200">
+                    <span>₹28,500 {t({ en: 'saved of', te: 'పొదుపు' })} ₹35,000</span>
+                  </div>
+                  <div className="w-44 sm:w-52 h-1.5 bg-white/10 rounded-full overflow-hidden mt-1">
+                    <div className="h-full bg-teal-400 rounded-full" style={{ width: '81%' }} />
+                  </div>
+                </div>
+                <Link
+                  to="/investing-made-simple"
+                  className="px-3 py-1.5 rounded-lg bg-teal-400 text-navy-950 text-xs font-bold hover:bg-teal-300 transition-colors shrink-0 shadow-xs"
+                >
+                  {t({ en: 'Try Sandbox', te: 'ప్రయోగించండి' })}
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
         {/* Dynamic Metric Ribbon */}
-        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center relative z-10">
+          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <p className="text-2xl sm:text-3xl font-black text-teal-300 font-display">1,500+</p>
             <p className="text-xs text-blue-200 mt-0.5">{t({ en: 'Students Targeted in Hyderabad', te: 'హైదరాబాద్ విద్యార్థుల లక్ష్యం' })}</p>
           </div>
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <p className="text-2xl sm:text-3xl font-black text-coral-300 font-display">16</p>
             <p className="text-xs text-blue-200 mt-0.5">{t({ en: 'Interactive Curriculum Lessons', te: 'ఇంటరాక్టివ్ పాఠాలు' })}</p>
           </div>
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <p className="text-2xl sm:text-3xl font-black text-teal-300 font-display">11</p>
             <p className="text-xs text-blue-200 mt-0.5">{t({ en: 'Live Simulation Sandboxes', te: 'లైవ్ సిమ్యులేటర్లు' })}</p>
           </div>
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <p className="text-2xl sm:text-3xl font-black text-amber-300 font-display">47+</p>
             <p className="text-xs text-blue-200 mt-0.5">{t({ en: 'Bilingual Glossary Terms (EN/TE)', te: 'ద్విభాషా నిఘంటువు పదాలు' })}</p>
           </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* EDITORIAL INSPIRING MESSAGE (Requirement 6) */}
+      {/* ============================================================ */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center -mt-8 sm:-mt-10 relative z-20">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border border-navy-100 shadow-xl">
+          <span className="text-3xl font-serif text-teal-500 font-bold block mb-1">“</span>
+          <blockquote className="text-xl sm:text-2xl font-extrabold font-display text-navy-800 leading-snug tracking-tight max-w-2xl mx-auto">
+            {t({
+              en: 'Financial confidence begins when you understand the choices in front of you.',
+              te: 'మీ ముందున్న ఎంపికలను మీరు అర్థం చేసుకున్నప్పుడే ఆర్థిక ఆత్మవిశ్వాసం ప్రారంభమవుతుంది.',
+            })}
+          </blockquote>
+          <div className="w-12 h-1 bg-gradient-to-r from-teal-400 to-coral-400 mx-auto my-3 rounded-full" />
+          <p className="text-xs sm:text-sm text-navy-500 font-medium max-w-lg mx-auto">
+            {t({
+              en: 'Empowering India’s next generation through interactive, risk-free financial education.',
+              te: 'ఇంటరాక్టివ్, రిస్క్ లేని ఆర్థిక విద్య ద్వారా భారతదేశ తదుపరి తరాన్ని సాధికారపరుస్తున్నాము.',
+            })}
+          </p>
         </div>
       </section>
 

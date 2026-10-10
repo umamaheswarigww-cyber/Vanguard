@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import { HomePage } from '@/pages/HomePage';
@@ -17,11 +18,24 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { InvestingMadeSimplePage } from '@/pages/InvestingMadeSimplePage';
 
 export default function App() {
+  const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      try {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } catch {
+        // Fallback for environments where scrollTo options are not supported
+      }
+    }
+  }, [location.pathname]);
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-cream-50 text-navy-800">
       <Navigation />
-      <main className="flex-1">
-        <Routes>
+      <main key={location.pathname} className="flex-1 animate-fade-in">
+        <Routes location={location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/investing-made-simple" element={<InvestingMadeSimplePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
