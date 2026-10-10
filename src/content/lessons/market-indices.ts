@@ -108,19 +108,19 @@ export const marketIndicesLesson: Lesson = {
         {
           id: 'q-idx-1',
           question: {
-            en: 'How many companies comprise the flagship BSE Sensex index?',
-            te: 'బాంబే స్టాక్ ఎక్స్ఛేంజ్ (BSE) సెన్సెక్స్ సూచికలో ఎన్ని కంపెనీలు ఉంటాయి?',
+            en: 'A hypothetical index has three companies. If the largest company falls but the other two rise, can the index still rise?',
+            te: 'ఒక ఊహాత్మక సూచీలో మూడు కంపెనీలు ఉన్నాయి. అతిపెద్ద కంపెనీ పడిపోయినా మిగతా రెండు పెరిగితే సూచీ ఇంకా పెరగగలదా?',
           },
           type: 'mcq',
           options: [
-            { en: '30 companies', te: '30 కంపెనీలు' },
-            { en: '50 companies', te: '50 కంపెనీలు' },
-            { en: '500 companies', te: '500 కంపెనీలు' },
+            { en: 'Yes; the result depends on constituent weights and price changes', te: 'అవును; ఫలితం కంపెనీల బరువులు, ధర మార్పులపై ఆధారపడుతుంది' },
+            { en: 'No; every constituent must rise for an index to rise', te: 'కాదు; సూచీ పెరగాలంటే ప్రతి కంపెనీ పెరగాలి' },
+            { en: 'No; a falling company always sets the index value', te: 'కాదు; పడిపోయే కంపెనీ ఎప్పుడూ సూచీ విలువను నిర్ణయిస్తుంది' },
           ],
           correctIndex: 0,
           explanation: {
-            en: 'The BSE Sensex tracks 30 large-cap, established companies, while NSE Nifty tracks 50.',
-            te: 'సెన్సెక్స్‌లో 30 కంపెనీలు ఉంటాయి; నిఫ్టీలో 50 కంపెనీలు ఉంటాయి.',
+            en: 'An index combines constituent movements according to its method and weights. Some constituents may fall while the overall index rises.',
+            te: 'సూచీ తన విధానం, బరువుల ప్రకారం కంపెనీల మార్పులను కలుపుతుంది. మొత్తం సూచీ పెరిగినా కొన్ని కంపెనీలు పడిపోవచ్చు.',
           },
           objectiveId: 'obj-idx-2',
         },
@@ -142,6 +142,25 @@ export const marketIndicesLesson: Lesson = {
             te: 'లాక్ చేయబడిన ప్రమోటర్ వాటాలను మినహాయించి పబ్లిక్ మార్కెట్ లిక్విడిటీని ప్రతిబింబించడానికి ఫ్రీ-ఫ్లోట్ ఉపయోగిస్తారు.',
           },
           objectiveId: 'obj-idx-3',
+        },
+        {
+          id: 'q-idx-3',
+          question: {
+            en: 'If one company has a larger index weight than another, what does that usually mean in a weighted index model?',
+            te: 'ఒక కంపెనీకి మరొకదానికంటే ఎక్కువ సూచీ బరువు ఉంటే, బరువు ఆధారిత సూచీ నమూనాలో దాని అర్థం ఏమిటి?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'Its movement can have a larger effect on the index calculation', te: 'దాని మార్పు సూచీ లెక్కపై ఎక్కువ ప్రభావం చూపవచ్చు' },
+            { en: 'Its share price cannot fall', te: 'దాని షేర్ ధర పడిపోదు' },
+            { en: 'Every other constituent must move in the same direction', te: 'మిగతా ప్రతి కంపెనీ అదే దిశలో కదలాలి' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'In a weighted index, larger weights contribute more to the combined movement, though the exact method depends on the index rules.',
+            te: 'బరువు ఆధారిత సూచీలో పెద్ద బరువులు మొత్తం మార్పుకు ఎక్కువ తోడ్పడతాయి; ఖచ్చితమైన విధానం సూచీ నియమాలపై ఆధారపడుతుంది.',
+          },
+          objectiveId: 'obj-idx-1',
         },
       ],
     },

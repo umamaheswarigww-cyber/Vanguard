@@ -18,8 +18,8 @@ export const fdCalculatorLesson: Lesson = {
     {
       id: 'obj-fd-1',
       description: {
-        en: 'Explain how bank Fixed Deposits compound quarterly in standard Indian banking.',
-        te: 'భారతీయ బ్యాంకింగ్‌లో ఫిక్స్‌డ్ డిపాజిట్లు సాధారణంగా త్రైమాసికంగా ఎలా చక్రవడ్డీ పొందుతాయో వివరించడం.',
+        en: 'Explain how compounding frequency affects an illustrative Fixed Deposit calculation.',
+        te: 'ఊహాత్మక ఫిక్స్‌డ్ డిపాజిట్ లెక్కలో చక్రవడ్డీ తరచుదనం ఫలితాన్ని ఎలా ప్రభావితం చేస్తుందో వివరించడం.',
       },
       evidenceType: 'explain',
     },
@@ -105,6 +105,44 @@ export const fdCalculatorLesson: Lesson = {
             te: 'ప్రతి 3 నెలలకు వడ్డీ అసలులో కలవడం వల్ల ఆ వడ్డీపై తదుపరి త్రైమాసికంలో వడ్డీ లభిస్తుంది!',
           },
           objectiveId: 'obj-fd-1',
+        },
+        {
+          id: 'q-fd-m-2',
+          question: {
+            en: 'If the same nominal annual rate and term are used, why can more frequent compounding produce a slightly higher modeled maturity value?',
+            te: 'అదే నామమాత్రపు వార్షిక రేటు, కాలపరిమితి ఉన్నప్పుడు, ఎక్కువసార్లు చక్రవడ్డీ కలపడం వల్ల నమూనా మెచ్యూరిటీ విలువ కొద్దిగా ఎందుకు పెరగవచ్చు?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'Interest added earlier can itself earn interest sooner', te: 'ముందుగా కలిపిన వడ్డీపై కూడా త్వరగా వడ్డీ రావచ్చు' },
+            { en: 'The bank raises the agreed rate every quarter', te: 'బ్యాంకు ప్రతి త్రైమాసికంలో అంగీకరించిన రేటును పెంచుతుంది' },
+            { en: 'More frequent compounding removes taxes and fees', te: 'ఎక్కువసార్లు చక్రవడ్డీ పన్నులు, ఫీజులను తొలగిస్తుంది' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Compounding frequency changes when earned interest is added to the balance. Actual deposit terms determine the schedule and maturity amount.',
+            te: 'వచ్చిన వడ్డీని నిల్వలో ఎప్పుడు కలుపుతారో చక్రవడ్డీ తరచుదనం మారుస్తుంది. అసలు డిపాజిట్ నిబంధనలు షెడ్యూల్, మెచ్యూరిటీ మొత్తాన్ని నిర్ణయిస్తాయి.',
+          },
+          objectiveId: 'obj-fd-1',
+        },
+        {
+          id: 'q-fd-m-3',
+          question: {
+            en: 'What does the DICGC coverage statement in this lesson describe?',
+            te: 'ఈ పాఠంలోని DICGC బీమా సమాచారం దేనిని వివరిస్తుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'A limited cover for eligible deposits under stated conditions; it does not remove inflation risk', te: 'పేర్కొన్న షరతులకు లోబడి అర్హ డిపాజిట్లకు పరిమిత బీమా; ఇది ద్రవ్యోల్బణ ప్రమాదాన్ని తొలగించదు' },
+            { en: 'Unlimited cover for every investment product', te: 'ప్రతి పెట్టుబడి ఉత్పత్తికి అపరిమిత బీమా' },
+            { en: 'A promise that a deposit will always buy the same basket of goods', te: 'డిపాజిట్ ఎప్పుడూ అదే వస్తువులు కొనగలదనే హామీ' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Deposit insurance has an eligibility scope, conditions, and a monetary limit. A nominal balance can still lose purchasing power if prices rise.',
+            te: 'డిపాజిట్ బీమాకు అర్హత, షరతులు, ద్రవ్య పరిమితి ఉంటాయి. ధరలు పెరిగితే నామమాత్రపు నిల్వ కొనుగోలు శక్తిని కోల్పోవచ్చు.',
+          },
+          objectiveId: 'obj-fd-3',
         },
       ],
     },

@@ -5,7 +5,7 @@
 // ============================================================
 import { useState, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { formatINR, formatIndianNumber } from '@/lib/finance/formulas';
+import { formatIndianNumber } from '@/lib/finance/formulas';
 
 interface CompanyInIndex {
   id: string;
@@ -19,7 +19,6 @@ interface CompanyInIndex {
 }
 
 const INDEX_BASE_VALUE = 1000;
-const INDEX_BASE_MARKET_CAP = 50000; // ₹50,000 Cr (hypothetical base total)
 
 const INITIAL_COMPANIES: CompanyInIndex[] = [
   { id: 'alpha', name: 'AlphaTech', sector: 'IT', shares: 100, freefloat: 0.7, initialPrice: 500, currentPrice: 500, color: '#11B7A3' },
@@ -40,7 +39,7 @@ function calcInitialFFMC(company: CompanyInIndex): number {
 export function MarketIndicesLab() {
   const [companies, setCompanies] = useState<CompanyInIndex[]>(INITIAL_COMPANIES);
 
-  const { indexValue, weights, totalFFMC, totalInitialFFMC } = useMemo(() => {
+  const { indexValue, weights, totalFFMC } = useMemo(() => {
     const totalInitial = companies.reduce((sum, c) => sum + calcInitialFFMC(c), 0);
     const totalCurrent = companies.reduce((sum, c) => sum + calcFFMC(c), 0);
     const indexVal = totalInitial > 0 ? INDEX_BASE_VALUE * (totalCurrent / totalInitial) : INDEX_BASE_VALUE;
@@ -51,7 +50,7 @@ export function MarketIndicesLab() {
       priceChange: ((c.currentPrice - c.initialPrice) / c.initialPrice) * 100,
       color: c.color,
     }));
-    return { indexValue: indexVal, weights: ws, totalFFMC: totalCurrent, totalInitialFFMC: totalInitial };
+    return { indexValue: indexVal, weights: ws, totalFFMC: totalCurrent };
   }, [companies]);
 
   const indexChange = ((indexValue - INDEX_BASE_VALUE) / INDEX_BASE_VALUE) * 100;
@@ -71,7 +70,7 @@ export function MarketIndicesLab() {
         <h3 className="text-xl font-bold mb-1">📊 Market Index Simulator</h3>
         <p className="text-orange-100 text-sm">
           Change stock prices below and watch how a <strong>free-float market-cap weighted index</strong> moves.
-          This is how real indices like Nifty 50 and Sensex work!
+          This is a simplified teaching model. Real index methodologies have their own rules; all company names and prices below are fictional.
         </p>
       </div>
 
@@ -79,7 +78,7 @@ export function MarketIndicesLab() {
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
         <p className="font-bold mb-2">💡 How Free-Float Market-Cap Weighting Works</p>
         <p><strong>Free-float market cap</strong> = Share Price × Shares Outstanding × Free-Float Factor</p>
-        <p className="mt-1"><strong>Free-float factor</strong> = fraction of shares that are publicly tradeable (excludes promoter holdings, government stakes, etc.)</p>
+        <p className="mt-1"><strong>Free-float factor</strong> = illustrative fraction treated as available to public investors under an index method.</p>
         <p className="mt-1"><strong>Index Value</strong> = Base Value × (Current Total FFMC / Base Total FFMC)</p>
       </div>
 

@@ -55,8 +55,8 @@ export const companyFinancialsLesson: Lesson = {
       type: 'discovery',
       title: { en: 'The Big Three Financial Statements', te: 'మూడు ముఖ్యమైన ఆర్థిక నివేదికలు' },
       content: {
-        en: 'Every listed company in India submits three vital audited statements to SEBI and stock exchanges every quarter:\n\n1. **Statement of Profit & Loss (Income Statement):** *Did the business earn a profit or suffer a loss over the period?*\n2. **Balance Sheet:** *What does the company own (Assets) and what does it owe (Liabilities) at a specific snapshot in time?*\n3. **Cash Flow Statement:** *Where did actual cash enter and exit the bank account?*',
-        te: 'ప్రతి లిస్టెడ్ కంపెనీ మూడు కీలక నివేదికలను ప్రచురిస్తుంది:\n1. లాభనష్టాల నివేదిక (P&L) - నిర్దిష్ట కాలంలో లాభం వచ్చిందా లేదా నష్టం వచ్చిందా?\n2. బ్యాలెన్స్ షీట్ - కంపెనీకి ఎంత ఆస్తి ఉంది మరియు ఎన్ని అప్పులు ఉన్నాయి?\n3. నగదు ప్రవాహ నివేదిక (Cash Flow) - బ్యాంకు ఖాతాలోకి నగదు ఎలా వచ్చింది మరియు ఎక్కడికి వెళ్లింది?',
+        en: 'A company’s financial statements help describe different parts of a business. Reporting schedules and review requirements depend on the company and current rules, so check its filings for the period you are studying.\n\n1. **Statement of Profit & Loss:** What income and expenses were recorded over a period?\n2. **Balance Sheet:** What assets and liabilities were reported at a particular date?\n3. **Cash Flow Statement:** What cash entered and left through operating, investing, and financing activities?\n\nThese statements answer different questions; accounting profit is not the same as cash in the bank.',
+        te: 'కంపెనీ ఆర్థిక నివేదికలు వ్యాపారంలోని వేర్వేరు అంశాలను అర్థం చేసుకోవడానికి సహాయపడతాయి. నివేదికల సమయాలు, సమీక్ష అవసరాలు కంపెనీ మరియు ప్రస్తుతం అమలులో ఉన్న నియమాలపై ఆధారపడతాయి; కాబట్టి మీరు పరిశీలిస్తున్న కాలానికి సంబంధించిన ఫైలింగ్స్ చూడండి.\n\n1. **లాభనష్టాల నివేదిక:** ఒక కాలంలో ఏ ఆదాయం, ఖర్చులు నమోదు అయ్యాయి?\n2. **బ్యాలెన్స్ షీట్:** ఒక నిర్దిష్ట తేదీన ఏ ఆస్తులు, బాధ్యతలు నివేదించబడ్డాయి?\n3. **నగదు ప్రవాహ నివేదిక:** నిర్వహణ, పెట్టుబడి, ఫైనాన్సింగ్ కార్యకలాపాల ద్వారా నగదు ఎలా వచ్చింది, వెళ్లింది?\n\nఈ నివేదికలు వేర్వేరు ప్రశ్నలకు సమాధానం ఇస్తాయి; లెక్కల లాభం బ్యాంకులోని నగదుతో సమానం కాదు.',
       },
     },
     {
@@ -64,8 +64,8 @@ export const companyFinancialsLesson: Lesson = {
       type: 'mechanism',
       title: { en: 'The P&L Waterfall: Topline to Bottomline', te: 'లాభనష్టాల నివేదిక (టాప్‌లైన్ నుండి బాటమ్‌లైన్)' },
       content: {
-        en: 'Think of the Income Statement as a waterfall starting with gross sales at the top:\n\n• **Revenue (Topline):** Total money collected from selling goods/services.\n• **(−) Cost of Goods Sold (COGS):** Direct cost of raw materials and production.\n• **(=) Gross Profit:** What remains after direct production costs.\n• **(−) Operating Expenses (OPEX):** Office rent, staff salaries, electricity, marketing.\n• **(=) EBITDA:** Earnings Before Interest, Tax, Depreciation & Amortization.\n• **(−) Depreciation:** Accounting wear-and-tear of plant and machines.\n• **(−) Finance Costs / Interest:** Money paid to banks on loans.\n• **(−) Taxes:** Corporate income tax paid to the Government of India.\n• **(=) Net Profit / PAT (Bottomline):** The final reward belonging purely to equity shareholders!',
-        te: 'ఆదాయ నివేదిక పైనుండి క్రిందికి ప్రవహించే జలపాతం వంటిది:\n• అమ్మకాల రాబడి (Topline)\n• (−) ముడిసరుకు ఖర్చులు (COGS)\n• (=) స్థూల లాభం (Gross Profit)\n• (−) ఉద్యోగుల జీతాలు, అద్దెలు, మార్కెటింగ్ ఖర్చులు\n• (=) EBITDA\n• (−) యంత్రాల తరుగుదల మరియు రుణాలపై వడ్డీ\n• (−) ప్రభుత్వానికి చెల్లించే పన్నులు\n• (=) నికర లాభం (Bottomline) - ఇది వాటాదారులకు మిగిలే అసలైన లాభం!',
+        en: 'Think of an income statement as a waterfall. This simplified example shows the relationship; actual statement layouts can vary:\n\n• **Revenue:** Value recorded for goods or services sold during the period; cash may arrive at a different time.\n• **(−) Cost of Goods Sold:** Direct costs tied to producing or providing those goods or services.\n• **(=) Gross Profit:** Revenue minus those direct costs.\n• **(−) Operating Expenses:** Examples include rent, salaries, electricity, and marketing.\n• **(=) Operating result:** The result depends on which costs the statement includes.\n• **(−) Finance costs, depreciation, and applicable taxes:** These are among the items considered before arriving at net profit.\n• **(=) Net Profit:** An accounting result after the listed expenses; it is not automatically cash paid to shareholders.',
+        te: 'ఆదాయ నివేదికను జలపాతంలా ఊహించండి. ఈ సరళ ఉదాహరణ సంబంధాన్ని చూపిస్తుంది; నిజమైన నివేదికల రూపాలు మారవచ్చు:\n\n• **ఆదాయం:** ఆ కాలంలో అమ్మిన వస్తువులు లేదా సేవలకు నమోదు చేసిన విలువ; నగదు వేరే సమయంలో రావచ్చు.\n• **(−) అమ్మిన వస్తువుల ఖర్చు:** ఉత్పత్తి లేదా సేవకు నేరుగా సంబంధించిన ఖర్చులు.\n• **(=) స్థూల లాభం:** ఆదాయం నుండి ఆ ప్రత్యక్ష ఖర్చులను తీసివేసిన తర్వాత మిగిలేది.\n• **(−) నిర్వహణ ఖర్చులు:** ఉదాహరణకు అద్దె, జీతాలు, విద్యుత్, మార్కెటింగ్.\n• **(=) నిర్వహణ ఫలితం:** నివేదికలో ఏ ఖర్చులను చేర్చామో దానిపై ఫలితం ఆధారపడుతుంది.\n• **(−) ఫైనాన్స్ ఖర్చులు, తరుగుదల, వర్తించే పన్నులు:** నికర లాభానికి ముందు పరిగణించే అంశాలు.\n• **(=) నికర లాభం:** జాబితాలోని ఖర్చుల తర్వాత లెక్కించిన ఫలితం; ఇది వాటాదారులకు తప్పనిసరిగా చెల్లించే నగదు కాదు.',
       },
     },
     {
@@ -142,6 +142,25 @@ export const companyFinancialsLesson: Lesson = {
             te: 'స్థూల లాభం = ₹10L − ₹6L = ₹4 లక్షలు (40% మార్జిన్).',
           },
           objectiveId: 'obj-fin-1',
+        },
+        {
+          id: 'q-fin-3',
+          question: {
+            en: 'A company records a sale on credit but has not yet received payment. Which statement is the most accurate?',
+            te: 'ఒక కంపెనీ బాకీపై అమ్మకాన్ని నమోదు చేసింది కానీ ఇంకా చెల్లింపు పొందలేదు. ఏ వాక్యం అత్యంత సరైనది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'Revenue may be recorded while the cash has not yet arrived', te: 'నగదు రాకపోయినా ఆదాయం నమోదు కావచ్చు' },
+            { en: 'Revenue and cash are always identical at every moment', te: 'ప్రతి క్షణంలో ఆదాయం, నగదు ఎప్పుడూ ఒకటే' },
+            { en: 'The sale must be excluded from every financial statement until cash arrives', te: 'నగదు వచ్చే వరకు ఆ అమ్మకాన్ని అన్ని ఆర్థిక నివేదికల నుంచి తప్పక తొలగించాలి' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Under accrual accounting, revenue can be recognized when earned even if cash collection happens later. Cash flow and profit therefore answer different questions.',
+            te: 'అక్రూవల్ అకౌంటింగ్‌లో సంపాదించినప్పుడు ఆదాయం నమోదు కావచ్చు; నగదు తర్వాత రావచ్చు. కాబట్టి నగదు ప్రవాహం, లాభం వేర్వేరు ప్రశ్నలకు సమాధానమిస్తాయి.',
+          },
+          objectiveId: 'obj-fin-3',
         },
       ],
     },

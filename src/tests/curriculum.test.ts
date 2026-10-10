@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { PILLARS, MODULES } from '../content/curriculum/pillars';
-import { LESSONS, getLessonById } from '../content/lessons';
+import { LESSONS } from '../content/lessons';
 import { GLOSSARY } from '../content/glossary/glossary';
+import { hasLessonConceptVisual, hasLessonMiniLab } from '../components/learning/lesson-visual-registry';
 
 describe('Curriculum Architecture & PS Traceability', () => {
   it('covers all four required pillars from Vanguard problem statement', () => {
@@ -30,6 +31,17 @@ describe('Curriculum Architecture & PS Traceability', () => {
         expect(stg.content.en).toBeTruthy();
         expect(stg.content.te).toBeTruthy();
       });
+    });
+  });
+
+  it('every registered lesson has a tailored visual, a functional experiment, and a knowledge check', () => {
+    LESSONS.forEach(lesson => {
+      expect(hasLessonConceptVisual(lesson.id), `${lesson.id} needs a concept visual`).toBe(true);
+      const hasWiredInteraction = lesson.stages.some(stage => stage.interactionKey)
+        || (hasLessonMiniLab(lesson.id) && lesson.stages.some(stage => stage.type === 'mechanism'));
+      expect(hasWiredInteraction, `${lesson.id} needs a working interaction`).toBe(true);
+      const masteryStage = lesson.stages.find(stage => stage.type === 'mastery_check');
+      expect(masteryStage?.questions?.length, `${lesson.id} needs at least three mastery questions`).toBeGreaterThanOrEqual(3);
     });
   });
 

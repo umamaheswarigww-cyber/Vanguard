@@ -106,6 +106,44 @@ export const mutualFundBasicsLesson: Lesson = {
           },
           objectiveId: 'obj-mf-2',
         },
+        {
+          id: 'q-mf-m-2',
+          question: {
+            en: 'Two funds each have ₹1,00,000 in net assets. Fund A has 10,000 units and Fund B has 20,000. What does the NAV comparison tell you by itself?',
+            te: 'రెండు ఫండ్ల నికర ఆస్తులు ₹1,00,000. A ఫండ్‌కు 10,000 యూనిట్లు, B ఫండ్‌కు 20,000 ఉన్నాయి. NAV పోలిక మాత్రమే ఏమి చెబుతుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'Fund B has a lower NAV per unit, but that alone does not make it cheaper or better', te: 'B ఫండ్ ఒక్కో యూనిట్ NAV తక్కువ; దానివల్ల అది చౌకైనది లేదా మెరుగైనది అని తేలదు' },
+            { en: 'Fund B must have worse assets because its NAV is lower', te: 'B ఫండ్ NAV తక్కువ కాబట్టి దాని ఆస్తులు తప్పనిసరిగా నాసిరకమైనవి' },
+            { en: 'Fund A must earn higher returns because its NAV is higher', te: 'A ఫండ్ NAV ఎక్కువ కాబట్టి తప్పనిసరిగా ఎక్కువ రాబడి ఇస్తుంది' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'NAV per unit is net assets divided by units. A lower unit price can simply reflect more units; compare the underlying portfolio and relevant performance and risk measures instead.',
+            te: 'ఒక్కో యూనిట్ NAV = నికర ఆస్తులు ÷ యూనిట్లు. యూనిట్ ధర తక్కువగా ఉండటం ఎక్కువ యూనిట్లు ఉన్నందువల్ల కావచ్చు; అంతర్లీన పోర్ట్‌ఫోలియో, సంబంధిత రాబడి, రిస్క్ కొలమానాలను చూడాలి.',
+          },
+          objectiveId: 'obj-mf-3',
+        },
+        {
+          id: 'q-mf-m-3',
+          question: {
+            en: 'If you invest ₹2,000 when the illustrative NAV is ₹20 per unit, how many units does the simplified model allocate before any charges?',
+            te: 'ఉదాహరణ NAV ఒక్కో యూనిట్‌కు ₹20 ఉన్నప్పుడు ₹2,000 పెట్టుబడి పెడితే, ఛార్జీలకు ముందు సరళ నమూనా ఎన్ని యూనిట్లు కేటాయిస్తుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: '100 units (₹2,000 ÷ ₹20)', te: '100 యూనిట్లు (₹2,000 ÷ ₹20)' },
+            { en: '40 units', te: '40 యూనిట్లు' },
+            { en: '2,020 units', te: '2,020 యూనిట్లు' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Units = contribution ÷ applicable NAV: ₹2,000 ÷ ₹20 = 100 units in this simplified calculation. Real transaction rules and charges can affect allocations.',
+            te: 'యూనిట్లు = పెట్టుబడి మొత్తం ÷ వర్తించే NAV: ఈ సరళ లెక్కలో ₹2,000 ÷ ₹20 = 100 యూనిట్లు. అసలు లావాదేవీ నియమాలు, ఛార్జీలు కేటాయింపును ప్రభావితం చేయవచ్చు.',
+          },
+          objectiveId: 'obj-mf-2',
+        },
       ],
     },
   ],

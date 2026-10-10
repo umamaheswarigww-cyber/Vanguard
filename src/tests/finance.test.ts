@@ -12,6 +12,7 @@ import {
   peRatio,
   cagr,
   budgetBalance,
+  formatINR,
   realReturnExact,
   ruleOf72,
 } from '../lib/finance/formulas';
@@ -64,6 +65,18 @@ describe('Compound Interest', () => {
     const annual = compoundInterest(10_000, 0.10, 1, 1);
     const quarterly = compoundInterest(10_000, 0.10, 1, 4);
     expect(quarterly).toBeGreaterThan(annual);
+  });
+
+  it('supports negative hypothetical returns without producing NaN', () => {
+    expect(compoundInterest(10_000, -0.10, 1, 1)).toBeCloseTo(9_000, 2);
+  });
+
+  it('guards invalid non-finite calculator inputs', () => {
+    expect(compoundInterest(Number.POSITIVE_INFINITY, 0.05, 2)).toBe(0);
+    expect(sipFutureValue(1_000, -1, 12)).toBe(0);
+    expect(formatINR(Number.NaN)).toContain('0');
+    expect(realReturnExact(Number.NaN, 0.05)).toBe(0);
+    expect(calculateNAV(Number.POSITIVE_INFINITY, 0, 100)).toBe(0);
   });
 });
 

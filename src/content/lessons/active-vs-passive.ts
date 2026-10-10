@@ -46,8 +46,8 @@ export const activeVsPassiveLesson: Lesson = {
       type: 'hook',
       title: { en: 'The Fund Manager Dilemma', te: 'ఫండ్ మేనేజర్ సందిగ్ధత' },
       content: {
-        en: 'Imagine you hire a brilliant, MBA-educated chess grandmaster to pick winning stocks for you. They charge a 1.5% fee every single year for their expertise. Another option is a simple computer program that simply buys all 50 stocks in the Nifty 50 in exact proportions, charging only 0.1%. Over 10 years, which one leaves you with more money in your pocket? The answer has revolutionized modern finance.',
-        te: 'మీ కోసం అత్యుత్తమ షేర్లను ఎంచుకోవడానికి ఒక నిపుణుడిని నియమించి ఏటా 1.5% రుసుము చెల్లించడం మంచిదా? లేక నిఫ్టీ 50 లోని 50 కంపెనీలను కంప్యూటర్ ద్వారా కేవలం 0.1% రుసుముతో కొనుగోలు చేయడం మంచిదా? ఈ ప్రశ్న ప్రపంచ ఆర్థిక రంగాన్ని మార్చివేసింది.',
+        en: 'Imagine two fictional funds that follow the same broad market. One has a manager who researches and selects investments; the other follows an index using stated rules. Their fees and results can differ. Which details would you compare before deciding what each approach means?',
+        te: 'ఒకే విస్తృత మార్కెట్‌ను అనుసరించే రెండు ఊహాత్మక ఫండ్లను ఊహించండి. ఒకదానిలో మేనేజర్ పరిశోధించి పెట్టుబడులను ఎంచుకుంటారు; మరొకటి నియమాల ప్రకారం సూచీని అనుసరిస్తుంది. వాటి ఫీజులు, ఫలితాలు వేరుగా ఉండవచ్చు. ఈ రెండు విధానాలను అర్థం చేసుకోవడానికి ఏ వివరాలను పోల్చాలి?',
       },
     },
     {
@@ -55,8 +55,8 @@ export const activeVsPassiveLesson: Lesson = {
       type: 'discovery',
       title: { en: 'Two Contrasting Philosophies', te: 'రెండు భిన్నమైన సిద్ధాంతాలు' },
       content: {
-        en: '### 1. Active Management (The Stock Picker)\n• **Goal:** Beat the market benchmark (generate **Alpha**).\n• **Method:** Fund managers and research analysts meet CEOs, analyse factory output, forecast quarters, and constantly buy/sell stocks.\n• **Cost:** Higher Total Expense Ratio (typically **1.0% to 2.25%** annually in Regular plans, **0.5% to 1.2%** in Direct plans).\n\n### 2. Passive Management (The Index Mirror)\n• **Goal:** Match the index return as closely as possible (minimize **Tracking Error**).\n• **Method:** Holds the exact stocks in the exact weights of the index (e.g. Nifty 50 Index Fund). No research staff or stock picking required.\n• **Cost:** Ultra-low Total Expense Ratio (typically **0.1% to 0.4%** annually).',
-        te: '1. యాక్టివ్ మేనేజ్‌మెంట్: మార్కెట్ కంటే ఎక్కువ రాబడి (Alpha) సాధించడమే లక్ష్యం. నిపుణుల పరిశోధన ఉంటుంది. ఖర్చు (TER) ఎక్కువ.\n2. పాసివ్ మేనేజ్‌మెంట్: ఇండెక్స్‌తో సమానమైన రాబడిని సాధించడం. కంప్యూటరైజ్డ్ ఇండెక్స్ ట్రాకింగ్. ఖర్చు (TER) చాలా తక్కువ.',
+        en: '### 1. Active management\n• **Goal:** Try to outperform a chosen benchmark after costs; this is uncertain.\n• **Method:** A manager uses a stated process to select or change holdings.\n• **Cost:** Research and trading can affect costs. The actual expense ratio varies by scheme and plan, so check its current documents.\n\n### 2. Passive management\n• **Goal:** Track a named index as closely as practical; results can differ from the index.\n• **Method:** A fund follows rules for holding or sampling index securities.\n• **Cost:** Costs still apply and vary. An index approach does not guarantee a gain or remove market risk.',
+        te: '### 1. యాక్టివ్ నిర్వహణ\n• **లక్ష్యం:** ఖర్చుల తర్వాత ఎంచుకున్న బెంచ్‌మార్క్‌ను మించడానికి ప్రయత్నించడం; ఇది ఖాయం కాదు.\n• **విధానం:** మేనేజర్ ఒక నిర్దిష్ట పద్ధతితో పెట్టుబడులను ఎంచుకోవచ్చు లేదా మార్చవచ్చు.\n• **ఖర్చు:** పరిశోధన, కొనుగోలు అమ్మకాలు ఖర్చులపై ప్రభావం చూపుతాయి. ఫండ్ పథకం, ప్లాన్‌ను బట్టి వ్యయ నిష్పత్తి మారుతుంది; తాజా పత్రాలను చూడాలి.\n\n### 2. పాసివ్ నిర్వహణ\n• **లక్ష్యం:** పేర్కొన్న సూచీని సాధ్యమైనంత దగ్గరగా అనుసరించడం; ఫలితాలు సూచీతో భిన్నంగా ఉండవచ్చు.\n• **విధానం:** సూచీ సెక్యూరిటీలను లేదా నమూనా సెక్యూరిటీలను దాని నియమాల ప్రకారం కలిగి ఉంటుంది.\n• **ఖర్చు:** ఖర్చులు ఉంటాయి, మారుతాయి. సూచీ విధానం లాభానికి హామీ ఇవ్వదు లేదా మార్కెట్ రిస్క్‌ను తొలగించదు.',
       },
     },
     {
@@ -64,17 +64,17 @@ export const activeVsPassiveLesson: Lesson = {
       type: 'mechanism',
       title: { en: 'The Stealth Destroyer: Compounding Fees', te: 'కంటికి కనిపించని నష్టం: ఫీజుల చక్రవడ్డీ' },
       content: {
-        en: 'A 1% fee difference sounds tiny — like pocket change. But compounding turns small percentages into massive wealth gaps over time!\n\n**Consider ₹1,00,000 invested for 20 years at a gross market return of 12% p.a.:**\n\n• **Fund A (Passive Index, 0.2% TER):** Net return = 11.8% p.a.\n$$\\text{Value at 20 Years} = ₹1,00,000 \\times (1 + 0.118)^{20} \\approx ₹9,34,000$$\n\n• **Fund B (Active Fund, 1.7% TER):** Net return = 10.3% p.a.\n$$\\text{Value at 20 Years} = ₹1,00,000 \\times (1 + 0.103)^{20} \\approx ₹7,12,000$$\n\n**The Shocking Gap:** Over 20 years, that "tiny" 1.5% fee gap erased **over ₹2,20,000** — more than double your entire starting investment! To justify their fees, active managers must beat the index by *more* than their expense ratio year after year.',
-        te: '1% రుసుము తేడా చాలా చిన్నదిగా అనిపించవచ్చు. కానీ 20 ఏళ్ల కాలంలో అది లక్షల రూపాయల సంపదను హరిస్తుంది!\n₹1,00,000 పెట్టుబడిపై 20 ఏళ్లలో 1.5% అదనపు రుసుము దాదాపు ₹2,20,000 సంపదను తగ్గించేస్తుంది. అందుకే తక్కువ రుసుములు ఉన్న ఫండ్లు దీర్ఘకాలంలో అధిక ప్రయోజనాన్ని ఇస్తాయి.',
+        en: 'Here is a simplified fee experiment, not a forecast. Start with ₹50,000 for 10 years and assume both examples earn the same 8% gross rate each year before fees. Subtract a hypothetical 0.2% annual fee in one case and 1.2% in the other, then compound the remaining rates.\n\nThe lower-fee illustration ends higher because the two cases assume identical gross growth and differ only by the fee. Real funds do not earn identical returns, fees can change, and market values can fall. A lower fee alone does not tell you which fund is suitable or will perform better.',
+        te: 'ఇది ఫీజు ప్రభావాన్ని చూపే సరళీకృత ఉదాహరణ మాత్రమే; భవిష్యత్ అంచనా కాదు. ₹50,000ను 10 సంవత్సరాలు ఉంచి, రెండు ఉదాహరణల్లోనూ ఫీజులకు ముందు ఏడాదికి 8% ఒకే ఊహాత్మక వృద్ధి అనుకుందాం. ఒకదానిలో ఏడాదికి 0.2%, మరొకదానిలో 1.2% ఊహాత్మక ఫీజు తీసి మిగిలిన రేటును చక్రవడ్డీగా లెక్కించండి.\n\nరెండు సందర్భాల్లోనూ ఫీజుకు ముందు వృద్ధి ఒకటే అనుకున్నందున తక్కువ ఫీజు ఉదాహరణలో చివరి విలువ ఎక్కువగా ఉంటుంది. వాస్తవ ఫండ్ల రాబడులు ఒకేలా ఉండవు; ఫీజులు మారవచ్చు, మార్కెట్ విలువ తగ్గవచ్చు. తక్కువ ఫీజు ఒక్కటే ఏ ఫండ్ సరిపోతుందో లేదా మెరుగ్గా పనిచేస్తుందో చెప్పదు.',
       },
     },
     {
       id: 'stg-avp-spiva',
       type: 'formal_concept',
-      title: { en: 'What Does the Data Say? The SPIVA Report', te: 'వాస్తవ సమాచారం: SPIVA ఇండియా నివేదిక' },
+      title: { en: 'How to Read Performance Comparisons', te: 'పనితీరు పోలికలను ఎలా చదవాలి' },
       content: {
-        en: 'Do active Indian managers consistently beat the index after their fees?\n\nThe **S&P Indices Versus Active (SPIVA) India Scorecard** tracks this biannually using rigorous methodology:\n\n• **Large-Cap Equity:** Over 5-year and 10-year periods, typically **60% to 80%+ of active large-cap mutual funds fail to beat the BSE 100 or Nifty 50 benchmark!**\n• **Mid & Small Caps:** Active managers historically showed more ability to find hidden gems, but even here, alpha has compressed as markets grow more transparent and digitally efficient.\n• **Survivorship Bias:** Many poorly performing active funds get quietly merged into better funds, hiding their past losses.\n\n*Source: S&P Dow Jones Indices — SPIVA India Mid-Year 2024 Report.*',
-        te: 'SPIVA ఇండియా నివేదిక ప్రకారం:\nలార్జ్-క్యాప్ విభాగంలో 5 నుండి 10 సంవత్సరాల కాలంలో దాదాపు 60% నుండి 80% పైగా యాక్టివ్ ఫండ్లు నిఫ్టీ లేదా సెన్సెక్స్ కంటే తక్కువ రాబడిని మాత్రమే ఇవ్వగలిగాయి! మార్కెట్లలో పారదర్శకత పెరిగే కొద్దీ ఇండెక్స్‌ను అధిగమించడం కష్టతరంగా మారుతోంది.',
+        en: 'When someone says “this approach beat the market,” ask: Which benchmark? Which dates? Before or after fees? Were distributions included? How many funds disappeared or merged?\n\nA comparison describes one past period and method. Results can change across time periods, categories, and benchmarks. Survivorship and selection effects can also make a group look stronger than it was. Past performance cannot establish what a fund will do next.',
+        te: '“ఈ విధానం మార్కెట్‌ను మించింది” అని ఎవరైనా చెబితే అడగండి: ఏ బెంచ్‌మార్క్? ఏ కాలం? ఫీజులకు ముందు లేదా తర్వాతా? పంపిణీలను లెక్కలోకి తీసుకున్నారా? ఎన్ని ఫండ్లు మూసివేయబడ్డాయి లేదా విలీనం అయ్యాయి?\n\nపోలిక గత కాలం, పద్ధతిని మాత్రమే వివరిస్తుంది. కాలం, వర్గం, బెంచ్‌మార్క్‌ను బట్టి ఫలితాలు మారవచ్చు. కొన్ని ఫండ్లు కనబడకపోవడం లేదా విలీనం కావడం వల్ల సమూహం నిజం కంటే మెరుగ్గా కనిపించవచ్చు. గత పనితీరు భవిష్యత్ ఫలితాలను నిర్ధారించదు.',
       },
     },
     {
@@ -82,8 +82,8 @@ export const activeVsPassiveLesson: Lesson = {
       type: 'misconception',
       title: { en: 'Passive Means Settling for "Average"', te: 'అపోహ: పాసివ్ అంటే తక్కువ రాబడి' },
       content: {
-        en: '❌ **Misconception:** "Passive investing means I am settling for mediocre average performance because I\'m not trying to win."\n\n✅ **Truth:** Because active managers collectively *are* the market and charge high fees, the average active rupee must deliver less than the index after fees! By owning an index fund with minimal costs, you mathematically beat the majority of market participants over long investment horizons.',
-        te: '❌ అపోహ: "పాసివ్ ఇన్వెస్టింగ్ అంటే నాసిరకం సగటు రాబడికి అంగీకరించడం!"\n✅ వాస్తవం: యాక్టివ్ ఫండ్ల ఫీజుల భారం కారణంగా, తక్కువ ఖర్చుతో కూడిన ఇండెక్స్ ఫండ్‌ను ఎంచుకోవడం ద్వారా మీరు దీర్ఘకాలంలో చాలా మంది యాక్టివ్ ఇన్వెస్టర్ల కంటే మెరుగైన రాబడిని సాధిస్తారు.',
+        en: '❌ **Misconception:** “Passive management always earns the market return, and active management always does worse.”\n\n✅ **Better way to think:** Passive funds aim to track a stated index, but costs and tracking differences matter. Active funds make different choices and may outperform or underperform. Neither style guarantees a result. Compare the goal, risks, costs, and evidence for the same period and benchmark.',
+        te: '❌ **అపోహ:** “పాసివ్ నిర్వహణ ఎప్పుడూ మార్కెట్ రాబడినే ఇస్తుంది; యాక్టివ్ నిర్వహణ ఎప్పుడూ తక్కువే ఇస్తుంది.”\n\n✅ **సరైన ఆలోచన:** పాసివ్ ఫండ్లు పేర్కొన్న సూచీని అనుసరించడానికి ప్రయత్నిస్తాయి; ఖర్చులు, సూచీతో తేడాలు ముఖ్యం. యాక్టివ్ ఫండ్లు వేర్వేరు ఎంపికలు చేస్తాయి; మెరుగ్గా లేదా తక్కువగా పనిచేయవచ్చు. ఏ విధానమూ ఫలితానికి హామీ ఇవ్వదు. ఒకే కాలం, బెంచ్‌మార్క్‌తో లక్ష్యం, రిస్క్, ఖర్చులు, ఆధారాలను పోల్చండి.',
       },
     },
     {
@@ -132,6 +132,25 @@ export const activeVsPassiveLesson: Lesson = {
             te: 'ఇండెక్స్ ఫండ్లు ఎటువంటి పరిశోధన ఖర్చులు లేకుండా స్వయంచాలకంగా ఇండెక్స్ షేర్లను కొనుగోలు చేస్తాయి.',
           },
           objectiveId: 'obj-avp-1',
+        },
+        {
+          id: 'q-avp-3',
+          question: {
+            en: 'Two hypothetical funds earn the same 8% gross annual return before fees. Which statement about fees is supported by this assumption?',
+            te: 'ఫీజులకు ముందు రెండు ఊహాత్మక ఫండ్లు 8% వార్షిక రాబడి సాధించాయని అనుకుందాం. ఫీజుల గురించి ఏ వాక్యానికి ఈ ఊహ మద్దతు ఇస్తుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'The lower-fee fund keeps more of the modeled return, all else equal', te: 'మిగతావన్నీ సమానంగా ఉంటే, తక్కువ ఫీజు ఫండ్ నమూనా రాబడిలో ఎక్కువ భాగాన్ని నిలుపుకుంటుంది' },
+            { en: 'The lower-fee fund must outperform every year', te: 'తక్కువ ఫీజు ఫండ్ ప్రతి సంవత్సరం తప్పనిసరిగా మెరుగ్గా రాణించాలి' },
+            { en: 'Fees do not affect investor outcomes', te: 'ఫీజులు పెట్టుబడిదారుల ఫలితాలను ప్రభావితం చేయవు' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'A lower fee reduces the modeled cost when other assumptions are equal. It cannot guarantee future outperformance or a positive return.',
+            te: 'ఇతర ఊహలు సమానంగా ఉన్నప్పుడు తక్కువ ఫీజు నమూనా ఖర్చును తగ్గిస్తుంది. ఇది భవిష్యత్ మెరుగైన పనితీరు లేదా సానుకూల రాబడికి హామీ కాదు.',
+          },
+          objectiveId: 'obj-avp-2',
         },
       ],
     },

@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useT } from '@/context/AppContext';
-import { ShieldAlert, Dumbbell, Award, CheckCircle, RefreshCw } from 'lucide-react';
+import { ShieldAlert, Dumbbell, Award, CheckCircle, RefreshCw, Sparkles, ArrowRight } from 'lucide-react';
 import { ScamDetectiveSim } from '@/components/simulation/ScamDetectiveSim';
 
 const GENERAL_QUIZ = [
@@ -130,6 +131,34 @@ export function PracticePage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Challenge 3: Investing Made Simple Masterclass */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="rounded-3xl bg-gradient-to-br from-navy-800 via-navy-900 to-teal-900 text-white p-6 sm:p-8 border border-teal-500/30 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-400/20 text-teal-300 text-xs font-semibold">
+              <Award size={14} />
+              <span>{t({ en: 'Challenge 3: Investing Mastery', te: 'సవాలు 3: పెట్టుబడుల నైపుణ్యం' })}</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold font-display">
+              {t({ en: 'Investing Made Simple: 5-Question Certification & Sandbox', te: 'సులభమైన పెట్టుబడులు: 5-ప్రశ్నల క్విజ్ & వర్చువల్ సిమ్యులేటర్' })}
+            </h3>
+            <p className="text-xs sm:text-sm text-navy-200 leading-relaxed">
+              {t({
+                en: 'Test your understanding of FD, Mutual Funds, and Stocks with real student scenarios, the ABC Bicycle Company case study, and interactive asset allocation.',
+                te: 'వాస్తవిక దృశ్యాలు, ABC సైకిల్ కంపెనీ కేస్ స్టడీ మరియు ₹10,000 వర్చువల్ పోర్ట్‌ఫోలియో సిమ్యులేటర్‌తో మీ జ్ఞానాన్ని పరీక్షించుకోండి.'
+              })}
+            </p>
+          </div>
+          <Link
+            to="/investing-made-simple#quiz"
+            className="px-5 py-3 rounded-xl bg-teal-400 text-navy-900 font-bold hover:bg-teal-300 transition text-sm flex items-center gap-2 shrink-0 shadow-lg"
+          >
+            <span>{t({ en: 'Take Challenge', te: 'సవాలు ప్రారంభించండి' })}</span>
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useT } from '@/context/AppContext';
 import { fdMaturity, formatINR } from '@/lib/finance/formulas';
-import { Building, ShieldCheck, AlertTriangle } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 export function FDCalculator() {
   const t = useT();
@@ -22,8 +22,8 @@ export function FDCalculator() {
         </h3>
         <p className="text-sm text-navy-400 mt-0.5">
           {t({
-            en: 'Standard Indian banking convention: Quarterly compounding (4 times per year).',
-            te: 'ప్రామాణిక భారతీయ బ్యాంకింగ్ విధానం: త్రైమాసిక చక్రవడ్డీ (సంవత్సరానికి 4 సార్లు).',
+            en: 'Illustration assumes quarterly compounding; actual FD rates, compounding, and terms vary by bank and deposit.',
+            te: 'ఉదాహరణలో త్రైమాసిక చక్రవడ్డీని ఊహించాం; నిజమైన FD వడ్డీ రేట్లు, చక్రవడ్డీ, నిబంధనలు బ్యాంకు, డిపాజిట్‌ను బట్టి మారతాయి.',
           })}
         </p>
       </div>
@@ -48,7 +48,7 @@ export function FDCalculator() {
 
         <div className="p-4 rounded-xl bg-navy-50/70 border border-navy-100">
           <label className="text-xs font-semibold text-navy-500 uppercase block mb-1">
-            {t({ en: 'Annual Interest Rate (%)', te: 'వార్షిక వడ్డీ రేటు (%)' })}
+            {t({ en: 'Assumed annual rate (%)', te: 'ఊహించిన వార్షిక రేటు (%)' })}
           </label>
           <div className="text-xl font-bold text-teal-600 mb-2">{rate.toFixed(1)}% p.a.</div>
           <input
@@ -110,11 +110,12 @@ export function FDCalculator() {
       <div className="p-4 rounded-xl bg-cream-50 border border-navy-100 flex items-start gap-3 text-xs text-navy-600 leading-relaxed">
         <ShieldCheck size={20} className="text-teal-500 shrink-0 mt-0.5" />
         <div>
-          <span className="font-bold text-navy-700">DICGC Insurance Context: </span>
+          <span className="font-bold text-navy-700">{t({ en: 'DICGC insurance context: ', te: 'DICGC బీమా సమాచారం: ' })}</span>
           {t({
-            en: 'Deposits in registered scheduled commercial banks in India are insured by the Deposit Insurance and Credit Guarantee Corporation (DICGC, a subsidiary of the RBI) up to ₹5,00,000 per depositor per bank (covering principal + interest). FDs above this limit rely on the individual bank’s solvency.',
-            te: 'భారతదేశంలో షెడ్యూల్డ్ బ్యాంకుల డిపాజిట్లు DICGC ద్వారా ఒక బ్యాంకులో ఒక డిపాజిటర్‌కు రూ. 5 లక్షల వరకు బీమా రక్షణ కలిగి ఉంటాయి.',
+            en: 'DICGC currently states that eligible deposits in an insured bank are covered up to ₹5,00,000 per depositor per bank in the same right and capacity, including principal and interest. Deposits across branches of the same bank are aggregated. Eligibility and claim conditions apply; check the current DICGC guidance and insured-bank list. This limit does not make an FD risk-free.',
+            te: 'బీమా పొందిన బ్యాంకులో అర్హమైన డిపాజిట్లకు ప్రస్తుతం ఒక డిపాజిటర్‌కు, ఒక బ్యాంకులో, ఒకే హక్కు మరియు సామర్థ్యంలో అసలు, వడ్డీ కలిపి ₹5,00,000 వరకు DICGC బీమా వర్తిస్తుందని సంస్థ చెబుతోంది. ఒకే బ్యాంకు శాఖలలోని డిపాజిట్లు కలిపి లెక్కిస్తారు. అర్హత, క్లెయిమ్ షరతులు వర్తిస్తాయి; తాజా DICGC సమాచారం, బీమా పొందిన బ్యాంకుల జాబితాను చూడండి. ఈ పరిమితి FDని రిస్క్ లేనిదిగా చేయదు.',
           })}
+          <a className="mt-2 inline-block font-semibold text-teal-700 underline" href="https://www.dicgc.org.in/guide-to-deposit-insurance" target="_blank" rel="noreferrer">{t({ en: 'Current DICGC guidance', te: 'ప్రస్తుత DICGC సమాచారం' })}</a>
         </div>
       </div>
     </div>

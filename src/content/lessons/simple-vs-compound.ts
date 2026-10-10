@@ -134,6 +134,25 @@ export const simpleVsCompoundLesson: Lesson = {
           },
           objectiveId: 'obj-interest-2',
         },
+        {
+          id: 'q-i-m-3',
+          question: {
+            en: '₹2,000 earns 5% simple interest for 2 years. What is the maturity amount before any tax or fees?',
+            te: '₹2,000కు 2 సంవత్సరాలు 5% సాధారణ వడ్డీ వస్తే, పన్నులు లేదా ఫీజులకు ముందు మెచ్యూరిటీ మొత్తం ఎంత?',
+          },
+          type: 'mcq',
+          options: [
+            { en: '₹2,200 (₹2,000 principal + ₹200 interest)', te: '₹2,200 (₹2,000 అసలు + ₹200 వడ్డీ)' },
+            { en: '₹2,100', te: '₹2,100' },
+            { en: '₹2,205, because interest compounds each year', te: '₹2,205, ఎందుకంటే ప్రతి సంవత్సరం చక్రవడ్డీ కలుస్తుంది' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Simple interest = ₹2,000 × 0.05 × 2 = ₹200. Add this interest to the principal to get ₹2,200.',
+            te: 'సాధారణ వడ్డీ = ₹2,000 × 0.05 × 2 = ₹200. దీన్ని అసలుకు కలిపితే ₹2,200 వస్తుంది.',
+          },
+          objectiveId: 'obj-interest-2',
+        },
       ],
     },
   ],

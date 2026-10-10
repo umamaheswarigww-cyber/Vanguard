@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useT } from '@/context/AppContext';
 import {
   Wallet, TrendingUp, ShoppingBag, Building,
-  Layers, ShieldAlert, Sparkles, BarChart2, FileText, Percent, RefreshCw
+  Layers, ShieldAlert, Sparkles, BarChart2, FileText, Percent, RefreshCw, ArrowRight
 } from 'lucide-react';
 import clsx from 'clsx';
 
@@ -37,7 +38,7 @@ const LABS = [
   {
     id: 'inflation',
     name: { en: 'Inflation Visualizer', te: 'ద్రవ్యోల్బణ విజువలైజర్' },
-    desc: { en: 'See how ₹1,00,000 shrinks to ₹55,839 in real purchasing power over 10 years.', te: 'నిజమైన కొనుగోలు శక్తి ఎలా తగ్గుతుందో చూడండి.' },
+    desc: { en: 'Compare the purchasing power of ₹1,00,000 after 10 years under an illustrative 6% annual inflation assumption.', te: 'ఏటా 6% ద్రవ్యోల్బణం అనే ఊహలో, 10 సంవత్సరాల తర్వాత ₹1,00,000 కొనుగోలు శక్తిని పోల్చండి.' },
     icon: ShoppingBag,
     color: 'coral',
   },
@@ -51,7 +52,7 @@ const LABS = [
   {
     id: 'rd',
     name: { en: 'Recurring Deposit (RD)', te: 'RD కాలిక్యులేటర్' },
-    desc: { en: 'Monthly instalment compounding for disciplined short-term savings.', te: 'నెలవారీ పొదుపు కోసం రికరింగ్ డిపాజిట్ సిమ్యులేటర్.' },
+    desc: { en: 'Explore a simplified recurring-deposit calculation and compare account terms.', te: 'సరళీకృత రికరింగ్ డిపాజిట్ లెక్కను పరిశీలించి ఖాతా నిబంధనలను పోల్చండి.' },
     icon: RefreshCw,
     color: 'teal',
   },
@@ -72,7 +73,7 @@ const LABS = [
   {
     id: 'indices',
     name: { en: 'Market Indices Lab', te: 'మార్కెట్ సూచీల ల్యాబ్' },
-    desc: { en: 'Simulate free-float market-cap weighted index movements like Nifty & Sensex.', te: 'నిఫ్టీ మరియు సెన్సెక్స్ తరహాలో ఫ్రీ-ఫ్లోట్ వెయిటెడ్ ఇండెక్స్ సిమ్యులేషన్.' },
+    desc: { en: 'Change fictional company prices and inspect how a weighted index model moves.', te: 'కల్పిత కంపెనీ ధరలను మార్చి, బరువు ఆధారిత సూచీ నమూనా ఎలా మారుతుందో పరిశీలించండి.' },
     icon: BarChart2,
     color: 'coral',
   },
@@ -149,6 +150,38 @@ export function MoneyLabPage() {
               te: 'అన్ని సిమ్యులేషన్‌లు కల్పిత రూపాయలను మరియు పారదర్శక గణిత నమూనాలను ఉపయోగిస్తాయి. ఎలాంటి ఆర్థిక రిస్క్ లేదు — పూర్తి విద్యా ప్రయోజనం మాత్రమే.',
             })}
           </p>
+        </div>
+      </section>
+
+      {/* Featured Masterclass Link */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-teal-50 via-emerald-50 to-teal-50 border border-teal-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow">
+              <Sparkles size={20} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-sm text-navy-800">
+                  {t({ en: 'New: ₹10,000 Virtual Portfolio Sandbox & Risk Studio', te: 'కొత్త: ₹10,000 వర్చువల్ పోర్ట్‌ఫోలియో ల్యాబ్ & రిస్క్ స్టూడియో' })}
+                </span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800">Grades 11–12</span>
+              </div>
+              <p className="text-xs text-navy-500 mt-0.5">
+                {t({
+                  en: 'Test asset allocations across FD, Mutual Funds, and ABC Stocks in Normal, Bull, Bear, and Stagflation markets with instant feedback.',
+                  te: 'సాధారణ, బుల్, బేర్, మరియు స్టాగ్‌ఫ్లేషన్ మార్కెట్లలో FD, MF, స్టాక్స్ కేటాయింపులను పరీక్షించండి.'
+                })}
+              </p>
+            </div>
+          </div>
+          <Link
+            to="/investing-made-simple"
+            className="px-4 py-2 rounded-xl bg-teal-600 text-white text-xs font-bold hover:bg-teal-700 transition flex items-center gap-1.5 shrink-0 shadow-sm"
+          >
+            <span>{t({ en: 'Try Portfolio Sandbox', te: 'సిమ్యులేటర్ తెరవండి' })}</span>
+            <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 

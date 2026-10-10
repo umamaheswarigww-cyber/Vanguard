@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import {
   Menu, X, Globe, BookOpen, FlaskConical, Compass,
-  Dumbbell, BarChart3, ChevronDown
+  Dumbbell, BarChart3, ChevronDown, LayoutDashboard, Sparkles
 } from 'lucide-react';
 import { useApp, useT } from '@/context/AppContext';
 import clsx from 'clsx';
 
 const navItems = [
+  { to: '/dashboard', label: { en: 'Dashboard', te: 'డ్యాష్‌బోర్డ్' }, icon: LayoutDashboard },
+  { to: '/investing-made-simple', label: { en: 'Investing Made Simple', te: 'సులభమైన పెట్టుబడులు' }, icon: Sparkles },
   { to: '/learn', label: { en: 'Learn', te: 'నేర్చుకోండి' }, icon: BookOpen },
   { to: '/money-lab', label: { en: 'Money Lab', te: 'మనీ లాబ్' }, icon: FlaskConical },
   { to: '/explore', label: { en: 'Explore', te: 'అన్వేషించండి' }, icon: Compass },

@@ -9,12 +9,15 @@
  * Convention: annualRate as decimal (e.g. 0.07 for 7%)
  */
 export function simpleInterest(principal: number, annualRateDecimal: number, years: number): number {
-  if (principal < 0 || annualRateDecimal < 0 || years < 0) return 0;
-  return principal * annualRateDecimal * years;
+  if (![principal, annualRateDecimal, years].every(Number.isFinite) || principal < 0 || annualRateDecimal < 0 || years < 0) return 0;
+  const result = principal * annualRateDecimal * years;
+  return Number.isFinite(result) ? result : 0;
 }
 
 export function simpleInterestMaturity(principal: number, annualRateDecimal: number, years: number): number {
-  return principal + simpleInterest(principal, annualRateDecimal, years);
+  if (![principal, annualRateDecimal, years].every(Number.isFinite) || principal < 0 || annualRateDecimal < 0 || years < 0) return 0;
+  const result = principal + simpleInterest(principal, annualRateDecimal, years);
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -29,9 +32,13 @@ export function compoundInterest(
   years: number,
   compoundingPerYear: number = 1,
 ): number {
-  if (principal < 0 || annualRateDecimal < 0 || years < 0 || compoundingPerYear <= 0) return 0;
+  if (![principal, annualRateDecimal, years, compoundingPerYear].every(Number.isFinite)
+    || principal < 0 || annualRateDecimal <= -1 || years < 0 || compoundingPerYear <= 0) return 0;
   if (annualRateDecimal === 0) return principal;
-  return principal * Math.pow(1 + annualRateDecimal / compoundingPerYear, compoundingPerYear * years);
+  const periodicFactor = 1 + annualRateDecimal / compoundingPerYear;
+  if (periodicFactor < 0) return 0;
+  const result = principal * Math.pow(periodicFactor, compoundingPerYear * years);
+  return Number.isFinite(result) ? result : 0;
 }
 
 export function compoundInterestEarned(
@@ -40,7 +47,9 @@ export function compoundInterestEarned(
   years: number,
   compoundingPerYear: number = 1,
 ): number {
-  return compoundInterest(principal, annualRateDecimal, years, compoundingPerYear) - principal;
+  if (![principal, annualRateDecimal, years, compoundingPerYear].every(Number.isFinite) || principal < 0 || annualRateDecimal <= -1 || years < 0 || compoundingPerYear <= 0) return 0;
+  const result = compoundInterest(principal, annualRateDecimal, years, compoundingPerYear) - principal;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -71,9 +80,11 @@ export function purchasingPowerEquivalent(
   annualInflationDecimal: number,
   years: number,
 ): number {
-  if (annualInflationDecimal <= -1) return 0;
+  if (![futureAmount, annualInflationDecimal, years].every(Number.isFinite)
+    || futureAmount < 0 || annualInflationDecimal <= -1 || years < 0) return 0;
   if (years === 0) return futureAmount;
-  return futureAmount / Math.pow(1 + annualInflationDecimal, years);
+  const result = futureAmount / Math.pow(1 + annualInflationDecimal, years);
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -85,7 +96,10 @@ export function futureNominalPrice(
   annualInflationDecimal: number,
   years: number,
 ): number {
-  return presentAmount * Math.pow(1 + annualInflationDecimal, years);
+  if (![presentAmount, annualInflationDecimal, years].every(Number.isFinite)
+    || presentAmount < 0 || annualInflationDecimal <= -1 || years < 0) return 0;
+  const result = presentAmount * Math.pow(1 + annualInflationDecimal, years);
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -94,12 +108,15 @@ export function futureNominalPrice(
  * Exact (Fisher equation): realReturn = (1 + nominalReturn) / (1 + inflation) - 1
  */
 export function realReturnApprox(nominalDecimal: number, inflationDecimal: number): number {
-  return nominalDecimal - inflationDecimal;
+  if (![nominalDecimal, inflationDecimal].every(Number.isFinite)) return 0;
+  const result = nominalDecimal - inflationDecimal;
+  return Number.isFinite(result) ? result : 0;
 }
 
 export function realReturnExact(nominalDecimal: number, inflationDecimal: number): number {
-  if (inflationDecimal <= -1) return 0;
-  return (1 + nominalDecimal) / (1 + inflationDecimal) - 1;
+  if (![nominalDecimal, inflationDecimal].every(Number.isFinite) || nominalDecimal <= -1 || inflationDecimal <= -1) return 0;
+  const result = (1 + nominalDecimal) / (1 + inflationDecimal) - 1;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -127,14 +144,17 @@ export function sipFutureValue(
   numberOfPeriods: number,
   timing: 'end' | 'beginning' = 'end',
 ): number {
-  if (contributionPerPeriod < 0 || numberOfPeriods < 0) return 0;
+  if (![contributionPerPeriod, periodicRateDecimal, numberOfPeriods].every(Number.isFinite)
+    || contributionPerPeriod < 0 || numberOfPeriods < 0 || periodicRateDecimal <= -1) return 0;
   if (periodicRateDecimal === 0) {
-    return contributionPerPeriod * numberOfPeriods;
+    const result = contributionPerPeriod * numberOfPeriods;
+    return Number.isFinite(result) ? result : 0;
   }
   const fvOrdinary =
     contributionPerPeriod *
     ((Math.pow(1 + periodicRateDecimal, numberOfPeriods) - 1) / periodicRateDecimal);
-  return timing === 'beginning' ? fvOrdinary * (1 + periodicRateDecimal) : fvOrdinary;
+  const result = timing === 'beginning' ? fvOrdinary * (1 + periodicRateDecimal) : fvOrdinary;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -147,18 +167,20 @@ export function generateSIPTable(
   let cumulativeUnits = 0;
   let cumulativeContribution = 0;
 
+  const safeContribution = Number.isFinite(contributionPerPeriod) && contributionPerPeriod >= 0 ? contributionPerPeriod : 0;
   return navPrices.map((nav, idx) => {
     const period = idx + 1;
-    const units = nav > 0 ? contributionPerPeriod / nav : 0;
+    const safeNAV = Number.isFinite(nav) && nav > 0 ? nav : 0;
+    const units = safeNAV > 0 ? safeContribution / safeNAV : 0;
     cumulativeUnits += units;
-    cumulativeContribution += contributionPerPeriod;
-    const portfolioValue = cumulativeUnits * nav;
+    cumulativeContribution += safeContribution;
+    const portfolioValue = cumulativeUnits * safeNAV;
     const averageCost = cumulativeUnits > 0 ? cumulativeContribution / cumulativeUnits : 0;
 
     return {
       period,
-      contribution: contributionPerPeriod,
-      navPrice: nav,
+      contribution: safeContribution,
+      navPrice: safeNAV,
       unitsBought: units,
       cumulativeUnits,
       cumulativeContribution,
@@ -178,10 +200,11 @@ export function calculateNAV(
   totalLiabilities: number,
   unitsOutstanding: number,
 ): number {
-  if (unitsOutstanding <= 0) return 0;
+  if (![totalAssets, totalLiabilities, unitsOutstanding].every(Number.isFinite) || totalAssets < 0 || totalLiabilities < 0 || unitsOutstanding <= 0) return 0;
   const netAssets = totalAssets - totalLiabilities;
   if (netAssets < 0) return 0;
-  return netAssets / unitsOutstanding;
+  const nav = netAssets / unitsOutstanding;
+  return Number.isFinite(nav) ? nav : 0;
 }
 
 /**
@@ -190,8 +213,9 @@ export function calculateNAV(
  * Teaching model — real transaction rules differ.
  */
 export function unitsBought(contribution: number, nav: number): number {
-  if (nav <= 0) return 0;
-  return contribution / nav;
+  if (![contribution, nav].every(Number.isFinite) || contribution < 0 || nav <= 0) return 0;
+  const result = contribution / nav;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -200,7 +224,9 @@ export function unitsBought(contribution: number, nav: number): number {
  * This is NOT enterprise value and NOT an intrinsic valuation.
  */
 export function marketCap(sharePrice: number, sharesOutstanding: number): number {
-  return sharePrice * sharesOutstanding;
+  if (![sharePrice, sharesOutstanding].every(Number.isFinite) || sharePrice < 0 || sharesOutstanding < 0) return 0;
+  const result = sharePrice * sharesOutstanding;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -208,8 +234,9 @@ export function marketCap(sharePrice: number, sharesOutstanding: number): number
  * EPS = netProfit / weightedAverageSharesOutstanding
  */
 export function eps(netProfit: number, sharesOutstanding: number): number {
-  if (sharesOutstanding <= 0) return 0;
-  return netProfit / sharesOutstanding;
+  if (![netProfit, sharesOutstanding].every(Number.isFinite) || sharesOutstanding <= 0) return 0;
+  const result = netProfit / sharesOutstanding;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -219,8 +246,9 @@ export function eps(netProfit: number, sharesOutstanding: number): number {
  * A low or high P/E alone does not indicate good or bad investment.
  */
 export function peRatio(sharePrice: number, epsValue: number): number {
-  if (epsValue <= 0) return 0;
-  return sharePrice / epsValue;
+  if (![sharePrice, epsValue].every(Number.isFinite) || sharePrice < 0 || epsValue <= 0) return 0;
+  const result = sharePrice / epsValue;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -230,8 +258,9 @@ export function peRatio(sharePrice: number, epsValue: number): number {
  * Hides interim volatility. NOT appropriate for arbitrary periodic cash flows.
  */
 export function cagr(beginValue: number, endValue: number, years: number): number {
-  if (beginValue <= 0 || endValue < 0 || years <= 0) return 0;
-  return Math.pow(endValue / beginValue, 1 / years) - 1;
+  if (![beginValue, endValue, years].every(Number.isFinite) || beginValue <= 0 || endValue < 0 || years <= 0) return 0;
+  const result = Math.pow(endValue / beginValue, 1 / years) - 1;
+  return Number.isFinite(result) ? result : 0;
 }
 
 /**
@@ -255,6 +284,8 @@ export function netGrowthWithExpenseRatio(
   expenseRatioDecimal: number,
   years: number,
 ): number {
+  if (![principal, grossAnnualReturnDecimal, expenseRatioDecimal, years].every(Number.isFinite)
+    || principal < 0 || expenseRatioDecimal < 0 || years < 0) return 0;
   const netRate = grossAnnualReturnDecimal - expenseRatioDecimal;
   return compoundInterest(principal, netRate, years);
 }
@@ -266,11 +297,12 @@ export function budgetBalance(
   income: number,
   allocations: number[],
 ): { total: number; remaining: number; isOverBudget: boolean } {
-  const total = allocations.reduce((sum, a) => sum + Math.max(0, a), 0);
+  const safeIncome = Number.isFinite(income) ? income : 0;
+  const total = allocations.reduce((sum, amount) => sum + (Number.isFinite(amount) ? Math.max(0, amount) : 0), 0);
   return {
     total,
-    remaining: income - total,
-    isOverBudget: total > income,
+    remaining: safeIncome - total,
+    isOverBudget: total > safeIncome,
   };
 }
 
@@ -280,21 +312,23 @@ export function budgetBalance(
 
 /** Format a number as Indian rupees */
 export function formatINR(amount: number, decimals = 0): string {
+  const safeAmount = Number.isFinite(amount) ? amount : 0;
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
-  }).format(amount);
+  }).format(safeAmount);
 }
 
 /** Format percentage */
 export function formatPercent(decimal: number, decimals = 2): string {
-  return `${(decimal * 100).toFixed(decimals)}%`;
+  return `${((Number.isFinite(decimal) ? decimal : 0) * 100).toFixed(decimals)}%`;
 }
 
 /** Format number in Indian lakhs/crores */
 export function formatIndianNumber(num: number): string {
+  if (!Number.isFinite(num)) return '₹0';
   if (num >= 10_000_000) return `₹${(num / 10_000_000).toFixed(2)} Cr`;
   if (num >= 100_000) return `₹${(num / 100_000).toFixed(2)} L`;
   if (num >= 1_000) return `₹${(num / 1_000).toFixed(1)}K`;

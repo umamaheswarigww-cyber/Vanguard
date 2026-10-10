@@ -105,6 +105,44 @@ export const businessesAndSharesLesson: Lesson = {
           },
           objectiveId: 'obj-share-2',
         },
+        {
+          id: 'q-sh-m-2',
+          question: {
+            en: 'A fictional company has 1,000 shares outstanding and you own 25. What fraction of its shares do you own?',
+            te: 'ఒక ఊహాత్మక కంపెనీకి 1,000 షేర్లు ఉండగా, మీ వద్ద 25 ఉంటే, మీరు ఎన్ని శాతం షేర్లు కలిగి ఉన్నారు?',
+          },
+          type: 'mcq',
+          options: [
+            { en: '2.5% (25 ÷ 1,000 × 100)', te: '2.5% (25 ÷ 1,000 × 100)' },
+            { en: '25%', te: '25%' },
+            { en: '40%', te: '40%' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Ownership fraction in this simplified example is shares held ÷ total shares: 25 ÷ 1,000 = 0.025, or 2.5%. Share rights depend on the share class and applicable rules.',
+            te: 'ఈ సరళ ఉదాహరణలో యాజమాన్య భాగం = మీ షేర్లు ÷ మొత్తం షేర్లు: 25 ÷ 1,000 = 0.025, అంటే 2.5%. షేర్ హక్కులు షేర్ తరగతి, వర్తించే నియమాలపై ఆధారపడతాయి.',
+          },
+          objectiveId: 'obj-share-1',
+        },
+        {
+          id: 'q-sh-m-3',
+          question: {
+            en: 'A company has 2 crore shares and a share price of ₹40. What is its market capitalisation in this simplified example?',
+            te: 'ఒక కంపెనీకి 2 కోట్ల షేర్లు, ఒక్కో షేర్ ధర ₹40. ఈ సరళ ఉదాహరణలో మార్కెట్ క్యాపిటలైజేషన్ ఎంత?',
+          },
+          type: 'mcq',
+          options: [
+            { en: '₹80 crore (₹40 × 2 crore shares)', te: '₹80 కోట్లు (₹40 × 2 కోట్ల షేర్లు)' },
+            { en: '₹42 crore', te: '₹42 కోట్లు' },
+            { en: '₹2 crore', te: '₹2 కోట్లు' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Market capitalisation is share price multiplied by shares outstanding. It is a market-value measure, not a complete measure of business value or quality.',
+            te: 'మార్కెట్ క్యాపిటలైజేషన్ = షేర్ ధర × మొత్తం షేర్లు. ఇది మార్కెట్ విలువను కొలుస్తుంది; వ్యాపార విలువ లేదా నాణ్యతకు సంపూర్ణ కొలమానం కాదు.',
+          },
+          objectiveId: 'obj-share-3',
+        },
       ],
     },
   ],

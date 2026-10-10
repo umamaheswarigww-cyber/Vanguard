@@ -8,10 +8,13 @@ import { MoneyLabPage } from '@/pages/MoneyLabPage';
 import { ExplorePage } from '@/pages/ExplorePage';
 import { PracticePage } from '@/pages/PracticePage';
 import { ProgressPage } from '@/pages/ProgressPage';
+import { DashboardPage } from '@/pages/DashboardPage';
 import { GlossaryPage } from '@/pages/GlossaryPage';
 import { GlossaryTermPage } from '@/pages/GlossaryTermPage';
 import { PillarPage } from '@/pages/PillarPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+
+import { InvestingMadeSimplePage } from '@/pages/InvestingMadeSimplePage';
 
 export default function App() {
   return (
@@ -20,6 +23,8 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/investing-made-simple" element={<InvestingMadeSimplePage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/learn" element={<LearnPage />} />
           <Route path="/learn/:pillarSlug" element={<PillarPage />} />
           <Route path="/learn/:pillarSlug/:lessonSlug" element={<LessonPage />} />

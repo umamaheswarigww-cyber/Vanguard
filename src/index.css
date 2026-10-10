@@ -189,3 +189,63 @@
     scrollbar-width: none;
   }
 }
+
+/* Lesson visual models use motion to show flow and changing values. */
+.lesson-visual-card {
+  @apply rounded-3xl border border-teal-100 bg-gradient-card p-4 shadow-sm sm:p-5;
+}
+
+.lesson-stage-enter {
+  animation: lesson-enter 260ms ease-out both;
+}
+
+.lesson-flow-node {
+  animation: lesson-float 3.6s ease-in-out infinite;
+}
+
+.lesson-flow-node:nth-child(2n) {
+  animation-delay: 180ms;
+}
+
+.lesson-item-pop {
+  display: inline-block;
+  animation: lesson-pop 2.4s ease-in-out infinite;
+}
+
+.lesson-item-pop:nth-child(2n) {
+  animation-delay: 160ms;
+}
+
+.lesson-bar-grow {
+  transform-origin: left center;
+  animation: lesson-grow 700ms cubic-bezier(.2,.75,.25,1) both;
+}
+
+@keyframes lesson-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lesson-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes lesson-pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+@keyframes lesson-grow {
+  from { transform: scaleX(.2); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-stage-enter,
+  .lesson-flow-node,
+  .lesson-item-pop,
+  .lesson-bar-grow {
+    animation: none;
+  }
+}

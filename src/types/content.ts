@@ -176,6 +176,8 @@ export interface LessonProgress {
   lessonId: string;
   startedAt: string;
   completedAt?: string;
+  /** Stage the learner last opened, so a lesson can resume after reload. */
+  currentStageId?: string;
   stagesVisited: string[];
   objectivesEvidenced: ObjectiveEvidence[];
   attemptsCount: number;

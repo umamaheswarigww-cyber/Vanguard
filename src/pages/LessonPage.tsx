@@ -1,14 +1,13 @@
-import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { useT } from '@/context/AppContext';
 import { getLessonBySlug } from '@/content/lessons';
 import { PILLARS } from '@/content/curriculum/pillars';
 import { LessonEngine } from '@/components/learning/LessonEngine';
-import { ArrowLeft, Clock, Award } from 'lucide-react';
+import { ArrowLeft, Clock } from 'lucide-react';
 
 export function LessonPage() {
   const { pillarSlug, lessonSlug } = useParams<{ pillarSlug: string; lessonSlug: string }>();
   const t = useT();
-  const navigate = useNavigate();
 
   const lesson = lessonSlug ? getLessonBySlug(lessonSlug) : undefined;
   const pillar = PILLARS.find(p => p.slug === pillarSlug);
@@ -45,6 +44,7 @@ export function LessonPage() {
       {/* Lesson Engine Container */}
       <div className="py-6">
         <LessonEngine
+          key={lesson.id}
           lesson={lesson}
           onComplete={() => {
             // Optional callback

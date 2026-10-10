@@ -55,8 +55,8 @@ export const sipLabLesson: Lesson = {
       type: 'mechanism',
       title: { en: 'Rupee-Cost Averaging: The Magic of Price Swings', te: 'రూపాయి-వ్యయ సగటు (Rupee-Cost Averaging)' },
       content: {
-        en: 'Suppose you invest ₹1,000 every month:\n\n- **Month 1 (Market High):** NAV is ₹100. Your ₹1,000 buys $\\frac{1,000}{100} = \\mathbf{10\\text{ units}}$.\n- **Month 2 (Market Crash!):** NAV drops to ₹50. Your ₹1,000 buys $\\frac{1,000}{50} = \\mathbf{20\\text{ units}}$!\n- **Month 3 (Market Recovers):** NAV rebounds to ₹80. Your ₹1,000 buys $\\frac{1,000}{80} = \\mathbf{12.5\\text{ units}}$.\n\n**Total Result:**\n- You invested ₹3,000.\n- You accumulated $10 + 20 + 12.5 = \\mathbf{42.5\\text{ units}}$.\n- Your portfolio value today at ₹80: $42.5 \\times 80 = \\mathbf{₹3,400}$ (a gain of ₹400), even though the NAV is STILL below Month 1’s starting price of ₹100!\n\nWhen the market dropped, your fixed ₹1,000 contribution automatically accumulated **double the units on sale**.',
-        te: 'మీరు ప్రతి నెలా ₹1,000 ఇన్వెస్ట్ చేస్తున్నారనుకుందాం:\n- 1వ నెల (NAV ₹100): 10 యూనిట్లు వస్తాయి.\n- 2వ నెల (మార్కెట్ పడింది - NAV ₹50): **20 యూనిట్లు** వస్తాయి!\n- 3వ నెల (మార్కెట్ కోలుకుంది - NAV ₹80): 12.5 యూనిట్లు.\n\nమొత్తం 42.5 యూనిట్లు వచ్చాయి. ప్రస్తుత విలువ: 42.5 × 80 = **₹3,400**! మార్కెట్ మొదట్లో ఉన్న ₹100 కంటే తక్కువగా ఉన్నా కూడా మీకు లాభం వచ్చింది!',
+        en: 'Suppose an illustrative fund has NAVs of ₹100, ₹50, and ₹80 over three contribution dates, and you invest ₹1,000 each date:\n\n- At ₹100, ₹1,000 buys 10 units.\n- At ₹50, ₹1,000 buys 20 units.\n- At ₹80, ₹1,000 buys 12.5 units.\n\nYou contribute ₹3,000 and hold 42.5 units. If the final NAV is ₹80, their illustrative value is 42.5 × ₹80 = ₹3,400. This result comes from this particular price path; another path could leave the value below ₹3,000. A regular schedule buys a changing number of units, but it does not guarantee a gain.',
+        te: 'ఒక ఉదాహరణ ఫండ్‌లో మూడు పెట్టుబడి తేదీలకు NAVలు ₹100, ₹50, ₹80 అనుకుందాం. ప్రతిసారి ₹1,000 పెట్టుబడి పెడితే:\n\n- NAV ₹100 వద్ద 10 యూనిట్లు వస్తాయి.\n- NAV ₹50 వద్ద 20 యూనిట్లు వస్తాయి.\n- NAV ₹80 వద్ద 12.5 యూనిట్లు వస్తాయి.\n\nమీరు ₹3,000 పెట్టుబడి పెట్టి 42.5 యూనిట్లు కలిగి ఉంటారు. చివరి NAV ₹80 అయితే వాటి ఉదాహరణ విలువ 42.5 × ₹80 = ₹3,400. ఈ ఫలితం ఈ ప్రత్యేక ధరల మార్గం వల్ల వచ్చింది; వేరే ధరల మార్గంలో విలువ ₹3,000 కంటే తక్కువ కావచ్చు. నియమిత పెట్టుబడితో యూనిట్ల సంఖ్య మారుతుంది, కానీ లాభానికి హామీ లేదు.',
       },
     },
     {
@@ -83,7 +83,7 @@ export const sipLabLesson: Lesson = {
       type: 'misconception',
       title: { en: 'CRITICAL GUARDRAIL: Does SIP Guarantee Profit?', te: 'కీలక హెచ్చరిక: SIP లాభానికి హామీ ఇస్తుందా?' },
       content: {
-        en: '❌ **Dangerous Myth:** *"A Systematic Investment Plan (SIP) is a special safe type of mutual fund that guarantees you cannot lose money."*\n\n✅ **The Truth:** SIP is **NOT a product and NOT an asset class**! It is simply a payment schedule (like an automatic bank debit) into a mutual fund scheme. If the underlying mutual fund invests in stocks that decline steadily, your SIP portfolio CAN and WILL lose money. Rupee-cost averaging reduces timing risk, but it does NOT eliminate market risk or guarantee returns!',
+        en: '❌ **Misconception:** “A Systematic Investment Plan (SIP) is a special fund that guarantees I cannot lose money.”\n\n✅ **Better way to think:** SIP describes a schedule for making contributions to a fund. It is not an asset class or a return guarantee. The value depends on the underlying investments and can fall. Investing on a schedule changes when contributions enter the market, but it cannot remove market risk.',
         te: '❌ **ప్రమాదకరమైన అపోహ:** "SIP లో డబ్బు పెడితే నష్టాలు వచ్చే ప్రసక్తే లేదు, లాభాలు ఖాయం."\n\n✅ **నిజం:** SIP అనేది ఉత్పత్తి కాదు, అది కేవలం క్రమం తప్పకుండా డబ్బు జమ చేసే పద్ధతి మాత్రమే! మార్కెట్లు పడిపోతే SIP లో కూడా నష్టం రావచ్చు.',
       },
     },
@@ -114,6 +114,44 @@ export const sipLabLesson: Lesson = {
             te: 'యూనిట్లు = మొత్తం / NAV కాబట్టి, NAV తగ్గితే ఎక్కువ యూనిట్లు వస్తాయి!',
           },
           objectiveId: 'obj-sip-2',
+        },
+        {
+          id: 'q-sip-m-2',
+          question: {
+            en: 'A ₹1,500 monthly contribution is invested at an illustrative NAV of ₹30. How many units are bought for that instalment before charges?',
+            te: 'ఊహాత్మక NAV ₹30 ఉన్నప్పుడు ₹1,500 నెలవారీ పెట్టుబడి చేస్తే, ఛార్జీలకు ముందు ఆ విడతలో ఎన్ని యూనిట్లు కొంటారు?',
+          },
+          type: 'mcq',
+          options: [
+            { en: '50 units (₹1,500 ÷ ₹30)', te: '50 యూనిట్లు (₹1,500 ÷ ₹30)' },
+            { en: '30 units', te: '30 యూనిట్లు' },
+            { en: '1,530 units', te: '1,530 యూనిట్లు' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Units for an instalment = contribution ÷ applicable NAV. A real transaction may use the NAV determined under the applicable rules and can include charges.',
+            te: 'ఒక విడత యూనిట్లు = పెట్టుబడి మొత్తం ÷ వర్తించే NAV. అసలు లావాదేవీలో వర్తించే నియమాల ప్రకారం నిర్ణయించిన NAV, ఛార్జీలు ఉండవచ్చు.',
+          },
+          objectiveId: 'obj-sip-3',
+        },
+        {
+          id: 'q-sip-m-3',
+          question: {
+            en: 'What does setting up an SIP promise?',
+            te: 'SIP ఏర్పాటు చేయడం ఏ విషయానికి హామీ ఇస్తుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'A method for investing contributions regularly; it does not guarantee returns or prevent loss', te: 'నియమిత పెట్టుబడులకు ఒక పద్ధతి; రాబడికి హామీ ఇవ్వదు, నష్టాన్ని నిరోధించదు' },
+            { en: 'A guaranteed positive return every month', te: 'ప్రతి నెలా సానుకూల రాబడికి హామీ' },
+            { en: 'That the investor owns no market-linked assets', te: 'పెట్టుబడిదారు మార్కెట్‌కు అనుసంధానమైన ఆస్తులు కలిగి ఉండరని' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'An SIP is a contribution schedule or facility. The returns depend on the investment and its market path; losses are possible.',
+            te: 'SIP అనేది పెట్టుబడి షెడ్యూల్ లేదా సౌకర్యం. రాబడి పెట్టుబడి, మార్కెట్ మార్గంపై ఆధారపడుతుంది; నష్టం సంభవించవచ్చు.',
+          },
+          objectiveId: 'obj-sip-1',
         },
       ],
     },

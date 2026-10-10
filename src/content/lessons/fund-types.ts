@@ -18,24 +18,24 @@ export const fundTypesLesson: Lesson = {
     {
       id: 'obj-ft-1',
       description: {
-        en: 'Classify mutual funds under SEBI\'s categorization: Equity, Debt, Hybrid, Solution-Oriented, and Other.',
-        te: 'సెబీ వర్గీకరణ ప్రకారం మ్యూచువల్ ఫండ్లను ఈక్విటీ, డెట్, హైబ్రిడ్ మరియు ఇతర కేటగిరీలుగా వర్గీకరించడం.',
+        en: 'Distinguish equity, debt, and hybrid funds by the broad assets they hold.',
+        te: 'ఈక్విటీ, డెట్, హైబ్రిడ్ ఫండ్లు కలిగి ఉండే ప్రధాన ఆస్తుల ఆధారంగా వాటిని వేరు చేయడం.',
       },
       evidenceType: 'classify',
     },
     {
       id: 'obj-ft-2',
       description: {
-        en: 'Differentiate between Large-Cap, Mid-Cap, Small-Cap, and Flexi-Cap equity funds.',
-        te: 'లార్జ్-క్యాప్, మిడ్-క్యాప్, స్మాల్-క్యాప్ మరియు ఫ్లెక్సీ-క్యాప్ ఈక్విటీ ఫండ్ల మధ్య తేడాలను గుర్తించడం.',
+        en: 'Explain how a scheme category describes its mandate but does not promise an outcome.',
+        te: 'పథక వర్గం దాని లక్ష్యాన్ని వివరిస్తుంది కానీ ఫలితానికి హామీ ఇవ్వదని వివరించడం.',
       },
       evidenceType: 'compare',
     },
     {
       id: 'obj-ft-3',
       description: {
-        en: 'Explain why Liquid and Debt funds suit short-term goals, while Equity suits 7+ year horizons.',
-        te: 'స్వల్పకాలిక లక్ష్యాలకు లిక్విడ్/డెట్ ఫండ్లు, మరియు 7+ సంవత్సరాల లక్ష్యాలకు ఈక్విటీ ఫండ్లు ఎందుకు సరిపోతాయో వివరించడం.',
+        en: 'Compare goal timing, access needs, and risk without treating any fund category as a guaranteed fit.',
+        te: 'ఏ ఫండ్ వర్గమూ హామీగా సరిపోతుందని భావించకుండా లక్ష్య సమయం, యాక్సెస్ అవసరాలు, రిస్కును పోల్చడం.',
       },
       evidenceType: 'explain',
     },
@@ -46,17 +46,17 @@ export const fundTypesLesson: Lesson = {
       type: 'hook',
       title: { en: 'Different Vehicles for Different Roads', te: 'వివిధ ప్రయాణాలకు వేర్వేరు వాహనాలు' },
       content: {
-        en: 'If you need to cross the street to buy milk, you walk or take a bicycle. If you are travelling 500 km across the country, you board an express train or an airplane. In personal finance, using an equity fund for a 3-month goal is like booking a flight to cross the street — dangerous and unsuitable! Let’s explore SEBI’s official taxonomy of mutual funds.',
-        te: 'పక్క వీధికి వెళ్ళడానికి సైకిల్ ఎలా వాడతామో, సుదూర ప్రయాణానికి రైలు ఎలా వాడతామో, ఆర్థిక లక్ష్యాలకు కూడా సరైన ఫండ్‌ను ఎంచుకోవాలి. 3 నెలల అత్యవసర డబ్బును రిస్క్ ఉన్న ఈక్విటీ ఫండ్లలో పెట్టడం ప్రమాదకరం. సెబీ వర్గీకరించిన ఫండ్ రకాలను తెలుసుకుందాం.',
+        en: 'Two students need money for different goals: one may need a known amount next term, while another is learning about long-term investing. Before comparing fund labels, what should each ask about timing, access, and the possibility that the value could fall?',
+        te: 'ఇద్దరు విద్యార్థులకు వేర్వేరు లక్ష్యాల కోసం డబ్బు అవసరం: ఒకరికి వచ్చే టర్మ్‌లో నిర్దిష్ట మొత్తం కావాలి; మరొకరు దీర్ఘకాల పెట్టుబడుల గురించి నేర్చుకుంటున్నారు. ఫండ్ పేర్లను పోల్చే ముందు, సమయం, యాక్సెస్, విలువ తగ్గే అవకాశం గురించి ఏమి అడగాలి?',
       },
     },
     {
       id: 'stg-ft-sebi-groups',
       type: 'discovery',
-      title: { en: 'SEBI\'s Official 5 Broad Categories', te: 'సెబీ నిర్దేశించిన 5 ప్రధాన వర్గాలు' },
+      title: { en: 'What a Fund Category Tells You', te: 'ఫండ్ వర్గం ఏమి చెబుతుంది?' },
       content: {
-        en: 'In October 2017, SEBI issued a landmark circular standardizing all mutual fund schemes into 5 clear categories so investors are never misled:\n\n1. **Equity Schemes:** Invest predominantly (at least 65%+) in shares of listed companies.\n2. **Debt Schemes:** Invest in fixed-income debt securities (bonds, treasury bills, commercial papers).\n3. **Hybrid Schemes:** Invest in a calibrated mix of both equities and debt.\n4. **Solution Oriented Schemes:** Dedicated lock-in schemes for Retirement or Children’s Education.\n5. **Other Schemes:** Index Funds, ETFs, and Fund of Funds (FoF).',
-        te: 'సెబీ 2017 మార్గదర్శకాల ప్రకారం 5 ప్రధాన వర్గాలు:\n1. ఈక్విటీ ఫండ్లు: కనీసం 65% షేర్లలో పెట్టుబడి పెడతాయి.\n2. డెట్ ఫండ్లు: స్థిర ఆదాయ బాండ్లు మరియు ప్రభుత్వ సెక్యూరిటీలలో పెట్టుబడి పెడతాయి.\n3. హైబ్రిడ్ ఫండ్లు: ఈక్విటీ మరియు డెట్ రెండింటి మిశ్రమం.\n4. సొల్యూషన్ ఓరియెంటెడ్: పిల్లల చదువు లేదా రిటైర్మెంట్ కోసం లాక్-ఇన్ ఉన్న ఫండ్లు.\n5. ఇండెక్స్ & ETF ఫండ్లు: మార్కెట్ సూచీలను యథాతథంగా ట్రాక్ చేసే ఫండ్లు.',
+        en: 'A scheme label is a short description of its investment mandate, not a performance promise. Three useful broad ideas are:\n\n• **Equity:** Predominantly holds shares or equity-related instruments. Prices can move sharply.\n• **Debt:** Predominantly holds debt instruments such as bonds. Prices and income can still be affected by credit, interest-rate, and liquidity risks.\n• **Hybrid:** Combines more than one asset class; the mix and rules differ by scheme.\n\nOther scheme groups and detailed subcategories exist, and regulatory classifications can change. Check the latest SEBI rules and the scheme’s current documents before relying on a category name.',
+        te: 'పథకం పేరు దాని పెట్టుబడి లక్ష్యాన్ని సంక్షిప్తంగా చెబుతుంది; పనితీరుకు హామీ కాదు. మూడు ఉపయోగకరమైన ప్రధాన భావనలు:\n\n• **ఈక్విటీ:** ప్రధానంగా షేర్లు లేదా ఈక్విటీ సంబంధిత సాధనాలను కలిగి ఉంటుంది. ధరలు గణనీయంగా మారవచ్చు.\n• **డెట్:** బాండ్ల వంటి డెట్ సాధనాలను ప్రధానంగా కలిగి ఉంటుంది. క్రెడిట్, వడ్డీ రేటు, లిక్విడిటీ రిస్కుల వల్ల ధరలు, ఆదాయం మారవచ్చు.\n• **హైబ్రిడ్:** ఒకటి కంటే ఎక్కువ ఆస్తి వర్గాలను కలుపుతుంది; మిశ్రమం, నియమాలు పథకాన్ని బట్టి మారతాయి.\n\nఇతర పథక సమూహాలు, వివరమైన ఉపవర్గాలూ ఉన్నాయి; నియంత్రణ వర్గీకరణలు మారవచ్చు. వర్గం పేరుపై ఆధారపడే ముందు తాజా SEBI నియమాలు, ప్రస్తుత పథక పత్రాలను చూడండి.',
       },
     },
     {
@@ -64,8 +64,8 @@ export const fundTypesLesson: Lesson = {
       type: 'mechanism',
       title: { en: 'Inside Equity Funds', te: 'ఈక్విటీ ఫండ్ల రకాలు' },
       content: {
-        en: 'SEBI strictly defines where equity schemes may invest:\n\n• **Large-Cap Fund:** Minimum 80% investment in the top 100 companies. Highest stability among equities.\n• **Mid-Cap Fund:** Minimum 65% in 101st to 250th companies. Higher growth potential, higher volatility.\n• **Small-Cap Fund:** Minimum 65% in 251st company onwards. Highest risk and volatility.\n• **Flexi-Cap Fund:** Free to dynamically allocate across large, mid, and small caps as the fund manager sees fit (min 65% in equity).\n• **ELSS (Tax Saver):** Minimum 80% in equity. Mandatory **3-year lock-in**; qualifies for 80C tax deduction.',
-        te: 'ఈక్విటీ ఫండ్ల వివరాలు:\n• లార్జ్-క్యాప్: టాప్ 100 పెద్ద కంపెనీలలో కనీసం 80% పెట్టుబడి.\n• మిడ్-క్యాప్: 101 నుండి 250 వ ర్యాంక్ కంపెనీలలో కనీసం 65%.\n• స్మాల్-క్యాప్: 251 మరియు ఆపై కంపెనీలలో కనీసం 65%.\n• ఫ్లెక్సీ-క్యాప్: అన్ని రకాల క్యాప్‌లలో స్వేచ్ఛగా పెట్టుబడి పెట్టగలదు.\n• ELSS: 3 సంవత్సరాల లాక్-ఇన్ పీరియడ్ ఉన్న పన్ను ఆదా ఫండ్.',
+        en: 'Equity schemes can be described by the size or style of the companies they hold—for example, large-, mid-, small-, or flexi-cap. Those labels refer to a scheme mandate and current classification rules; they do not mean a company is safe, or that a smaller company will grow faster. Concentration and volatility can differ.\n\nTax-linked scheme rules can change and depend on a person’s circumstances. This lesson does not give tax advice; check current official guidance and scheme documents for tax or lock-in details.',
+        te: 'ఈక్విటీ పథకాలు కలిగి ఉండే కంపెనీల పరిమాణం లేదా శైలి ఆధారంగా వివరించవచ్చు—ఉదాహరణకు లార్జ్, మిడ్, స్మాల్ లేదా ఫ్లెక్సీ క్యాప్. ఈ పేర్లు పథక లక్ష్యం, ప్రస్తుత వర్గీకరణ నియమాలను సూచిస్తాయి; కంపెనీ సురక్షితమని లేదా చిన్న కంపెనీ వేగంగా పెరుగుతుందని అర్థం కాదు. పెట్టుబడుల ఏకాగ్రత, ధరల మార్పు వేర్వేరుగా ఉండవచ్చు.\n\nపన్ను సంబంధిత పథక నియమాలు మారవచ్చు; వ్యక్తిగత పరిస్థితులపై ఆధారపడతాయి. ఈ పాఠం పన్ను సలహా కాదు; పన్ను లేదా లాక్-ఇన్ వివరాల కోసం తాజా అధికారిక సమాచారం, పథక పత్రాలను చూడండి.',
       },
     },
     {
@@ -73,8 +73,8 @@ export const fundTypesLesson: Lesson = {
       type: 'formal_concept',
       title: { en: 'Debt & Liquid Funds: Stability & Tenor', te: 'డెట్ మరియు లిక్విడ్ ఫండ్లు: స్థిరత్వం' },
       content: {
-        en: 'Debt funds lend money to corporations and governments in exchange for interest:\n\n• **Overnight Funds:** Invest in 1-day securities. Lowest possible credit and interest rate risk.\n• **Liquid Funds:** Invest in debt instruments with maturity up to **91 days**. Ideal for emergency funds and parking money for a few weeks to 6 months.\n• **Short Duration Funds:** Invest in 1–3 year debt securities.\n• **Gilt Funds:** Invest minimum 80% in Government of India securities (Zero default risk, but price changes when RBI adjusts repo interest rates).\n\n⚠️ **Important:** Debt funds are **NOT** bank FDs. They are subject to interest rate fluctuations and credit risk, and are NOT covered by DICGC insurance.',
-        te: 'డెట్ ఫండ్లు ప్రభుత్వానికి మరియు కంపెనీలకు రుణాలు ఇస్తాయి:\n• లిక్విడ్ ఫండ్లు: 91 రోజుల వరకు మెచ్యూరిటీ ఉండే సెక్యూరిటీలు. అత్యవసర నిధికి ఉత్తమం.\n• గిల్ట్ ఫండ్లు: కేంద్ర/రాష్ట్ర ప్రభుత్వ బాండ్లలో పెట్టుబడి. డిఫాల్ట్ రిస్క్ ఉండదు.\n⚠️ గమనిక: డెట్ ఫండ్లు బ్యాంక్ FD లు కావు. వీటికి DICGC బీమా వర్తించదు.',
+        en: 'Debt schemes hold instruments where an issuer borrows money, such as bonds. The issuer’s ability to pay, market interest rates, and the time until repayment can affect a bond’s price. A debt fund is not the same contract as a bank deposit; its value can fall and it is not a guaranteed-return product. Exact risk, liquidity, and protections depend on the instrument and scheme. Check current official documents for details.',
+        te: 'డెట్ పథకాలు బాండ్ల వంటి రుణ సాధనాలను కలిగి ఉంటాయి; వీటిలో ఒక సంస్థ డబ్బు అప్పుగా తీసుకుంటుంది. చెల్లింపుదారుడి సామర్థ్యం, మార్కెట్ వడ్డీ రేట్లు, తిరిగి చెల్లించే సమయం బాండ్ ధరను ప్రభావితం చేయవచ్చు. డెట్ ఫండ్ బ్యాంక్ డిపాజిట్ ఒప్పందంతో సమానం కాదు; దాని విలువ తగ్గవచ్చు, రాబడికి హామీ ఉండదు. ఖచ్చితమైన రిస్క్, లిక్విడిటీ, రక్షణలు సాధనం, పథకంపై ఆధారపడతాయి. వివరాల కోసం తాజా అధికారిక పత్రాలను చూడండి.',
       },
     },
     {
@@ -82,8 +82,8 @@ export const fundTypesLesson: Lesson = {
       type: 'worked_example',
       title: { en: 'Matching Time Horizons to Categories', te: 'సమయానికి తగిన కేటగిరీని ఎంచుకోవడం' },
       content: {
-        en: 'Consider two students in Hyderabad:\n\n1. **Kavya (17):** Saving ₹2,000/month for college admission fees due in **8 months**.\n• *Best match concept:* **Liquid Fund or Bank Recurring Deposit.** Equities can drop 20% right before her fees are due!\n\n2. **Vikram (18):** Planning to save ₹1,000/month for his dream of starting a business in **10 years**.\n• *Best match concept:* **Diversified Equity Index Fund (e.g. Nifty 50).** Over a decade, equities have historically beaten inflation, and he has ample time to weather short-term market crashes.',
-        te: 'రెండు ఉదాహరణలు:\n1. కావ్య (17): 8 నెలల్లో కాలేజీ ఫీజు చెల్లించాలి. ఈమెకు లిక్విడ్ ఫండ్ లేదా బ్యాంక్ RD సరైనది (రిస్క్ లేకుండా).\n2. విక్రమ్ (18): 10 సంవత్సరాల తర్వాత వ్యాపారం ప్రారంభించడానికి పొదుపు చేస్తున్నాడు. ఈ కాలానికి ఈక్విటీ ఇండెక్స్ ఫండ్ అనువైనది.',
+        en: 'Compare two fictional situations—not as product recommendations, but as questions to investigate:\n\n1. **Kavya needs ₹20,000 in eight months.** She should ask how certain the goal date and amount are, whether the value can fall, when money can be accessed, and what fees or conditions apply.\n2. **Vikram is learning about a goal ten years away.** He has more time, but still needs to understand possible losses, diversification, costs, and whether the chosen approach fits his circumstances.\n\nA longer horizon does not guarantee a gain, and a fund category does not guarantee access to money on a particular date.',
+        te: 'రెండు ఊహాత్మక పరిస్థితులను పోల్చండి—ఉత్పత్తి సిఫార్సుగా కాదు; పరిశీలించాల్సిన ప్రశ్నలుగా:\n\n1. **కావ్యకు ఎనిమిది నెలల్లో ₹20,000 అవసరం.** లక్ష్య తేదీ, మొత్తం ఎంత ఖచ్చితమో; విలువ తగ్గవచ్చో; డబ్బు ఎప్పుడు తీసుకోవచ్చో; ఫీజులు, షరతులు ఏమిటో అడగాలి.\n2. **విక్రమ్ పది సంవత్సరాల తర్వాతి లక్ష్యం గురించి నేర్చుకుంటున్నాడు.** సమయం ఎక్కువైనా, సంభావ్య నష్టాలు, వైవిధ్యీకరణ, ఖర్చులు, అతని పరిస్థితులకు విధానం సరిపోతుందో అర్థం చేసుకోవాలి.\n\nఎక్కువ సమయం ఉండటం లాభానికి హామీ కాదు; ఫండ్ వర్గం ఒక నిర్దిష్ట తేదీన డబ్బు అందుబాటులో ఉంటుందని హామీ ఇవ్వదు.',
       },
     },
     {
@@ -98,40 +98,59 @@ export const fundTypesLesson: Lesson = {
         {
           id: 'q-ft-1',
           question: {
-            en: 'What is the mandatory lock-in period for an ELSS (Equity Linked Savings Scheme) mutual fund?',
-            te: 'ELSS పన్ను ఆదా మ్యూచువల్ ఫండ్ కోసం తప్పనిసరి లాక్-ఇన్ కాలపరిమితి ఎంత?',
+            en: 'Which statement best describes an equity fund category?',
+            te: 'ఈక్విటీ ఫండ్ వర్గాన్ని ఏ వాక్యం సరిగ్గా వివరిస్తుంది?',
           },
           type: 'mcq',
           options: [
-            { en: '3 Years', te: '3 సంవత్సరాలు' },
-            { en: '1 Year', te: '1 సంవత్సరం' },
-            { en: '5 Years', te: '5 సంవత్సరాలు' },
+            { en: 'It describes a scheme that predominantly holds shares or equity-related instruments', te: 'ప్రధానంగా షేర్లు లేదా ఈక్విటీ సంబంధిత సాధనాలను కలిగి ఉండే పథకాన్ని వివరిస్తుంది' },
+            { en: 'It guarantees that the value will rise over time', te: 'కాలక్రమంలో విలువ పెరుగుతుందని హామీ ఇస్తుంది' },
+            { en: 'It means the investor cannot lose money', te: 'పెట్టుబడిదారుడు డబ్బు కోల్పోలేడని అర్థం' },
           ],
           correctIndex: 0,
           explanation: {
-            en: 'ELSS has a statutory 3-year lock-in period from the date of each instalment allotment.',
-            te: 'ELSS ఫండ్‌కు ప్రతి వాయిదా కేటాయింపు తేదీ నుండి 3 సంవత్సరాల లాక్-ఇన్ ఉంటుంది.',
+            en: 'An equity category tells you about the scheme’s broad holdings. It does not promise a return or prevent losses.',
+            te: 'ఈక్విటీ వర్గం పథకం ప్రధాన హోల్డింగ్స్‌ను చెబుతుంది. ఇది రాబడికి హామీ ఇవ్వదు లేదా నష్టాలను అడ్డుకోదు.',
           },
           objectiveId: 'obj-ft-2',
         },
         {
           id: 'q-ft-2',
           question: {
-            en: 'Which fund category is most suitable for parking emergency money needed within 3 months?',
-            te: 'రాబోయే 3 నెలల్లో అవసరమయ్యే అత్యవసర డబ్బును ఉంచడానికి ఏ ఫండ్ కేటగిరీ అత్యంత అనుకూలమైనది?',
+            en: 'A student may need a fixed amount for fees in three months. What should they compare first?',
+            te: 'ఒక విద్యార్థికి మూడు నెలల్లో ఫీజు కోసం నిర్దిష్ట మొత్తం అవసరమవచ్చు. ముందుగా ఏమి పోల్చాలి?',
           },
           type: 'mcq',
           options: [
-            { en: 'Liquid Fund or Bank Savings Account', te: 'లిక్విడ్ ఫండ్ లేదా బ్యాంక్ పొదుపు ఖాతా' },
-            { en: 'Small-Cap Equity Fund', te: 'స్మాల్-క్యాప్ ఈక్విటీ ఫండ్' },
-            { en: 'Sectoral IT Technology Fund', te: 'సెక్టోరల్ ఐటీ ఫండ్' },
+            { en: 'Access timing, possible loss in value, and the terms of available options', te: 'యాక్సెస్ సమయం, విలువ తగ్గే అవకాశం, అందుబాటులో ఉన్న ఎంపికల నిబంధనలు' },
+            { en: 'Which category had the highest return last year', te: 'గత సంవత్సరం ఏ వర్గం ఎక్కువ రాబడి ఇచ్చింది' },
+            { en: 'Which fund name sounds safest', te: 'ఏ ఫండ్ పేరు అత్యంత సురక్షితంగా వినిపిస్తుంది' },
           ],
           correctIndex: 0,
           explanation: {
-            en: 'Liquid funds invest in low-risk short-term debt up to 91 days with minimal volatility, protecting short-term capital.',
-            te: 'లిక్విడ్ ఫండ్లు స్వల్పకాలిక సెక్యూరిటీలలో పెట్టుబడి పెడతాయి, కాబట్టి మూలధన నష్టం లేకుండా లిక్విడిటీని అందిస్తాయి.',
+            en: 'For a near-term obligation, timing and access matter alongside risk. A category name or past return cannot promise that the value will be available when needed.',
+            te: 'సమీపకాల అవసరానికి రిస్కుతో పాటు సమయం, యాక్సెస్ ముఖ్యం. వర్గం పేరు లేదా గత రాబడి అవసరమైనప్పుడు విలువ అందుబాటులో ఉంటుందని హామీ ఇవ్వదు.',
           },
           objectiveId: 'obj-ft-3',
+        },
+        {
+          id: 'q-ft-3',
+          question: {
+            en: 'What can a fund category help a learner understand?',
+            te: 'ఫండ్ వర్గం విద్యార్థికి ఏమి అర్థం చేసుకోవడంలో సహాయపడుతుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'The broad mandate or kinds of assets a scheme is designed to hold', te: 'ఒక పథకం కలిగి ఉండే విస్తృత లక్ష్యం లేదా ఆస్తుల రకాలు' },
+            { en: 'That the fund cannot lose value', te: 'ఫండ్ విలువ తగ్గదని' },
+            { en: 'That the category will outperform all other categories', te: 'ఆ వర్గం మిగతా అన్ని వర్గాల కంటే మెరుగ్గా రాణిస్తుందని' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'A category describes a broad investment mandate. It does not by itself reveal every holding, guarantee an outcome, or make all schemes in the category identical.',
+            te: 'వర్గం విస్తృత పెట్టుబడి లక్ష్యాన్ని వివరిస్తుంది. అది అన్ని హోల్డింగ్స్‌ను చెప్పదు, ఫలితానికి హామీ ఇవ్వదు, ఒకే వర్గంలోని పథకాలన్నీ ఒకటే అని కూడా కాదు.',
+          },
+          objectiveId: 'obj-ft-1',
         },
       ],
     },

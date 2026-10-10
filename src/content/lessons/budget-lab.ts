@@ -73,8 +73,8 @@ export const budgetLabLesson: Lesson = {
           ],
           correctIndex: 1,
           explanation: {
-            en: 'Planning your savings and essential commitments FIRST ("paying yourself first") guarantees your vital goals are met. Spending first and saving the leftover usually leaves ₹0 saved!',
-            te: 'ముందుగా అవసరాలు మరియు పొదుపును కేటాయించడం ("మిమ్మల్ని మీరు మొదట చెల్లించుకోవడం") మీ లక్ష్యాలను కాపాడుతుంది!',
+            en: 'Planning essential commitments and a realistic savings amount can make a goal easier to follow. It does not guarantee every goal can be met; income and unexpected needs matter.',
+            te: 'తప్పనిసరి ఖర్చులు, సాధ్యమైన పొదుపు మొత్తాన్ని ముందుగా ప్లాన్ చేస్తే లక్ష్యాన్ని అనుసరించడం సులభమవుతుంది. ప్రతి లక్ష్యం నెరవేరుతుందని హామీ లేదు; ఆదాయం, ఊహించని అవసరాలు కూడా ముఖ్యం.',
           },
           objectiveId: 'obj-budget-1',
         },
@@ -94,8 +94,8 @@ export const budgetLabLesson: Lesson = {
       type: 'mechanism',
       title: { en: 'The Anatomy of a Working Budget', te: 'సమర్థవంతమైన బడ్జెట్ సూత్రం' },
       content: {
-        en: 'A healthy budget balances three streams:\n\n1. **Essential Needs (40-60%):** Living and study costs that cannot be skipped.\n2. **Financial Cushion & Savings (20-30%):** Emergency fund and future goals.\n3. **Flexible Discretionary (10-30%):** Social life, hobbies, and personal enjoyment.\n\n*Rule to remember:* A budget is not meant to be rigid handcuffs. It is a steering wheel that gives YOU control over where your hard-earned money goes!',
-        te: 'ఆరోగ్యకరమైన బడ్జెట్ మూడు భాగాలను సమతుల్యం చేస్తుంది:\n\n1. **తప్పనిసరి అవసరాలు (40-60%):** జీవనం మరియు విద్య ఖర్చులు.\n2. **పొదుపు & ఎమర్జెన్సీ ఫండ్ (20-30%):** అత్యవసర పరిస్థితులు, భవిష్యత్ లక్ష్యాలు.\n3. **వ్యక్తిగత కోరికలు (10-30%):** వినోదం, స్నేహితులు.\n\nగుర్తుంచుకోండి: బడ్జెట్ సంకెళ్లు కాదు, మీ ఆర్థిక స్వేచ్ఛకు దిక్సూచి!',
+        en: 'There is no single percentage split that fits every student or family. Start with the money actually available, list commitments, and make room for priorities where possible.\n\nFor Priya’s fictional ₹5,000: textbooks ₹1,500 + bus pass ₹800 + recharge ₹300 + biryani ₹600 + backpack ₹1,200 = ₹4,400. That leaves ₹600. If a new ₹500 expense appears, only ₹100 remains unless she changes another choice.\n\nA budget is a flexible plan: it helps you see trade-offs and revise them when circumstances change.',
+        te: 'ప్రతి విద్యార్థికి లేదా కుటుంబానికి సరిపోయే ఒకే శాతం విభజన ఉండదు. నిజంగా అందుబాటులో ఉన్న డబ్బుతో ప్రారంభించి, తప్పనిసరి ఖర్చులను రాసి, సాధ్యమైన చోట మీ ప్రాధాన్యతలకు కేటాయించండి.\n\nప్రియ ₹5,000 ఉదాహరణ: పుస్తకాలు ₹1,500 + బస్ పాస్ ₹800 + రీఛార్జ్ ₹300 + బిర్యానీ ₹600 + బ్యాగ్ ₹1,200 = ₹4,400. ₹600 మిగులుతుంది. కొత్తగా ₹500 ఖర్చు వస్తే, వేరే ఎంపికను మార్చకపోతే ₹100 మాత్రమే మిగులుతుంది.\n\nబడ్జెట్ ఒక సరళమైన ప్రణాళిక: ఎంపికల మధ్య తేడాను చూపించి, పరిస్థితులు మారినప్పుడు సవరించుకునేలా చేస్తుంది.',
       },
     },
     {

@@ -181,14 +181,13 @@ export function RDCalculator() {
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
         <p className="font-bold text-amber-800 mb-2">📚 What This Shows</p>
         <ul className="text-sm text-amber-700 space-y-1">
-          <li>• RD lets you save a <strong>fixed amount every month</strong> at a guaranteed interest rate</li>
+          <li>• An RD models regular deposits under the bank’s stated rate and account terms</li>
           <li>• Each deposit earns interest for <strong>fewer months</strong> than the previous one</li>
-          <li>• Your first deposit earns interest for the full tenure; your last deposit earns for just 1 month</li>
-          <li>• RDs suit short-term goals (1–5 years) — unlike equity, returns are predictable but modest</li>
+          <li>• In this model, the first instalment compounds for the longest period and the last for one month</li>
+          <li>• Compare the stated rate, access rules, fees, taxes, and timing with your own needs; this tool does not recommend a product</li>
         </ul>
         <p className="text-xs text-amber-600 mt-3 italic">
-          ⚠️ Hypothetical illustration only. Actual RD rates, compounding, TDS deduction and premature withdrawal penalties vary by bank.
-          Deposits up to ₹5 lakh per bank are insured by DICGC.
+          ⚠️ Hypothetical illustration only. This teaching model treats monthly instalments with a simplified fractional quarterly-compounding formula. Actual rate, crediting, tax, and early-closure terms vary by bank and product. Eligible deposits at an insured bank have limited DICGC cover under applicable conditions; see the <a href="https://www.dicgc.org.in/guide-to-deposit-insurance" target="_blank" rel="noreferrer" className="underline">current DICGC guidance</a>.
         </p>
       </div>
 
@@ -206,11 +205,11 @@ export function RDCalculator() {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {[
-                ['Interest Rate', '5–7.5% p.a.', '2.5–4% p.a.'],
-                ['Withdrawal', 'At maturity (penalty for early)', 'Any time'],
-                ['Discipline', 'Forces monthly saving', 'Optional'],
-                ['DICGC Insurance', 'Yes (up to ₹5L)', 'Yes (up to ₹5L)'],
-                ['Lock-in', 'Yes — till maturity', 'No'],
+                ['Rate', 'Product-specific; check current terms', 'Product-specific; check current terms'],
+                ['Access', 'Early closure can change interest or terms', 'Access depends on account rules'],
+                ['Contribution pattern', 'Scheduled recurring deposits', 'Deposits as permitted by account'],
+                ['Deposit cover', 'Eligibility and limits apply', 'Eligibility and limits apply'],
+                ['Term', 'Chosen deposit period and closure rules', 'Account terms and withdrawal rules'],
               ].map(([feature, rd, sa]) => (
                 <tr key={feature}>
                   <td className="p-2 text-left text-gray-600">{feature}</td>
@@ -221,7 +220,7 @@ export function RDCalculator() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-gray-400 mt-2 italic">Rates are indicative ranges as of 2025 — check your bank for current rates.</p>
+        <p className="text-xs text-gray-400 mt-2 italic">This comparison is a guide to questions to ask, not a statement of current market rates or terms. Check the provider’s latest documents.</p>
       </div>
     </div>
   );

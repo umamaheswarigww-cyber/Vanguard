@@ -55,7 +55,7 @@ export function LearnPage() {
               <div className="h-2 bg-white/20 rounded-full overflow-hidden mt-2">
                 <div className="h-full bg-teal-400 rounded-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
               </div>
-              <span className="text-[11px] text-teal-300 block mt-2 text-right font-semibold">{progressPercent}% Mastered</span>
+              <span className="text-[11px] text-teal-300 block mt-2 text-right font-semibold">{progressPercent}% {t({ en: 'Lessons completed', te: 'పాఠాలు పూర్తయ్యాయి' })}</span>
             </div>
           </div>
 
@@ -71,6 +71,48 @@ export function LearnPage() {
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white text-navy-600 placeholder-navy-300 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Masterclass Banner: Investing Made Simple */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-navy-800 via-navy-700 to-teal-800 text-white p-6 sm:p-8 shadow-xl border border-teal-500/30">
+          <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block opacity-25 overflow-hidden pointer-events-none">
+            <img src="/images/mutual_funds.jpg" alt="Investment growth" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-3 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-400/20 border border-teal-400/40 text-teal-300 text-xs font-semibold">
+                <Sparkles size={14} />
+                <span>{t({ en: 'NEW INTERACTIVE MODULE', te: 'కొత్త ఇంటరాక్టివ్ మాడ్యూల్' })}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold font-display leading-tight">
+                {t({
+                  en: 'Investing Made Simple: Learn Before You Earn',
+                  te: 'సులభమైన పెట్టుబడులు: సంపాదించే ముందు నేర్చుకోండి'
+                })}
+              </h2>
+              <p className="text-navy-100 text-sm leading-relaxed">
+                {t({
+                  en: 'Designed for Grades 11–12: Master Fixed Deposits, Mutual Funds, and Stocks through the ABC Bicycle Company case study, interactive Risk Studio, and a safe ₹10,000 virtual portfolio simulator.',
+                  te: 'గ్రేడ్ 11-12 కోసం రూపొందించబడింది: ABC సైకిల్ కంపెనీ ఉదాహరణ, రిస్క్ స్టూడియో మరియు ₹10,000 వర్చువల్ పోర్ట్‌ఫోలియో సిమ్యులేటర్ ద్వారా FDలు, మ్యూచువల్ ఫండ్స్, షేర్లను అర్థం చేసుకోండి.'
+                })}
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1 text-xs">
+                <span className="px-2.5 py-1 rounded-lg bg-white/10 text-teal-200">✨ FD vs MF vs Stocks</span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/10 text-teal-200">🎯 Match Money to Goals</span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/10 text-teal-200">💰 ₹10,000 Virtual Simulator</span>
+              </div>
+            </div>
+
+            <Link
+              to="/investing-made-simple"
+              className="px-6 py-3.5 rounded-xl bg-teal-400 text-navy-900 font-bold hover:bg-teal-300 transition-all shadow-lg flex items-center gap-2 shrink-0 text-sm"
+            >
+              {t({ en: 'Explore Investing Masterclass', te: 'మాస్టర్‌క్లాస్ ప్రారంభించండి' })}
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>

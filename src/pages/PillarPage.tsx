@@ -22,26 +22,43 @@ export function PillarPage() {
 
   const Icon = pillar.id === 'budget' ? Wallet : pillar.id === 'save' ? PiggyBank : pillar.id === 'invest' ? TrendingUp : Shield;
 
+  const pillarImages: Record<string, string> = {
+    budget: '/images/hero_students.jpg',
+    save: '/images/sip_journey.jpg',
+    invest: '/images/stock_market.jpg',
+    safe: '/images/cyber_safety.jpg',
+  };
+  const bannerImg = pillarImages[pillar.id] || '/images/hero_students.jpg';
+
   return (
     <div className="space-y-8 pb-16">
-      {/* Banner */}
-      <section className="bg-hero text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <Link to="/learn" className="inline-flex items-center gap-1.5 text-xs text-navy-200 hover:text-white mb-4">
+      {/* Banner with realistic background image */}
+      <section className="relative overflow-hidden bg-navy-900 text-white py-14 px-4 sm:px-6 lg:px-8 border-b border-navy-700">
+        <div className="absolute inset-0 opacity-25">
+          <img
+            src={bannerImg}
+            alt={pillar.slug}
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900/90 to-navy-950/70" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <Link to="/learn" className="inline-flex items-center gap-1.5 text-xs text-blue-200 hover:text-white mb-4 transition-colors">
             <ArrowLeft size={14} />
             {t({ en: 'Back to All Pillars', te: 'అన్ని స్తంభాలకు వెనుకకు' })}
           </Link>
 
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-teal-400/20 border border-teal-300/30 flex items-center justify-center text-teal-300">
+            <div className="w-14 h-14 rounded-2xl bg-teal-400/20 border border-teal-300/40 backdrop-blur-md flex items-center justify-center text-teal-300 shadow-lg">
               <Icon size={32} />
             </div>
             <div>
               <span className="badge badge-teal mb-1">{t(pillar.tagline)}</span>
-              <h1 className="text-3xl sm:text-4xl font-extrabold font-display">{t(pillar.title)}</h1>
+              <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-white">{t(pillar.title)}</h1>
             </div>
           </div>
-          <p className="text-navy-100 text-sm mt-3 max-w-2xl leading-relaxed">
+          <p className="text-blue-100 text-sm sm:text-base mt-3 max-w-2xl leading-relaxed">
             {t(pillar.description)}
           </p>
         </div>

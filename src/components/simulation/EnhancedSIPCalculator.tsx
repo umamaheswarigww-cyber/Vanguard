@@ -3,7 +3,7 @@
 // With Monthly NAV Table, Step-Up SIP, and Lump-Sum Comparison
 // Educational only — NOT investment advice or return prediction
 // ============================================================
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, Legend, AreaChart, Area,
@@ -109,6 +109,8 @@ export function EnhancedSIPCalculator() {
     () => generateStepUpSIPFV(stepUpMonthly, stepUpRate, stepUpAnnualReturn / 100, stepUpYears),
     [stepUpMonthly, stepUpRate, stepUpAnnualReturn, stepUpYears],
   );
+  const stepUpContributions = stepUpResult.rows.reduce((sum, row) => sum + row.contribution, 0);
+  const flatContributions = stepUpMonthly * stepUpYears * 12;
 
   const flatSIPForComparison = useMemo(
     () => sipFutureValue(stepUpMonthly, stepUpAnnualReturn / 100 / 12, stepUpYears * 12, 'end'),
@@ -120,7 +122,7 @@ export function EnhancedSIPCalculator() {
     const r = compRate / 100 / 12;
     const n = compYears * 12;
     const monthly = compAmount / n; // spread lump-sum as monthly SIP equivalent
-    const lumpSumFV = compAmount * Math.pow(1 + compRate / 100, compYears);
+    const lumpSumFV = compAmount * Math.pow(1 + r, n);
     const sipFV = sipFutureValue(monthly, r, n, 'end');
 
     const chartData: { year: string; 'Lump Sum': number; SIP: number }[] = [];
@@ -129,7 +131,7 @@ export function EnhancedSIPCalculator() {
       const monthlyLocal = compAmount / (compYears * 12);
       chartData.push({
         year: `Yr ${y}`,
-        'Lump Sum': Math.round(compAmount * Math.pow(1 + compRate / 100, y)),
+        'Lump Sum': Math.round(compAmount * Math.pow(1 + r, months)),
         SIP: Math.round(sipFutureValue(monthlyLocal, r, months, 'end')),
       });
     }
@@ -176,7 +178,7 @@ export function EnhancedSIPCalculator() {
           <div className="bg-white rounded-2xl shadow-card p-6 space-y-4">
             {[
               { label: 'Monthly Investment', value: monthly, set: setMonthly, min: 500, max: 20000, step: 500, format: (v: number) => formatINR(v) },
-              { label: 'Expected Annual Return (% p.a.)', value: annualRate, set: setAnnualRate, min: 6, max: 20, step: 0.5, format: (v: number) => `${v}%` },
+              { label: 'Assumed annual return (% p.a.)', value: annualRate, set: setAnnualRate, min: -20, max: 20, step: 0.5, format: (v: number) => `${v}%` },
               { label: 'Time Period', value: years, set: setYears, min: 1, max: 30, step: 1, format: (v: number) => `${v} years` },
             ].map(({ label, value, set, min, max, step, format }) => (
               <div key={label}>
@@ -214,8 +216,8 @@ export function EnhancedSIPCalculator() {
                 <YAxis tickFormatter={(v: number) => `₹${(v / 1000).toFixed(0)}K`} tick={{ fontSize: 10 }} />
                 <Tooltip formatter={(v: any) => formatINR(Number(v) || 0)} />
                 <Legend />
-                <Area type="monotone" dataKey="Invested" stackId="no" stroke="#14253D" fill="#e8edf3" strokeWidth={2} />
-                <Area type="monotone" dataKey="Portfolio" stackId="no" stroke="#11B7A3" fill="#d1f5f1" strokeWidth={2} />
+                <Area type="monotone" dataKey="Invested" stroke="#14253D" fill="#e8edf3" strokeWidth={2} />
+                <Area type="monotone" dataKey="Portfolio" stroke="#11B7A3" fill="#d1f5f1" strokeWidth={2} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -243,7 +245,7 @@ export function EnhancedSIPCalculator() {
 
             <div className="bg-blue-50 rounded-lg p-3 mb-4 text-sm text-blue-700">
               <strong>Edit NAV prices below</strong> — see how many units you buy each month and how your portfolio value changes.
-              Notice you buy more units when NAV is low and fewer when it's high — this is <strong>Rupee Cost Averaging</strong>!
+              With a fixed contribution, a lower NAV means more units for that instalment. This pattern is often called <strong>rupee cost averaging</strong>; it does not prevent losses.
             </div>
 
             {/* NAV inputs */}
@@ -310,7 +312,7 @@ export function EnhancedSIPCalculator() {
 
           {navBelow && (
             <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 text-sm text-orange-700">
-              🔴 <strong>Portfolio value is below invested amount right now</strong> — this is normal and expected in the short term. SIP is designed for long-term investing. The highlighted months show when market prices were lower than your average cost.
+              🔴 <strong>In this modeled price path, portfolio value is below total contributions.</strong> A contribution plan does not prevent losses or ensure recovery. The highlighted rows show the modeled value at each NAV.
             </div>
           )}
 
@@ -337,14 +339,14 @@ export function EnhancedSIPCalculator() {
       {activeTab === 'stepup' && (
         <div className="space-y-4">
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
-            <strong>Step-Up SIP</strong>: You increase your monthly contribution by a fixed percentage every year. This mirrors income growth and dramatically boosts corpus over time.
+            <strong>Step-Up SIP</strong>: You increase your monthly contribution by a fixed percentage every year. The example shows how contributing more changes both total contributions and the modeled ending value.
           </div>
 
           <div className="bg-white rounded-2xl shadow-card p-6 space-y-4">
             {[
               { label: 'Starting Monthly Contribution', value: stepUpMonthly, set: setStepUpMonthly, min: 500, max: 10000, step: 500, format: (v: number) => formatINR(v) },
               { label: 'Annual Step-Up Rate', value: stepUpRate, set: setStepUpRate, min: 0, max: 25, step: 1, format: (v: number) => `${v}% per year` },
-              { label: 'Expected Annual Return', value: stepUpAnnualReturn, set: setStepUpAnnualReturn, min: 6, max: 20, step: 0.5, format: (v: number) => `${v}% p.a.` },
+              { label: 'Assumed annual return', value: stepUpAnnualReturn, set: setStepUpAnnualReturn, min: -20, max: 20, step: 0.5, format: (v: number) => `${v}% p.a.` },
               { label: 'Time Period', value: stepUpYears, set: setStepUpYears, min: 3, max: 30, step: 1, format: (v: number) => `${v} years` },
             ].map(({ label, value, set, min, max, step, format }) => (
               <div key={label}>
@@ -360,22 +362,27 @@ export function EnhancedSIPCalculator() {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-gray-50 rounded-xl p-4 text-center border">
-              <p className="text-xs text-gray-500 mb-1">Flat SIP (no step-up)</p>
-              <p className="font-extrabold text-gray-700 text-xl">{formatINR(flatSIPForComparison)}</p>
+              <p className="text-xs text-gray-500 mb-1">Flat SIP · total contributions</p>
+              <p className="font-extrabold text-gray-700 text-xl">{formatINR(flatContributions)}</p>
               <p className="text-xs text-gray-400 mt-1">{formatINR(stepUpMonthly)}/mo for {stepUpYears} yrs</p>
             </div>
+            <div className="bg-gray-50 rounded-xl p-4 text-center border">
+              <p className="text-xs text-gray-500 mb-1">Flat SIP · modeled value</p>
+              <p className="font-extrabold text-gray-700 text-xl">{formatINR(flatSIPForComparison)}</p>
+              <p className="text-xs text-gray-400 mt-1">At the same assumed rate</p>
+            </div>
             <div className="bg-teal-50 rounded-xl p-4 text-center border border-teal-200">
-              <p className="text-xs text-gray-500 mb-1">Step-Up SIP corpus</p>
+              <p className="text-xs text-gray-500 mb-1">Step-Up SIP · total contributions</p>
+              <p className="font-extrabold text-teal-700 text-xl">{formatINR(stepUpContributions)}</p>
+              <p className="text-xs text-gray-400 mt-1">+{stepUpRate}% contribution increase each year</p>
+            </div>
+            <div className="bg-teal-50 rounded-xl p-4 text-center border border-teal-200">
+              <p className="text-xs text-gray-500 mb-1">Step-Up SIP · modeled value</p>
               <p className="font-extrabold text-teal-600 text-xl">{formatINR(stepUpResult.total)}</p>
-              <p className="text-xs text-gray-400 mt-1">+{stepUpRate}% step-up each year</p>
+              <p className="text-xs text-gray-400 mt-1">At the same assumed rate</p>
             </div>
           </div>
-
-          {stepUpResult.total > flatSIPForComparison && (
-            <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-sm text-green-700">
-              📈 Step-up SIP generates <strong>{formatINR(stepUpResult.total - flatSIPForComparison)} more</strong> than flat SIP — that's the power of increasing contributions as your income grows!
-            </div>
-          )}
+          <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-xs text-amber-800">The step-up example invests more money over time, so compare total contributions as well as ending values. Both values use a constant, hypothetical return; real returns vary and may be negative.</p>
 
           {/* Year-by-year table */}
           <div className="bg-white rounded-2xl shadow-card overflow-hidden">
@@ -407,13 +414,13 @@ export function EnhancedSIPCalculator() {
       {activeTab === 'comparison' && (
         <div className="space-y-4">
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
-            <strong>Same total money, different approaches.</strong> We divide your lump-sum amount into equal monthly SIP contributions spread over the same period.
+            <strong>Same total contribution, different timing.</strong> We model the lump sum invested on day one and the same total amount spread across equal monthly contributions. Both use the same assumed monthly return throughout.
           </div>
 
           <div className="bg-white rounded-2xl shadow-card p-6 space-y-4">
             {[
               { label: 'Total Investment Amount', value: compAmount, set: setCompAmount, min: 10000, max: 500000, step: 10000, format: (v: number) => formatINR(v) },
-              { label: 'Annual Return Rate', value: compRate, set: setCompRate, min: 6, max: 20, step: 0.5, format: (v: number) => `${v}% p.a.` },
+              { label: 'Assumed annual return rate', value: compRate, set: setCompRate, min: -20, max: 20, step: 0.5, format: (v: number) => `${v}% p.a.` },
               { label: 'Investment Period', value: compYears, set: setCompYears, min: 1, max: 30, step: 1, format: (v: number) => `${v} years` },
             ].map(({ label, value, set, min, max, step, format }) => (
               <div key={label}>
@@ -461,10 +468,10 @@ export function EnhancedSIPCalculator() {
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-700">
             <p className="font-bold mb-2">📚 Key Insight</p>
             <ul className="space-y-1">
-              <li>• Lump sum wins if you invest at the exact right time (market low). But timing the market is very hard.</li>
-              <li>• SIP wins through <strong>Rupee Cost Averaging</strong> — you buy more units when markets are low.</li>
-              <li>• For most students who earn monthly, SIP is more practical than lump sum.</li>
-              <li>• Both assume constant returns — <strong>real markets are volatile.</strong></li>
+              <li>• In this constant-return example, money invested earlier compounds for longer.</li>
+              <li>• With changing prices, regular contributions buy different numbers of units at each price.</li>
+              <li>• Neither schedule guarantees a gain; outcomes depend on the actual price path and timing.</li>
+              <li>• This simplified chart assumes a constant return — <strong>real markets fluctuate.</strong></li>
             </ul>
           </div>
         </div>

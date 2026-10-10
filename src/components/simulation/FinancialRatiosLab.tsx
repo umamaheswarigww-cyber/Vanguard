@@ -15,8 +15,9 @@ interface RatioResult {
 }
 
 function safeDiv(a: number, b: number): number | null {
-  if (b === 0 || isNaN(b) || isNaN(a)) return null;
-  return a / b;
+  if (![a, b].every(Number.isFinite) || b === 0) return null;
+  const result = a / b;
+  return Number.isFinite(result) ? result : null;
 }
 
 function formatRatio(val: number | null, unit: string, decimals = 2): string {
@@ -34,10 +35,10 @@ export function FinancialRatiosLab() {
 
   const ratios = useMemo<RatioResult[]>(() => {
     const epsValue = safeDiv(netProfit, sharesOutstanding); // ₹ per share
-    const peValue = epsValue != null ? safeDiv(sharePrice, epsValue) : null;
-    const pbValue = safeDiv(sharePrice, bookValuePerShare);
-    const roeValue = safeDiv(netProfit * 100, shareholdersEquity); // %
-    const divYield = safeDiv(dividendPerShare * 100, sharePrice); // %
+    const peValue = epsValue != null && epsValue > 0 ? safeDiv(sharePrice, epsValue) : null;
+    const pbValue = bookValuePerShare > 0 ? safeDiv(sharePrice, bookValuePerShare) : null;
+    const roeValue = shareholdersEquity > 0 ? safeDiv(netProfit * 100, shareholdersEquity) : null; // %
+    const divYield = sharePrice > 0 ? safeDiv(dividendPerShare * 100, sharePrice) : null; // %
 
     return [
       {
@@ -65,7 +66,7 @@ export function FinancialRatiosLab() {
         value: pbValue,
         formula: 'Share Price ÷ Book Value Per Share',
         interpretation: pbValue != null
-          ? `Market values the company at ${formatRatio(pbValue, 'x')} its accounting book value. P/B < 1 can signal undervaluation — or problems.`
+          ? `Market price is ${formatRatio(pbValue, 'x')} book value per share. A low P/B may reflect many factors and does not establish a bargain.`
           : 'Enter a valid book value.',
         unit: 'x',
         color: 'bg-purple-50 border-purple-200 text-purple-700',
@@ -75,7 +76,7 @@ export function FinancialRatiosLab() {
         value: roeValue,
         formula: '(Net Profit ÷ Shareholders\' Equity) × 100',
         interpretation: roeValue != null
-          ? `The company generates ${formatRatio(roeValue, '%', 1)} return on every ₹100 of equity. Higher ROE generally means more profitable use of shareholder funds.`
+          ? `The ratio is ${formatRatio(roeValue, '%', 1)}. Interpret it with leverage, business model, accounting choices, and changes over time.`
           : 'Enter equity.',
         unit: '%',
         color: 'bg-green-50 border-green-200 text-green-700',
@@ -85,7 +86,7 @@ export function FinancialRatiosLab() {
         value: divYield,
         formula: '(Annual Dividend Per Share ÷ Share Price) × 100',
         interpretation: divYield != null
-          ? `Investors earn ${formatRatio(divYield, '%', 2)} annually in dividend income on current share price. Not all companies pay dividends.`
+          ? `The indicated dividend is ${formatRatio(divYield, '%', 2)} of the current price if maintained. Dividends can change; not all companies pay them.`
           : 'Enter share price.',
         unit: '%',
         color: 'bg-amber-50 border-amber-200 text-amber-700',
@@ -206,7 +207,7 @@ export function FinancialRatiosLab() {
       <div className="bg-red-50 border border-red-200 rounded-xl p-4">
         <p className="font-bold text-red-800 mb-2">⚠️ Important Caveats</p>
         <ul className="text-sm text-red-700 space-y-1.5">
-          <li>• <strong>Never compare P/E across sectors.</strong> IT companies trade at 30x, banks at 12x — sector norms differ.</li>
+          <li>• <strong>Compare P/E with context.</strong> Sector, growth, leverage, accounting choices, and earnings quality can affect comparisons.</li>
           <li>• <strong>One ratio tells one story.</strong> Always use multiple ratios together, not individually.</li>
           <li>• <strong>Past earnings ≠ future earnings.</strong> Ratios are backward-looking; the future is uncertain.</li>
           <li>• <strong>Accounting policies matter.</strong> Two companies can report the same business differently.</li>
@@ -231,9 +232,9 @@ export function FinancialRatiosLab() {
               {[
                 ['EPS', 'Profit per share', 'More profit per share', 'Less profit per share'],
                 ['P/E', 'Price vs earnings', 'High growth expected (or overvalued)', 'Low growth expected (or undervalued)'],
-                ['P/B', 'Price vs book value', 'Market values intangibles highly', 'Could be undervalued or distressed'],
-                ['ROE', 'Efficiency of equity use', 'Generates more profit per ₹ of equity', 'Less efficient with shareholder funds'],
-                ['Div. Yield', 'Income from dividends', 'High income, mature business', 'Growth company reinvests profits'],
+                ['P/B', 'Price vs book value', 'May reflect expectations or business mix', 'May reflect concerns or accounting factors'],
+                ['ROE', 'Profit relative to equity', 'Consider leverage and sustainability', 'Consider trends and business context'],
+                ['Div. Yield', 'Indicated dividend relative to price', 'Could reflect payout or a falling price', 'Could reflect a low or no dividend'],
               ].map(([ratio, what, high, low]) => (
                 <tr key={ratio}>
                   <td className="p-2 font-semibold text-navy-600">{ratio}</td>

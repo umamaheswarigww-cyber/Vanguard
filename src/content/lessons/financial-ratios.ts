@@ -134,6 +134,25 @@ export const financialRatiosLesson: Lesson = {
           },
           objectiveId: 'obj-ratio-1',
         },
+        {
+          id: 'q-ratio-3',
+          question: {
+            en: 'A ratio compares two numbers. Why should a learner also inspect the underlying statements and context?',
+            te: 'ఒక నిష్పత్తి రెండు సంఖ్యలను పోలుస్తుంది. దాని మూల నివేదికలు, సందర్భాన్ని కూడా ఎందుకు పరిశీలించాలి?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'Accounting choices, business models, timing, and risk can change what the same ratio means', te: 'అకౌంటింగ్ విధానం, వ్యాపార నమూనా, సమయం, రిస్క్ వల్ల ఒకే నిష్పత్తి అర్థం మారవచ్చు' },
+            { en: 'A ratio by itself proves whether a share is a good purchase', te: 'నిష్పత్తి ఒక్కటే షేర్ కొనడం మంచిదో నిరూపిస్తుంది' },
+            { en: 'All companies use identical accounting assumptions', te: 'అన్ని కంపెనీలు ఒకే అకౌంటింగ్ ఊహలను ఉపయోగిస్తాయి' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Ratios summarize selected figures and inherit their limitations. They are clues for comparison, not a complete judgment or investment recommendation.',
+            te: 'నిష్పత్తులు కొన్ని సంఖ్యలను సంగ్రహిస్తాయి, వాటి పరిమితులను కూడా కలిగి ఉంటాయి. అవి పోలికకు సూచనలు మాత్రమే; సంపూర్ణ తీర్పు లేదా పెట్టుబడి సిఫార్సు కాదు.',
+          },
+          objectiveId: 'obj-ratio-3',
+        },
       ],
     },
   ],

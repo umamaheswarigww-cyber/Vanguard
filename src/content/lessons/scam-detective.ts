@@ -55,17 +55,17 @@ export const scamDetectiveLesson: Lesson = {
       type: 'intuition',
       title: { en: 'The 3 Hallmarks of Every Scam', te: 'ప్రతి స్కామ్‌లో ఉండే 3 ప్రధాన లక్షణాలు' },
       content: {
-        en: 'No matter how modern a scam looks, almost all rely on the same three emotional weapons:\n\n1. **Artificial Urgency & Fear:** *"Account will be blocked in 30 minutes!"* (Prevents you from calling your parents or visiting your actual bank branch).\n2. **Unrealistic Promises of Easy Wealth:** *"Earn ₹5,000/day working from home by liking YouTube videos!"* or *"Guaranteed 40% returns every month!"*\n3. **Request for Confidential Credentials or Screen-Sharing:** Asking for OTP, UPI PIN, passwords, or downloading AnyDesk/TeamViewer.',
-        te: 'మోసాలు ఎంత అధునాతనంగా ఉన్నా, ఇవి ఈ 3 విషయాలపైనే ఆధారపడతాయి:\n\n1. **ఆందోళన మరియు భయం:** "30 నిమిషాల్లో అకౌంట్ బ్లాక్ అవుతుంది!"\n2. **సులభంగా డబ్బు వస్తుందనే అత్యాశ:** "యూట్యూబ్ వీడియోలు లైక్ చేసి రోజుకు ₹5,000 సంపాదించండి!"\n3. **రహస్య వివరాలు కోరడం:** OTP, UPI PIN లేదా స్క్రీన్ షేరింగ్ యాప్‌లు ఇన్‌స్టాల్ చేయమనడం.',
+        en: 'Many scams use one or more of these pressure tactics:\n\n1. **Urgency or fear:** “Act now or your account will be blocked.”\n2. **Unrealistic promises:** “Guaranteed high returns” or pay-to-unlock earnings.\n3. **Requests for secrets or device access:** Asking for an OTP, UPI PIN, password, or remote-screen access.\n\nA warning sign is a reason to pause and verify independently. It is not a substitute for checking the sender and transaction details.',
+        te: 'చాలా మోసాలు ఈ ఒత్తిడి పద్ధతుల్లో ఒకటి లేదా అంతకంటే ఎక్కువ ఉపయోగిస్తాయి:\n\n1. **తొందర లేదా భయం:** “ఇప్పుడే చేయండి, లేదంటే ఖాతా బ్లాక్ అవుతుంది.”\n2. **అవాస్తవ హామీలు:** “అధిక రాబడికి హామీ” లేదా ఆదాయం పొందడానికి ముందుగా డబ్బు చెల్లించమని అడగడం.\n3. **రహస్యాలు లేదా పరికర యాక్సెస్ అడగడం:** OTP, UPI PIN, పాస్‌వర్డ్ లేదా రిమోట్ స్క్రీన్ యాక్సెస్ కోరడం.\n\nహెచ్చరిక సంకేతం కనిపిస్తే ఆగి స్వతంత్రంగా ధృవీకరించండి. పంపినవారు, లావాదేవీ వివరాలను పరిశీలించడానికి ఇది ప్రత్యామ్నాయం కాదు.',
       },
     },
     {
       id: 'stg-sc-mechanism',
       type: 'mechanism',
-      title: { en: 'Golden Security Rules for India', te: 'భారతీయ డిజిటల్ భద్రతా నియమాలు' },
+      title: { en: 'Pause, Protect, and Verify', te: 'ఆగండి, రక్షించండి, ధృవీకరించండి' },
       content: {
-        en: 'Memorize these rules — they protect you for life:\n\n- **Rule 1 (The UPI Golden Rule):** You enter your **UPI PIN ONLY TO SEND MONEY, NEVER TO RECEIVE MONEY**! If someone says *"Scan this QR code or enter your PIN to receive your ₹2,000 lottery"*, entering your PIN will instantly DEBIT your account!\n- **Rule 2:** Banks, RBI, and Police NEVER ask for your OTP or PIN over phone calls or WhatsApp.\n- **Rule 3:** Never download remote access software (AnyDesk, QuickSupport, TeamViewer) at the request of an unknown caller.\n- **Rule 4:** Official government helpline for financial cyber fraud: **National Cyber Crime Helpline 1930** and [cybercrime.gov.in](https://cybercrime.gov.in).',
-        te: 'ఈ బంగారు నియమాలను ఎప్పటికీ మర్చిపోకండి:\n\n- **నియమం 1:** **డబ్బు పంపడానికి మాత్రమే UPI PIN వాడాలి, డబ్బు అందుకోవడానికి ఎప్పుడూ PIN అవసరం లేదు**!\n- **నియమం 2:** బ్యాంకులు లేదా పోలీసులు ఎప్పుడూ మీ OTP లేదా PIN అడగరు.\n- **నియమం 3:** ఎవరి మాటలు విని స్క్రీన్ షేరింగ్ యాప్‌లు డౌన్‌లోడ్ చేయవద్దు.\n- **నియమం 4:** సైబర్ మోసం జరిగితే వెంటనే **1930** నంబర్‌కు కాల్ చేయండి లేదా [cybercrime.gov.in](https://cybercrime.gov.in) లో ఫిర్యాదు చేయండి.',
+        en: 'Use these checks when a message, call, or QR code involves money:\n\n- **A UPI PIN authorizes a transaction from your account.** Do not reveal it to anyone or enter it just to receive money. Before authorizing, check the payee and amount in the trusted payment app.\n- **Keep OTPs, passwords, and PINs private.** A genuine bank or payment provider should not ask you to disclose these secrets over a call or message.\n- **Do not install remote-access software at a stranger’s request.** Contact the organisation using a number or app you find independently.\n- **If online financial fraud happens, report it promptly.** India’s official portal currently lists helpline **1930** and [online reporting](https://www.cybercrime.gov.in/Accept.aspx). Prompt reporting does not guarantee that funds will be recovered; follow instructions from your bank and the relevant authorities.',
+        te: 'డబ్బుకు సంబంధించిన సందేశం, కాల్ లేదా QR కోడ్ వస్తే ఈ తనిఖీలు చేయండి:\n\n- **UPI PIN మీ ఖాతా నుండి జరిగే లావాదేవీని అనుమతిస్తుంది.** దాన్ని ఎవరికీ చెప్పకండి; డబ్బు స్వీకరించడానికి మాత్రమే నమోదు చేయకండి. అనుమతించే ముందు నమ్మకమైన చెల్లింపు యాప్‌లో చెల్లింపుదారు, మొత్తాన్ని చూడండి.\n- **OTPలు, పాస్‌వర్డ్‌లు, PINలు రహస్యంగా ఉంచండి.** నిజమైన బ్యాంక్ లేదా చెల్లింపు సంస్థ ఫోన్ లేదా సందేశంలో ఈ రహస్యాలను చెప్పమని అడగకూడదు.\n- **తెలియని వ్యక్తి మాటకు రిమోట్ యాక్సెస్ యాప్ ఇన్‌స్టాల్ చేయకండి.** సంస్థను మీరు స్వతంత్రంగా కనుగొన్న నంబర్ లేదా యాప్ ద్వారా సంప్రదించండి.\n- **ఆన్‌లైన్ ఆర్థిక మోసం జరిగితే వెంటనే నివేదించండి.** భారత అధికారిక పోర్టల్ ప్రస్తుతం **1930** హెల్ప్‌లైన్, [ఆన్‌లైన్ ఫిర్యాదు](https://www.cybercrime.gov.in/Accept.aspx) సూచిస్తుంది. త్వరగా నివేదించినా డబ్బు తిరిగి వస్తుందని హామీ లేదు; మీ బ్యాంక్, సంబంధిత అధికారుల సూచనలు పాటించండి.',
       },
     },
     {
@@ -95,14 +95,14 @@ export const scamDetectiveLesson: Lesson = {
           },
           type: 'mcq',
           options: [
-            { en: '₹2,500 will be DEDUCTED from your bank account immediately', te: 'మీ బ్యాంక్ ఖాతా నుండి ₹2,500 తక్షణమే కట్ అవుతాయి' },
+            { en: 'You may authorize an outgoing payment from your account', te: 'మీ ఖాతా నుండి బయటకు వెళ్లే చెల్లింపును మీరు అనుమతించవచ్చు' },
             { en: '₹2,500 will be credited to your account', te: 'మీ ఖాతాకు ₹2,500 జమ అవుతాయి' },
             { en: 'Nothing will happen without biometric fingerprint', te: 'ఫింగర్‌ప్రింట్ లేకుండా ఏమీ జరగదు' },
           ],
           correctIndex: 0,
           explanation: {
-            en: 'Entering your UPI PIN authorises an OUTGOING payment. You NEVER enter a PIN to receive money on UPI!',
-            te: 'UPI PIN కొట్టడం అంటే డబ్బులు పంపడానికి అనుమతి ఇవ్వడం. డబ్బు స్వీకరించడానికి PIN అసలు అవసరం లేదు!',
+            en: 'A UPI PIN authorizes a transaction from your account. Do not enter it just because someone says it will receive money; inspect the amount and recipient in the trusted app before authorizing.',
+            te: 'UPI PIN మీ ఖాతా నుండి జరిగే లావాదేవీని అనుమతిస్తుంది. డబ్బు వస్తుందని ఎవరో చెప్పారని మాత్రమే నమోదు చేయకండి; అనుమతించే ముందు నమ్మకమైన యాప్‌లో మొత్తం, చెల్లింపుదారును పరిశీలించండి.',
           },
           objectiveId: 'obj-scam-2',
         },
@@ -120,10 +120,29 @@ export const scamDetectiveLesson: Lesson = {
           ],
           correctIndex: 0,
           explanation: {
-            en: '1930 is the national financial cyber fraud helpline (operated under Ministry of Home Affairs with cybercrime.gov.in). Call immediately within the "golden hour" to freeze stolen funds!',
-            te: '1930 అనేది ఆర్థిక సైబర్ మోసాల అధికారిక హెల్ప్‌లైన్ నంబర్!',
+            en: 'The official National Cyber Crime Reporting Portal currently lists 1930 for immediate reporting of cyber financial fraud. Reporting promptly is important, but a recovery or freeze is not guaranteed.',
+            te: 'అధికారిక జాతీయ సైబర్ క్రైమ్ రిపోర్టింగ్ పోర్టల్ ప్రస్తుతం ఆర్థిక సైబర్ మోసాలను వెంటనే నివేదించడానికి 1930ను సూచిస్తుంది. త్వరగా నివేదించడం ముఖ్యం; కానీ డబ్బు తిరిగి రావడం లేదా నిలిపివేయబడటం హామీ కాదు.',
           },
           objectiveId: 'obj-scam-3',
+        },
+        {
+          id: 'q-sc-m-3',
+          question: {
+            en: 'A caller claims to be from your bank and asks you to share an OTP to stop a payment. What is the safest next step?',
+            te: 'ఒక కాలర్ బ్యాంకు నుంచి మాట్లాడుతున్నానని చెప్పి చెల్లింపును ఆపడానికి OTP చెప్పమంటున్నారు. సురక్షితమైన తదుపరి చర్య ఏమిటి?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'Do not share it; end the call and contact the bank using a trusted official channel', te: 'OTP చెప్పకండి; కాల్ ముగించి, నమ్మకమైన అధికారిక మార్గం ద్వారా బ్యాంకును సంప్రదించండి' },
+            { en: 'Share it if the caller knows your name', te: 'కాలర్‌కు మీ పేరు తెలిస్తే చెప్పండి' },
+            { en: 'Read it aloud but change the last digit', te: 'చివరి అంకె మార్చి మిగతాది చెప్పండి' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Never share OTPs or transaction credentials with an incoming caller. Verify the issue independently through a trusted app, card, statement, or official website.',
+            te: 'వచ్చిన కాలర్‌తో OTPలు లేదా లావాదేవీ వివరాలు పంచుకోకండి. నమ్మకమైన యాప్, కార్డు, స్టేట్‌మెంట్ లేదా అధికారిక వెబ్‌సైట్ ద్వారా స్వతంత్రంగా నిర్ధారించండి.',
+          },
+          objectiveId: 'obj-scam-1',
         },
       ],
     },

@@ -34,8 +34,8 @@ export const stockMarketEcosystemLesson: Lesson = {
     {
       id: 'obj-eco-3',
       description: {
-        en: 'Trace the lifecycle of a trade from order placement to T+1 settlement.',
-        te: 'ఆర్డర్ ఉంచడం నుండి T+1 సెటిల్‌మెంట్ వరకు ట్రేడ్ ప్రయాణాన్ని వివరించడం.',
+        en: 'Trace a simplified trade from order placement through matching, clearing, settlement, and record keeping.',
+        te: 'ఆర్డర్ నుండి సరిపోలిక, క్లియరింగ్, సెటిల్‌మెంట్, రికార్డు వరకు సరళీకృత ట్రేడ్ ప్రయాణాన్ని వివరించడం.',
       },
       evidenceType: 'explain',
     },
@@ -46,8 +46,8 @@ export const stockMarketEcosystemLesson: Lesson = {
       type: 'hook',
       title: { en: 'A Market on Your Smartphone', te: 'మీ చేతిలోని మార్కెట్' },
       content: {
-        en: 'Every weekday morning at 9:15 AM, millions of Indians tap their phone screens to buy or sell pieces of major corporations. But behind that smooth swipe lies an intricate, high-speed ecosystem of institutions built to ensure no one steals your money, trades settle reliably, and transactions are legally binding. Who are the guardians of this digital marketplace?',
-        te: 'ప్రతి సోమవారం నుండి శుక్రవారం ఉదయం 9:15 గంటలకు లక్షలాది మంది భారతీయులు తమ ఫోన్‌లలో షేర్లను కొనుగోలు చేస్తారు లేదా విక్రయిస్తారు. అయితే ఈ సులువైన యాప్ వెనుక మీ డబ్బు భద్రంగా ఉండేలా చూడటానికి అనేక ప్రభుత్వ మరియు స్వతంత్ర సంస్థలు పనిచేస్తాయి. అవి ఎలా పనిచేస్తాయి?',
+        en: 'Imagine a student enters a fictional order to buy one share. The app is only the visible starting point: other organisations handle routing, matching, record keeping, and the exchange of money and securities. What has to happen before the trade is complete?',
+        te: 'ఒక విద్యార్థి ఒక షేర్ కొనడానికి ఊహాత్మక ఆర్డర్ ఇస్తున్నట్లు ఊహించండి. యాప్ కేవలం కనిపించే ప్రారంభం మాత్రమే: ఆర్డర్ పంపడం, సరిపోల్చడం, రికార్డులు ఉంచడం, నగదు మరియు సెక్యూరిటీల మార్పిడి వంటి పనులను ఇతర సంస్థలు నిర్వహిస్తాయి. ట్రేడ్ పూర్తయ్యే ముందు ఏమి జరగాలి?',
       },
     },
     {
@@ -55,8 +55,8 @@ export const stockMarketEcosystemLesson: Lesson = {
       type: 'discovery',
       title: { en: 'Meet the Key Players', te: 'ప్రధాన భాగస్వాములు' },
       content: {
-        en: 'Think of the stock market as a super-secure international airport:\n\n1. **The Regulator (Air Traffic Control):** **SEBI** (Securities and Exchange Board of India) sets safety rules, inspects brokers, and protects passengers (investors).\n2. **The Terminal (The Runway):** **NSE & BSE** are the exchanges where flights (orders) take off and land.\n3. **The Ticket Booking Agents:** **Stock Brokers** (like Zerodha, Groww, Angel One, ICICI Direct) provide platforms for retail investors to book their tickets.\n4. **The Digital Vault:** **Depositories (NSDL & CDSL)** hold your electronic share certificates.\n5. **The Clearing Corporation:** Ensures that the seller actually delivers shares and the buyer actually delivers cash before the swap is completed.',
-        te: 'స్టాక్ మార్కెట్‌ను ఒక ఎయిర్‌పోర్ట్‌తో పోల్చవచ్చు:\n1. సెబీ (SEBI) - నిబంధనలను రూపొందించే ఎయిర్ ట్రాఫిక్ కంట్రోల్.\n2. ఎక్స్ఛేంజీలు (NSE & BSE) - ట్రేడ్‌లు జరిగే రన్‌వేలు.\n3. స్టాక్ బ్రోకర్లు - మీరు టిక్కెట్లు బుక్ చేసుకోవడానికి ఉపయోగించే యాప్‌లు.\n4. డిపాజిటరీలు (NSDL & CDSL) - షేర్లను భద్రపరిచే డిజిటల్ లాకర్లు.\n5. క్లియరింగ్ కార్పొరేషన్ - నగదు మరియు షేర్ల బదిలీని నిర్ధారించే వ్యవస్థ.',
+        en: 'Think of a market as a team with separate jobs:\n\n1. **Regulator:** SEBI is India’s securities-market regulator. Regulation and investor protections reduce some risks, but they cannot prevent every loss, error, or fraud.\n2. **Exchange:** NSE and BSE operate marketplaces with rules for submitting and matching orders.\n3. **Broker:** Provides a route and account interface for a customer’s orders.\n4. **Depository:** NSDL and CDSL maintain electronic records of securities held in demat accounts.\n5. **Clearing and settlement system:** Processes the obligations created by matched trades and the transfer of securities and funds.\n\nThe phone app is one part of the chain; it is not the exchange or the depository.',
+        te: 'మార్కెట్‌ను వేర్వేరు పనులు చేసే బృందంగా చూడండి:\n\n1. **నియంత్రణ సంస్థ:** SEBI భారతదేశ సెక్యూరిటీస్ మార్కెట్ నియంత్రణ సంస్థ. నియమాలు, పెట్టుబడిదారుల రక్షణలు కొన్ని రిస్కులను తగ్గిస్తాయి; కానీ ప్రతి నష్టం, పొరపాటు లేదా మోసాన్ని అడ్డుకోలేవు.\n2. **ఎక్స్చేంజ్:** NSE, BSE ఆర్డర్లు సమర్పించి సరిపోల్చే నియమాలతో మార్కెట్‌లను నిర్వహిస్తాయి.\n3. **బ్రోకర్:** కస్టమర్ ఆర్డర్లకు మార్గం, ఖాతా ఇంటర్‌ఫేస్ అందిస్తారు.\n4. **డిపాజిటరీ:** NSDL, CDSL డీమ్యాట్ ఖాతాల్లోని సెక్యూరిటీల ఎలక్ట్రానిక్ రికార్డులను నిర్వహిస్తాయి.\n5. **క్లియరింగ్, సెటిల్‌మెంట్ వ్యవస్థ:** సరిపోలిన ట్రేడ్ బాధ్యతలను, సెక్యూరిటీలు మరియు నిధుల బదిలీని ప్రాసెస్ చేస్తుంది.\n\nఫోన్ యాప్ ఈ గొలుసులో ఒక భాగం మాత్రమే; అది ఎక్స్చేంజ్ లేదా డిపాజిటరీ కాదు.',
       },
     },
     {
@@ -64,8 +64,8 @@ export const stockMarketEcosystemLesson: Lesson = {
       type: 'mechanism',
       title: { en: 'The Watchdog: SEBI', te: 'కాపలాదారు: సెబీ (SEBI)' },
       content: {
-        en: 'Established by an Act of Parliament in 1992, the **Securities and Exchange Board of India (SEBI)** has a sacred legal mandate: protect retail investors from fraud, manipulate-proof trading, and false corporate claims.\n\nKey investor protections enforced by SEBI:\n• Mandatory **KYC** before opening trading accounts.\n• Strict disclosure requirements: Public companies must publish quarterly audited earnings.\n• Action against illegal insider trading and pump-and-dump cartels.\n• **SCORES (SEBI Complaints Redress System):** An official online portal to resolve investor grievances against listed companies or brokers.\n• Investor Helpline: **1800 266 7575** (Toll-Free).',
-        te: '1992 లో స్థాపించబడిన సెబీ (SEBI) ముఖ్య ఉద్దేశ్యం సాధారణ పెట్టుబడిదారులను మోసాల నుండి కాపాడటం.\n• తప్పనిసరి KYC ప్రక్రియ.\n• కంపెనీలు ప్రతి 3 నెలలకు ఒకసారి తమ లాభనష్టాలను ప్రకటించాలి.\n• SCORES పోర్టల్ ద్వారా ఫిర్యాదులను పరిష్కరించడం.\n• సెబీ టోల్-ఫ్రీ హెల్ప్‌లైన్: 1800 266 7575.',
+        en: 'The **Securities and Exchange Board of India (SEBI)** is the statutory regulator for India’s securities markets. It sets and enforces rules for market participants and has investor-protection and market-integrity responsibilities.\n\nRules, complaint routes, account requirements, and reporting schedules can change and may depend on the product or participant. Use current official SEBI and exchange information when you need to take action. Regulation supports fairer markets; it does not guarantee an investment, stop every scam, or remove market risk.',
+        te: '**సెక్యూరిటీస్ అండ్ ఎక్స్చేంజ్ బోర్డ్ ఆఫ్ ఇండియా (SEBI)** భారత సెక్యూరిటీస్ మార్కెట్ల చట్టబద్ధ నియంత్రణ సంస్థ. మార్కెట్ భాగస్వాముల కోసం నియమాలు రూపొందించి అమలు చేస్తుంది; పెట్టుబడిదారుల రక్షణ, మార్కెట్ సమగ్రత కూడా దాని బాధ్యతల్లో భాగం.\n\nనియమాలు, ఫిర్యాదు మార్గాలు, ఖాతా అవసరాలు, నివేదికల సమయాలు మారవచ్చు; ఉత్పత్తి లేదా భాగస్వామిని బట్టి కూడా వేరుగా ఉండవచ్చు. చర్య తీసుకోవాల్సినప్పుడు ప్రస్తుత అధికారిక SEBI, ఎక్స్చేంజ్ సమాచారాన్ని చూడండి. నియంత్రణ న్యాయమైన మార్కెట్లకు తోడ్పడుతుంది; పెట్టుబడికి హామీ ఇవ్వదు, ప్రతి మోసాన్ని ఆపదు, మార్కెట్ రిస్క్‌ను తొలగించదు.',
       },
     },
     {
@@ -73,17 +73,17 @@ export const stockMarketEcosystemLesson: Lesson = {
       type: 'formal_concept',
       title: { en: 'The Exchanges: NSE vs BSE', te: 'ఎక్స్ఛేంజీలు: NSE vs BSE' },
       content: {
-        en: 'India has two dominant nationwide electronic stock exchanges:\n\n• **BSE (Bombay Stock Exchange):** Founded in 1875 by Premchand Roychand on Dalal Street, Mumbai. It is the **oldest stock exchange in Asia**. Its benchmark 30-stock index is the **Sensex**.\n\n• **NSE (National Stock Exchange):** Established in 1992 and began operations in 1994 to bring electronic, transparent trading across the nation. Today, NSE is India’s largest exchange by trading volume and the world’s largest derivatives exchange by contract volume. Its benchmark 50-stock index is the **Nifty 50**.\n\nMost large Indian blue-chip companies are listed on **both** exchanges, allowing investors to choose where to buy or sell.',
-        te: 'భారతదేశంలో రెండు ప్రముఖ స్టాక్ ఎక్స్ఛేంజీలు ఉన్నాయి:\n• BSE: 1875 లో ముంబైలో ప్రారంభమైన ఆసియాలోనే పురాతన ఎక్స్ఛేంజ్. దీని ప్రధాన సూచిక సెన్సెక్స్ (Sensex).\n• NSE: 1992 లో స్థాపించబడి 1994 లో ట్రేడింగ్ ప్రారంభించిన ఆధునిక ఎలక్ట్రానిక్ ఎక్స్ఛేంజ్. లావాదేవీల పరిమాణంలో అతిపెద్దది. దీని ప్రధాన సూచిక నిఫ్టీ 50 (Nifty 50).',
+        en: 'The **BSE (BSE Limited)** and **NSE (National Stock Exchange of India)** are two Indian stock exchanges. They provide rule-based marketplaces where eligible securities can be listed and orders can be matched. A company may be listed on one exchange or more than one.\n\nThe **Sensex** and **Nifty 50** are indices associated with BSE and NSE respectively. An index is a measured group; it is not the whole market, and its movement does not mean every included share moved the same way.',
+        te: '**BSE (BSE Limited)** మరియు **NSE (నేషనల్ స్టాక్ ఎక్స్చేంజ్ ఆఫ్ ఇండియా)** భారతీయ స్టాక్ ఎక్స్చేంజీలు. అర్హత ఉన్న సెక్యూరిటీలను లిస్ట్ చేయడానికి, ఆర్డర్లను సరిపోల్చడానికి నియమాల ఆధారిత మార్కెట్‌లను అందిస్తాయి. ఒక కంపెనీ ఒక ఎక్స్చేంజ్‌లో లేదా ఒకటి కంటే ఎక్కువ ఎక్స్చేంజ్‌లలో లిస్ట్ కావచ్చు.\n\n**సెన్సెక్స్**, **నిఫ్టీ 50** వరుసగా BSE, NSEకి సంబంధించిన సూచీలు. సూచీ ఒక కొలిచిన సమూహం మాత్రమే; మొత్తం మార్కెట్ కాదు. దాని కదలిక ప్రతి షేర్ ఒకే విధంగా కదిలిందని అర్థం కాదు.',
       },
     },
     {
       id: 'stg-eco-lifecycle',
       type: 'worked_example',
-      title: { en: 'The 24-Hour Journey of a Share (T+1 Settlement)', te: 'షేర్ ప్రయాణం (T+1 సెటిల్‌మెంట్)' },
+      title: { en: 'A Trade from Order to Settlement', te: 'ఆర్డర్ నుండి సెటిల్‌మెంట్ వరకు' },
       content: {
-        en: 'Suppose Meera in Hyderabad buys 1 share of Infosys on Monday morning:\n\n1. **9:30 AM (Trade Execution):** Meera clicks "Buy" on her broker app. Her broker routes the order to NSE. The exchange matches Meera\'s buy bid with a seller named Rahul in Pune.\n2. **Immediate Lock:** Meera\'s account funds are blocked; Rahul’s share in his demat is blocked.\n3. **Clearing & Settlement (NSE Clearing):** The clearing corporation guarantees both legs. Even if Rahul’s broker defaults, the clearing house guarantees Meera receives her share.\n4. **Tuesday Afternoon (T+1):** Funds transfer from Meera\'s bank to Rahul\'s bank. The share leaves Rahul\'s depository account and is credited directly to Meera’s Demat account at CDSL/NSDL.\n\nIndia was among the first major financial markets worldwide to transition to the lightning-fast **T+1 (Trade + 1 Day)** cycle!',
-        te: 'మీరా సోమవారం ఉదయం ఒక షేర్ కొనుగోలు చేస్తే ఏం జరుగుతుంది:\n1. ఉదయం 9:30: ఆర్డర్ NSE కి వెళ్లి విక్రేతతో సరిపోలుతుంది.\n2. క్లియరింగ్ కార్పొరేషన్ లావాదేవీని గ్యారెంటీ చేస్తుంది.\n3. మంగళవారం మధ్యాహ్నం (T+1): నిధులు విక్రేతకు బదిలీ అవుతాయి మరియు షేర్ మీరా డీమ్యాట్ ఖాతాకు క్రెడిట్ అవుతుంది. భారతదేశంలో T+1 సెటిల్‌మెంట్ అమలవుతోంది.',
+        en: 'Follow one fictional purchase:\n\n1. **Order:** Meera enters a buy order through her broker.\n2. **Routing and matching:** The broker routes it to an exchange. If it matches a seller’s order under the exchange rules, a trade occurs.\n3. **Clearing:** The clearing system calculates what each side owes.\n4. **Settlement and records:** Securities and funds are transferred and account records updated on the applicable schedule.\n\nSettlement timelines and procedures vary by market, product, and current rules. The diagram is a simplified learning model, not an instruction for a real trade.',
+        te: 'ఒక ఊహాత్మక కొనుగోలును అనుసరించండి:\n\n1. **ఆర్డర్:** మీరా బ్రోకర్ ద్వారా కొనుగోలు ఆర్డర్ ఇస్తుంది.\n2. **మార్గం, సరిపోలిక:** బ్రోకర్ దాన్ని ఎక్స్చేంజ్‌కు పంపిస్తారు. ఎక్స్చేంజ్ నియమాల ప్రకారం అమ్మకందారు ఆర్డర్‌తో సరిపోతే ట్రేడ్ జరుగుతుంది.\n3. **క్లియరింగ్:** ప్రతి పక్షం ఏమి చెల్లించాలి లేదా బదిలీ చేయాలో క్లియరింగ్ వ్యవస్థ లెక్కిస్తుంది.\n4. **సెటిల్‌మెంట్, రికార్డులు:** వర్తించే షెడ్యూల్ ప్రకారం సెక్యూరిటీలు, నిధులు బదిలీ చేసి ఖాతా రికార్డులను నవీకరిస్తారు.\n\nసెటిల్‌మెంట్ గడువులు, విధానాలు మార్కెట్, ఉత్పత్తి, ప్రస్తుత నియమాలపై ఆధారపడి మారతాయి. ఈ చిత్రం సరళీకృత అభ్యాస నమూనా మాత్రమే; నిజమైన ట్రేడ్‌కు సూచన కాదు.',
       },
     },
     {
@@ -91,8 +91,8 @@ export const stockMarketEcosystemLesson: Lesson = {
       type: 'misconception',
       title: { en: 'Busting Market Myths', te: 'అపోహలు - నిజాలు' },
       content: {
-        en: '❌ **Misconception:** "If my broker company goes bankrupt or shuts down, I will lose all my shares!"\n\n✅ **Truth:** Your shares are **never** held in your broker\'s bank vault. They are safely deposited in your personal name at the central depository (**NSDL or CDSL**). Even if your broker ceases operations tomorrow, your shares remain 100% safe in your Demat account, and SEBI allows you to simply transfer your account to any other registered broker.',
-        te: '❌ అపోహ: "నా బ్రోకర్ కంపెనీ మూతపడితే నా షేర్లు పోతాయి!"\n✅ వాస్తవం: షేర్లు బ్రోకర్ వద్ద ఉండవు. అవి NSDL లేదా CDSL డిపాజిటరీ వద్ద మీ వ్యక్తిగత డీమ్యాట్ ఖాతాలో సురక్షితంగా ఉంటాయి. బ్రోకర్ మూతపడినా మీ షేర్లు క్షేమంగా ఉంటాయి.',
+        en: '❌ **Misconception:** “My broker app is the same thing as my shareholding record.”\n\n✅ **Better way to think:** A broker provides an interface and services; electronic securities are recorded through the depository and demat-account system. A broker failure can still disrupt access or require administrative steps. Do not assume any financial asset is “100% safe”; for a real account problem, check current official instructions from the broker, depository, exchange, or regulator.',
+        te: '❌ **అపోహ:** “నా బ్రోకర్ యాప్‌నే నా షేర్ల రికార్డు.”\n\n✅ **సరైన ఆలోచన:** బ్రోకర్ ఇంటర్‌ఫేస్, సేవలను అందిస్తారు; ఎలక్ట్రానిక్ సెక్యూరిటీల రికార్డులు డిపాజిటరీ, డీమ్యాట్ ఖాతా వ్యవస్థ ద్వారా నిర్వహించబడతాయి. బ్రోకర్ సమస్య వల్ల ఖాతా యాక్సెస్ ఆగిపోవచ్చు లేదా పరిపాలనా చర్యలు అవసరమవచ్చు. ఏ ఆర్థిక ఆస్తినీ “100% సురక్షితం” అని అనుకోకండి; నిజమైన ఖాతా సమస్య వస్తే బ్రోకర్, డిపాజిటరీ, ఎక్స్చేంజ్ లేదా నియంత్రణ సంస్థ తాజా అధికారిక సూచనలు చూడండి.',
       },
     },
     {
@@ -126,19 +126,19 @@ export const stockMarketEcosystemLesson: Lesson = {
         {
           id: 'q-eco-2',
           question: {
-            en: 'What does T+1 settlement mean when you buy shares on Wednesday in India?',
-            te: 'భారతదేశంలో బుధవారం షేర్లు కొనుగోలు చేస్తే T+1 సెటిల్‌మెంట్ అంటే ఏమిటి?',
+            en: 'What is the purpose of the clearing and settlement part of a trade?',
+            te: 'ట్రేడ్‌లో క్లియరింగ్, సెటిల్‌మెంట్ దశల ప్రయోజనం ఏమిటి?',
           },
           type: 'mcq',
           options: [
-            { en: 'Shares arrive in your Demat account on Thursday (next business day)', te: 'షేర్లు గురువారం (తదుపరి పనిదినం) మీ డీమ్యాట్ ఖాతాలోకి వస్తాయి' },
-            { en: 'You must pay 1 extra rupee tax', te: 'మీరు 1 రూపాయి అదనపు పన్ను చెల్లించాలి' },
-            { en: 'The trade takes 1 month to complete', te: 'ట్రేడ్ పూర్తి కావడానికి 1 నెల పడుతుంది' },
+            { en: 'Calculate obligations and process the transfer of funds and securities', te: 'బాధ్యతలను లెక్కించి నిధులు, సెక్యూరిటీల బదిలీని ప్రాసెస్ చేయడం' },
+            { en: 'Choose whether the company made a profit', te: 'కంపెనీ లాభం చేసిందో లేదో నిర్ణయించడం' },
+            { en: 'Guarantee that the share price will rise', te: 'షేర్ ధర పెరుగుతుందని హామీ ఇవ్వడం' },
           ],
           correctIndex: 0,
           explanation: {
-            en: 'T+1 means Trade date plus 1 working day. A Wednesday trade settles on Thursday.',
-            te: 'T+1 అంటే ట్రేడ్ జరిగిన మరుసటి పనిదినం నాటికి సెటిల్‌మెంట్ పూర్తవుతుంది.',
+            en: 'Clearing calculates what each side owes; settlement processes the exchange of funds and securities. Applicable timelines depend on current market rules.',
+            te: 'క్లియరింగ్ ప్రతి పక్షం బాధ్యతలను లెక్కిస్తుంది; సెటిల్‌మెంట్ నిధులు, సెక్యూరిటీల మార్పిడిని ప్రాసెస్ చేస్తుంది. వర్తించే గడువులు ప్రస్తుత మార్కెట్ నియమాలపై ఆధారపడతాయి.',
           },
           objectiveId: 'obj-eco-3',
         },

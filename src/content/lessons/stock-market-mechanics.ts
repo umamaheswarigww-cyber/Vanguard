@@ -64,8 +64,8 @@ export const stockMarketMechanicsLesson: Lesson = {
       type: 'misconception',
       title: { en: 'CRITICAL CORRECTION: "More Buyers Than Sellers?"', te: 'కీలకమైన సవరణ: "అమ్మేవారికంటే కొనేవారు ఎక్కువా?"' },
       content: {
-        en: '❌ **The Universal Misconception:** Many beginner videos claim: *"When there are more buyers than sellers, the price goes up!"*\n\n✅ **The Reality:** In EVERY executed trade in the real world, there is **EXACTLY ONE BUYER AND EXACTLY ONE SELLER**! The number of shares bought ALWAYS equals the number of shares sold.\n\n**Why does price really move?**\nPrice moves because of **Urgency, Available Liquidity, and Aggressiveness**:\n- If eager buyers are willing to pay whatever sellers ask (hitting higher asks in the order book), the price ticks UP.\n- If nervous sellers are eager to dump shares and accept whatever buyers offer (hitting lower bids in the order book), the price ticks DOWN.\n\nIt is about the *prices at which participants are willing to transact*, not a literal head-count of buyers vs. sellers!',
-        te: '❌ **సాధారణ అపోహ:** "అమ్మేవారికంటే కొనేవారు ఎక్కువ ఉంటే ధర పెరుగుతుంది!"\n\n✅ **నిజం:** ప్రతి పూర్తయిన ట్రేడ్‌లోనూ **ఖచ్చితంగా ఒక కొనుగోలుదారు మరియు ఒక అమ్మకందారు** ఉంటారు! కొన్న షేర్ల సంఖ్య అమ్మిన షేర్ల సంఖ్యకు సమానం.\n\nధర పెరగడానికి కారణం కొనుగోలుదారులు ఎక్కువ ధర చెల్లించడానికి కూడా సిద్ధపడటం, అమ్మేవారు అడిగిన ధరకు కొనడం. ఇది ఆత్రుత మరియు లిక్విడిటీకి సంబంధించినది, మనుషుల సంఖ్యకు కాదు!',
+        en: '❌ **Oversimplification:** “There are more buyers than sellers, so the price must rise.”\n\n✅ **What is missing:** Every matched quantity has a buyer and a seller, but many orders may be waiting at different prices and quantities. The quoted price can change as orders arrive, cancel, or trade.\n\nIf a buyer accepts the lowest available asking price, that order may trade there; if a seller accepts the highest available bid, it may trade there. Liquidity, order size, timing, and market rules matter. A simple count of people who want to buy or sell cannot by itself tell you the next price.',
+        te: '❌ **అతి సరళీకరణ:** “అమ్మేవారికంటే కొనేవారు ఎక్కువ, కాబట్టి ధర తప్పకుండా పెరుగుతుంది.”\n\n✅ **ఇందులో మిగిలినది:** సరిపోలిన ప్రతి పరిమాణానికి కొనుగోలుదారు, అమ్మకందారు ఉంటారు; కానీ వేర్వేరు ధరలు, పరిమాణాల వద్ద అనేక ఆర్డర్లు వేచి ఉండవచ్చు. ఆర్డర్లు రావడం, రద్దవడం లేదా ట్రేడ్ కావడంతో సూచించిన ధర మారవచ్చు.\n\nకొనుగోలుదారు అందుబాటులో ఉన్న అతి తక్కువ అమ్మకపు ధరను అంగీకరిస్తే అక్కడ ట్రేడ్ కావచ్చు; అమ్మకందారు అందుబాటులో ఉన్న అత్యధిక బిడ్‌ను అంగీకరిస్తే అక్కడ కావచ్చు. లిక్విడిటీ, ఆర్డర్ పరిమాణం, సమయం, మార్కెట్ నియమాలు ముఖ్యం. కొనాలనుకునే లేదా అమ్మాలనుకునే వారి సంఖ్య ఒక్కటే తదుపరి ధరను చెప్పదు.',
       },
     },
     {
@@ -73,8 +73,8 @@ export const stockMarketMechanicsLesson: Lesson = {
       type: 'mechanism',
       title: { en: 'Market Order vs. Limit Order', te: 'మార్కెట్ ఆర్డర్ vs లిమిట్ ఆర్డర్' },
       content: {
-        en: 'When placing an order with a SEBI-registered broker:\n\n1. **Limit Order:** You state your exact target price. *"Buy 10 shares of Company X, but ONLY if price is ₹200 or lower."* You control the price, but your order might not execute if the market stays above ₹200.\n2. **Market Order:** You demand immediate execution at whatever price is available in the order book right now. You guarantee execution, but risk paying a slightly higher price (slippage) if liquidity is thin.',
-        te: 'SEBI రిజిస్టర్డ్ బ్రోకర్ వద్ద ఆర్డర్ ఇచ్చే విధానాలు:\n\n1. **లిమిట్ ఆర్డర్ (Limit Order):** మీరు కోరుకున్న ధరకే ట్రేడ్ చేయాలి (ఉదా: ₹200 లేదా తక్కువ). ధర నియంత్రణ మీ చేతుల్లో ఉంటుంది.\n2. **మార్కెట్ ఆర్డర్ (Market Order):** వెంటనే ప్రస్తుత మార్కెట్ ధరకే ఆర్డర్ ఎగ్జిక్యూట్ అవ్వాలి. తక్షణమే జరుగుతుంది కానీ ధరలో కొద్దిగా హెచ్చుతగ్గులు ఉండవచ్చు.',
+        en: 'In this simplified example, a buyer wants 10 shares at no more than ₹200:\n\n1. **Limit order:** Sets the maximum price the buyer will accept (or minimum price for a seller). It can remain unfilled if no acceptable order matches it.\n2. **Market order:** Requests a trade against available orders, generally prioritizing execution over a chosen price. It can fill at more than one price, be partially filled, or remain unfilled if there is not enough available liquidity.\n\nActual order instructions and outcomes depend on the exchange and broker rules. Neither order type removes price or execution risk.',
+        te: 'ఈ సరళ ఉదాహరణలో కొనుగోలుదారు 10 షేర్లకు గరిష్ఠంగా ₹200 చెల్లించాలనుకుంటున్నారు:\n\n1. **లిమిట్ ఆర్డర్:** కొనుగోలుదారు అంగీకరించే గరిష్ఠ ధరను (లేదా విక్రేత అంగీకరించే కనిష్ఠ ధరను) నిర్ణయిస్తుంది. సరిపోయే ఆర్డర్ లేకపోతే ఇది అమలు కాకుండా ఉండవచ్చు.\n2. **మార్కెట్ ఆర్డర్:** అందుబాటులో ఉన్న ఆర్డర్లతో ట్రేడ్ చేయమని కోరుతుంది; సాధారణంగా ఎంచుకున్న ధర కంటే అమలుకు ప్రాధాన్యత ఇస్తుంది. వేర్వేరు ధరల వద్ద కొంత లేదా మొత్తం అమలవచ్చు; లిక్విడిటీ లేకపోతే పూర్తిగా అమలుకాకపోవచ్చు.\n\nఅసలు ఆర్డర్ సూచనలు, ఫలితాలు ఎక్స్చేంజ్ మరియు బ్రోకర్ నియమాలపై ఆధారపడతాయి. ఏ ఆర్డర్ రకమూ ధర లేదా అమలు రిస్క్‌ను తొలగించదు.',
       },
     },
     {
@@ -104,6 +104,44 @@ export const stockMarketMechanicsLesson: Lesson = {
             te: 'ప్రతి లావాదేవీ ఒక జంట: 50 షేర్లు కొన్నారంటే మరొకరు 50 షేర్లు అమ్మినట్లే!',
           },
           objectiveId: 'obj-mkt-2',
+        },
+        {
+          id: 'q-mkt-m-2',
+          question: {
+            en: 'The highest buyer bid is ₹99 and the lowest seller ask is ₹100. What does this simplified order-book snapshot indicate?',
+            te: 'అత్యధిక కొనుగోలు బిడ్ ₹99, అత్యల్ప అమ్మకపు ధర ₹100. ఈ సరళ ఆర్డర్ బుక్ దృశ్యం ఏమి సూచిస్తుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'There is a ₹1 spread and those two prices have not matched yet', te: '₹1 స్ప్రెడ్ ఉంది; ఆ రెండు ధరలు ఇంకా సరిపోలలేదు' },
+            { en: 'A trade at ₹99 is guaranteed immediately', te: '₹99 వద్ద వెంటనే ట్రేడ్ ఖచ్చితంగా జరుగుతుంది' },
+            { en: 'The exchange must raise the price to ₹100', te: 'ఎక్స్చేంజ్ తప్పనిసరిగా ధరను ₹100కి పెంచుతుంది' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'The spread is the lowest ask minus the highest bid. If prices do not cross, these orders may remain pending; other orders or market rules can affect what happens next.',
+            te: 'స్ప్రెడ్ = అత్యల్ప అమ్మకపు ధర − అత్యధిక బిడ్. ధరలు కలవకపోతే ఆర్డర్లు వేచి ఉండవచ్చు; ఇతర ఆర్డర్లు, మార్కెట్ నియమాలు తదుపరి ఫలితాన్ని మార్చవచ్చు.',
+          },
+          objectiveId: 'obj-mkt-1',
+        },
+        {
+          id: 'q-mkt-m-3',
+          question: {
+            en: 'Which statement best distinguishes a limit order from a market order?',
+            te: 'లిమిట్ ఆర్డర్, మార్కెట్ ఆర్డర్ మధ్య తేడాను ఏ వాక్యం సరిగ్గా వివరిస్తుంది?',
+          },
+          type: 'mcq',
+          options: [
+            { en: 'A limit order sets a price boundary and may not execute; a market order seeks available execution but price can vary', te: 'లిమిట్ ఆర్డర్ ధర పరిమితి పెడుతుంది, అమలుకాకపోవచ్చు; మార్కెట్ ఆర్డర్ అందుబాటులో అమలును కోరుతుంది, కానీ ధర మారవచ్చు' },
+            { en: 'Both guarantee an immediate trade at the displayed price', te: 'రెండూ చూపిన ధర వద్ద తక్షణ ట్రేడ్‌కు హామీ ఇస్తాయి' },
+            { en: 'A market order can only be used when there are no sellers', te: 'అమ్మేవారు లేనప్పుడే మార్కెట్ ఆర్డర్ ఉపయోగించవచ్చు' },
+          ],
+          correctIndex: 0,
+          explanation: {
+            en: 'Limit orders control the acceptable price but can remain unfilled. Market orders prioritize execution against available liquidity, while the execution price and completeness are not guaranteed.',
+            te: 'లిమిట్ ఆర్డర్ అంగీకరించే ధరను నియంత్రిస్తుంది, కానీ అమలుకాకపోవచ్చు. మార్కెట్ ఆర్డర్ అందుబాటులో ఉన్న లిక్విడిటీతో అమలుకు ప్రాధాన్యత ఇస్తుంది; ధర, పూర్తిస్థాయి అమలుకు హామీ లేదు.',
+          },
+          objectiveId: 'obj-mkt-3',
         },
       ],
     },
