@@ -3,10 +3,20 @@ import type { LearnerProgress, LessonProgress, ObjectiveEvidence } from '@/types
 
 type Language = 'en' | 'te';
 
+export interface LearnerGamification {
+  totalXP: number;
+  level: number;
+  levelTitle: { en: string; te: string };
+  nextLevelXP: number;
+  progressPercent: number;
+  badgesUnlocked: number;
+}
+
 interface AppContextValue {
   language: Language;
   setLanguage: (lang: Language) => void;
   progress: LearnerProgress;
+  gamification: LearnerGamification;
   updateLessonProgress: (update: Partial<LessonProgress> & { lessonId: string }) => void;
   addObjectiveEvidence: (evidence: ObjectiveEvidence) => void;
   markLessonStarted: (lessonId: string) => void;
@@ -14,6 +24,73 @@ interface AppContextValue {
   isLessonCompleted: (lessonId: string) => boolean;
   isLessonStarted: (lessonId: string) => boolean;
   getObjectivesEvidenced: (lessonId: string) => ObjectiveEvidence[];
+}
+
+export function calculateGamification(progress: LearnerProgress): LearnerGamification {
+  let xp = 0;
+  let badges = 0;
+
+  // 1. Lessons completed: 100 XP each
+  // 2. Objectives evidenced: 25 XP each
+  // 3. Visited stages: 10 XP each
+  Object.values(progress.lessonsProgress).forEach(lp => {
+    if (lp.completedAt) {
+      xp += 100;
+      badges += 1;
+    }
+    xp += (lp.objectivesEvidenced?.length || 0) * 25;
+    xp += (lp.stagesVisited?.length || 0) * 10;
+  });
+
+  // Check spot the scam badge in localStorage
+  try {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('scam-spotter-badge') === 'unlocked') {
+      xp += 150;
+      badges += 1;
+    }
+  } catch {
+    // Ignore storage errors
+  }
+
+  // Level thresholds
+  let level = 1;
+  let levelTitle = { en: 'Novice Saver', te: 'ఆరంభ పొదుపరి' };
+  let nextLevelXP = 300;
+  let prevLevelXP = 0;
+
+  if (xp >= 2500) {
+    level = 5;
+    levelTitle = { en: 'Financial Legend', te: 'ఆర్థిక దిగ్గజం' };
+    nextLevelXP = 5000;
+    prevLevelXP = 2500;
+  } else if (xp >= 1500) {
+    level = 4;
+    levelTitle = { en: 'Wealth Architect', te: 'సంపద రూపశిల్పి' };
+    nextLevelXP = 2500;
+    prevLevelXP = 1500;
+  } else if (xp >= 700) {
+    level = 3;
+    levelTitle = { en: 'Smart Investor', te: 'తెలివైన పెట్టుబడిదారుడు' };
+    nextLevelXP = 1500;
+    prevLevelXP = 700;
+  } else if (xp >= 300) {
+    level = 2;
+    levelTitle = { en: 'Budget Master', te: 'బడ్జెట్ మాస్టర్' };
+    nextLevelXP = 700;
+    prevLevelXP = 300;
+  }
+
+  const range = nextLevelXP - prevLevelXP;
+  const progressPercent = Math.min(100, Math.round(((xp - prevLevelXP) / range) * 100));
+
+  return {
+    totalXP: xp,
+    level,
+    levelTitle,
+    nextLevelXP,
+    progressPercent: Math.max(5, progressPercent),
+    badgesUnlocked: badges,
+  };
 }
 
 const defaultProgress: LearnerProgress = {
@@ -155,11 +232,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     return progress.lessonsProgress[lessonId]?.objectivesEvidenced || [];
   }, [progress]);
 
+  const gamification = React.useMemo(() => calculateGamification(progress), [progress]);
+
   return (
     <AppContext.Provider value={{
       language,
       setLanguage,
       progress,
+      gamification,
       updateLessonProgress,
       addObjectiveEvidence,
       markLessonStarted,

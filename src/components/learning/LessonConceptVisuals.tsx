@@ -69,6 +69,64 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       return <div className="flex items-end justify-center gap-2 border-b border-l border-navy-200 px-3 pb-1 pt-4">{[1, 2, 3, 4, 5, 6].map((month, index) => <div className="flex flex-col items-center gap-1" key={month}><div className="lesson-bar-grow w-7 rounded-t-md bg-teal-400" style={{ height: `${14 + index * 5}px` }} /><span className="text-[9px] text-navy-400">{t({ en: `M${month}`, te: `${month}వ నెల` })}</span></div>)}<span className="ml-2 self-center text-xs font-bold text-navy-600">₹2,000 × 6 = ₹12,000</span></div>;
     case 'scam-detective':
       return <div className="mx-auto max-w-sm rounded-2xl border border-coral-200 bg-white p-3 shadow-sm"><div className="flex items-center gap-2 text-[10px] font-bold text-navy-500"><span className="flex h-6 w-6 items-center justify-center rounded-full bg-coral-100">!</span>{t({ en: 'Unverified message', te: 'ధృవీకరించని సందేశం' })}</div><p className="mt-2 text-xs font-semibold text-navy-700">{t({ en: '“Guaranteed 4% every week! Pay today. Send your OTP to activate.”', te: '“ప్రతి వారం 4% హామీ! ఈరోజే చెల్లించండి. ప్రారంభించడానికి OTP పంపండి.”' })}</p><div className="mt-2 flex flex-wrap gap-1"><span className="rounded-full bg-coral-50 px-2 py-1 text-[9px] text-coral-700">{t({ en: 'guaranteed return', te: 'హామీ రాబడి' })}</span><span className="rounded-full bg-coral-50 px-2 py-1 text-[9px] text-coral-700">{t({ en: 'urgency', te: 'తొందరపాటు' })}</span><span className="rounded-full bg-coral-50 px-2 py-1 text-[9px] text-coral-700">OTP</span></div></div>;
+    case 'money-foundations':
+      return <div className="space-y-2">
+        <div className="flex items-center justify-between text-xs font-semibold"><span>{t({ en: 'Income Pool', te: 'ఆదాయం' })}</span><span className="text-teal-700">₹5,000</span></div>
+        <div className="flex h-7 overflow-hidden rounded-xl border border-navy-100">
+          <div className="w-[52%] bg-teal-400 flex items-center justify-center text-[10px] font-bold text-white" title="Needs ₹2,600">52% {t({ en: 'Needs', te: 'అవసరాలు' })}</div>
+          <div className="w-[36%] bg-coral-400 flex items-center justify-center text-[10px] font-bold text-white" title="Wants ₹1,800">36% {t({ en: 'Wants', te: 'కోరికలు' })}</div>
+          <div className="w-[12%] bg-emerald-400 flex items-center justify-center text-[10px] font-bold text-white" title="Surplus ₹600">12% {t({ en: 'Save', te: 'పొదుపు' })}</div>
+        </div>
+        <p className="text-center text-[10px] text-navy-400">{t({ en: 'Income (₹5,000) − Needs (₹2,600) − Wants (₹1,800) = Surplus ₹600', te: 'ఆదాయం (₹5,000) − అవసరాలు (₹2,600) − కోరికలు (₹1,800) = మిగులు ₹600' })}</p>
+      </div>;
+    case 'savings-goals':
+      return <div className="grid grid-cols-3 gap-2 text-center text-[10px]">
+        <div className="rounded-xl border border-teal-200 bg-teal-50 p-2.5"><span className="text-lg block">⏱️</span><b className="block text-teal-800">{t({ en: '< 1 Year', te: '< 1 సంవత్సరం' })}</b><span className="text-[9px] text-navy-500">{t({ en: 'Exam fee, books', te: 'పరీక్ష ఫీజు, పుస్తకాలు' })}</span></div>
+        <div className="rounded-xl border border-sky-200 bg-sky-50 p-2.5"><span className="text-lg block">💻</span><b className="block text-sky-800">{t({ en: '1–3 Years', te: '1–3 సంవత్సరాలు' })}</b><span className="text-[9px] text-navy-500">{t({ en: 'Laptop ₹36,000', te: 'ల్యాప్‌టాప్ ₹36,000' })}</span></div>
+        <div className="rounded-xl border border-purple-200 bg-purple-50 p-2.5"><span className="text-lg block">🎓</span><b className="block text-purple-800">{t({ en: '3+ Years', te: '3+ సంవత్సరాలు' })}</b><span className="text-[9px] text-navy-500">{t({ en: 'Higher education', te: 'ఉన్నత చదువులు' })}</span></div>
+      </div>;
+    case 'saving-basics':
+      return <div className="rounded-2xl bg-white border border-navy-100 p-3 space-y-2">
+        <div className="flex justify-between items-center text-xs">
+          <span className="font-bold text-navy-700">{t({ en: 'Emergency Shield Cushion', te: 'అత్యవసర నిధి రక్షణ' })}</span>
+          <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full text-[10px]">3–6 Months Runway</span>
+        </div>
+        <div className="grid grid-cols-6 gap-1">
+          {[1, 2, 3, 4, 5, 6].map(m => (
+            <div key={m} className={`h-6 rounded-md flex items-center justify-center text-[9px] font-bold ${m <= 3 ? 'bg-teal-400 text-white' : 'bg-teal-100 text-teal-800'}`}>
+              M{m}
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-[10px] text-navy-400">{t({ en: 'Accessible instantly 24/7 without market capital loss', te: 'ఎటువంటి నష్టం లేకుండా 24/7 వెంటనే లభించే రక్షణ నిధి' })}</p>
+      </div>;
+    case 'saving-vs-investing':
+      return <div className="rounded-2xl bg-navy-900 text-white p-3 space-y-2 border border-navy-700">
+        <div className="flex justify-between items-center text-xs">
+          <span className="text-teal-300 font-bold">{t({ en: 'The Inflation Hurdle', te: 'ద్రవ్యోల్బణం సవాలు' })}</span>
+          <span className="text-coral-300 text-[10px]">10-Year Horizon</span>
+        </div>
+        <div className="space-y-1.5 text-[10px]">
+          <div className="flex items-center justify-between"><span className="text-navy-300">Cash in Locker:</span><span className="text-coral-400 font-bold">0% return (−6% real loss)</span></div>
+          <div className="flex items-center justify-between"><span className="text-navy-300">Bank Fixed Deposit:</span><span className="text-sky-300 font-bold">6.5% return (preserves capital)</span></div>
+          <div className="flex items-center justify-between"><span className="text-navy-300">Equity Index Fund:</span><span className="text-teal-300 font-bold">12% historical CAGR (beats inflation)</span></div>
+        </div>
+      </div>;
+    case 'digital-safety':
+      return <div className="grid grid-cols-2 gap-2 text-center text-xs">
+        <div className="rounded-xl border border-coral-300 bg-coral-50 p-2.5">
+          <span className="text-lg block mb-0.5">📤</span>
+          <b className="text-coral-800 block text-[11px]">{t({ en: 'SENDING Money', te: 'డబ్బు పంపుతున్నప్పుడు' })}</b>
+          <span className="text-[10px] text-coral-700 font-bold">PIN REQUIRED 🔒</span>
+        </div>
+        <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-2.5">
+          <span className="text-lg block mb-0.5">📥</span>
+          <b className="text-emerald-800 block text-[11px]">{t({ en: 'RECEIVING Money', te: 'డబ్బు స్వీకరిస్తున్నప్పుడు' })}</b>
+          <span className="text-[10px] text-emerald-700 font-bold">NO PIN EVER ✅</span>
+        </div>
+      </div>;
+    case 'incident-steps':
+      return <><Flow steps={[{ en: '1. Block Scammer', te: '1. బ్లాక్ చేయండి' }, { en: '2. Freeze Cards', te: '2. కార్డులను ఫ్రీజ్ చేయండి' }, { en: '3. Dial 1930 Helpline', te: '3. 1930 కు కాల్ చేయండి' }, { en: '4. cybercrime.gov.in', te: '4. ఆన్‌లైన్ ఫిర్యాదు' }]} /><p className="mt-2 text-center text-[10px] text-navy-400">{t({ en: 'Golden Hour: Report within 60 minutes to freeze fraudster accounts.', te: 'గోల్డెన్ అవర్: 60 నిమిషాల్లో కాల్ చేస్తే మోసగాడి ఖాతాను ఫ్రీజ్ చేయవచ్చు.' })}</p></>;
     default:
       return null;
   }
@@ -151,6 +209,297 @@ function FeeDragLab() {
   return <div className="rounded-2xl border border-violet-200 bg-violet-50/60 p-4"><h4 className="text-sm font-bold text-navy-700">{t({ en: 'See how fees change an illustration', te: 'ఫీజులు ఉదాహరణను ఎలా మారుస్తాయో చూడండి' })}</h4><p className="text-[10px] text-navy-500">{t({ en: 'Both examples assume the same hypothetical 8% gross annual growth before fees.', te: 'రెండు ఉదాహరణలూ ఫీజులకు ముందు ఊహాత్మకంగా ఏడాదికి 8% వృద్ధి అనుకుంటాయి.' })}</p><div className="mt-3 grid gap-3 sm:grid-cols-2"><label className="text-xs font-semibold">{t({ en: 'Starting amount', te: 'ప్రారంభ మొత్తం' })}: {formatINR(principal)}<input type="range" min="10000" max="200000" step="5000" value={principal} onChange={event => setPrincipal(Number(event.target.value))} className="mt-2 w-full accent-teal-500" /></label><label className="text-xs font-semibold">{t({ en: 'Years', te: 'సంవత్సరాలు' })}: {years}<input type="range" min="1" max="25" step="1" value={years} onChange={event => setYears(Number(event.target.value))} className="mt-2 w-full accent-teal-500" /></label></div><div className="mt-3 space-y-2">{[{ name: t({ en: 'Illustrative lower fee (0.2%)', te: 'తక్కువ ఫీజు (0.2%) ఉదాహరణ' }), value: lowFee, color: 'bg-teal-400' }, { name: t({ en: 'Illustrative higher fee (1.2%)', te: 'ఎక్కువ ఫీజు (1.2%) ఉదాహరణ' }), value: highFee, color: 'bg-coral-300' }].map(item => <div key={item.name}><div className="mb-1 flex justify-between gap-2 text-[10px]"><span>{item.name}</span><b>{formatINR(item.value)}</b></div><div className="h-3 overflow-hidden rounded-full bg-white"><div className={`h-full ${item.color} transition-all duration-500`} style={{ width: `${max ? item.value / max * 100 : 0}%` }} /></div></div>)}</div><p className="mt-2 text-[10px] text-navy-500">{t({ en: 'Simplified annual fee deduction model. Real fund costs are reflected in NAV; actual returns are uncertain and can be negative.', te: 'సరళీకృత వార్షిక ఫీజు తగ్గింపు నమూనా. అసలు ఫండ్ ఖర్చులు NAVలో ప్రతిబింబిస్తాయి; వాస్తవ రాబడులు అనిశ్చితం, నష్టమూ రావచ్చు.' })}</p></div>;
 }
 
+function CashFlowBalanceLab() {
+  const t = useT();
+  const [income, setIncome] = useState(5000);
+  const [needs, setNeeds] = useState(2600);
+  const [wants, setWants] = useState(1800);
+  const totalExpenses = needs + wants;
+  const netBalance = income - totalExpenses;
+  const isSurplus = netBalance >= 0;
+
+  return (
+    <div className="rounded-2xl border border-teal-200 bg-teal-50/60 p-4">
+      <div className="mb-3">
+        <h4 className="text-sm font-bold text-navy-700">{t({ en: 'Interactive Cash Flow Lab', te: 'ఇంటరాక్టివ్ నగదు ప్రవాహ ప్రయోగశాల' })}</h4>
+        <p className="text-[10px] text-navy-500">{t({ en: 'Adjust Priya’s monthly student cash flow and inspect her net surplus or deficit.', te: 'నెలవారీ ఆదాయం, అవసరాలు, కోరికలను మార్చి మిగులు లేదా లోటును పరిశీలించండి.' })}</p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <label className="rounded-xl bg-white p-2.5 text-[10px] font-semibold text-navy-600 shadow-sm">
+          {t({ en: 'Total Income', te: 'మొత్తం ఆదాయం' })}: <b className="text-teal-700">{formatINR(income)}</b>
+          <input type="range" min="3000" max="10000" step="500" value={income} onChange={e => setIncome(Number(e.target.value))} className="mt-2 w-full accent-teal-500" />
+        </label>
+        <label className="rounded-xl bg-white p-2.5 text-[10px] font-semibold text-navy-600 shadow-sm">
+          {t({ en: 'Essential Needs', te: 'అవసరాలు' })}: <b className="text-navy-700">{formatINR(needs)}</b>
+          <input type="range" min="1500" max="6000" step="200" value={needs} onChange={e => setNeeds(Number(e.target.value))} className="mt-2 w-full accent-navy-500" />
+        </label>
+        <label className="rounded-xl bg-white p-2.5 text-[10px] font-semibold text-navy-600 shadow-sm">
+          {t({ en: 'Discretionary Wants', te: 'కోరికలు' })}: <b className="text-coral-600">{formatINR(wants)}</b>
+          <input type="range" min="500" max="4000" step="100" value={wants} onChange={e => setWants(Number(e.target.value))} className="mt-2 w-full accent-coral-500" />
+        </label>
+      </div>
+      <div className={`mt-3 rounded-xl p-3 text-center ${isSurplus ? 'bg-teal-100 text-teal-900 border border-teal-200' : 'bg-coral-100 text-coral-900 border border-coral-200'}`}>
+        <span className="text-[10px] font-bold uppercase tracking-wider">{isSurplus ? t({ en: 'Monthly Surplus (Savings)', te: 'నెలవారీ మిగులు (పొదుపు)' }) : t({ en: 'Monthly Deficit (Debt Risk)', te: 'నెలవారీ లోటు (అప్పు ప్రమాదం)' })}</span>
+        <b className="block text-2xl font-black">{formatINR(Math.abs(netBalance))}</b>
+        <p className="mt-1 text-[10px]">{isSurplus ? t({ en: `Great! You are retaining ${Math.round((netBalance / income) * 100)}% of your earnings to build emergency cushion and future goals.`, te: `అద్భుతం! మీరు సంపాదనలో ${Math.round((netBalance / income) * 100)}% ను పొదుపు చేస్తున్నారు.` }) : t({ en: 'Expenses exceed earnings! Reduce discretionary wants to avoid borrowing.', te: 'ఖర్చులు ఆదాయాన్ని మించాయి! కోరికలను తగ్గించుకోండి.' })}</p>
+      </div>
+    </div>
+  );
+}
+
+function SmartGoalMilestoneLab() {
+  const t = useT();
+  const [target, setTarget] = useState(36000);
+  const [months, setMonths] = useState(12);
+  const monthly = Math.ceil(target / months);
+
+  return (
+    <div className="rounded-2xl border border-sky-200 bg-sky-50/60 p-4">
+      <div className="mb-3">
+        <h4 className="text-sm font-bold text-navy-700">{t({ en: 'SMART Milestone Target Lab', te: 'లక్ష్యాల మైలురాయి ప్రయోగశాల' })}</h4>
+        <p className="text-[10px] text-navy-500">{t({ en: 'Calculate exact monthly savings required for any student goal.', te: 'మీ విద్యార్థి లక్ష్యానికి అవసరమైన ఖచ్చితమైన నెలవారీ పొదుపును లెక్కించండి.' })}</p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className="rounded-xl bg-white p-3 text-[10px] font-semibold text-navy-600 shadow-sm">
+          {t({ en: 'Goal Target Amount', te: 'లక్ష్యం మొత్తం' })}: <b className="text-teal-700">{formatINR(target)}</b>
+          <input type="range" min="6000" max="60000" step="3000" value={target} onChange={e => setTarget(Number(e.target.value))} className="mt-2 w-full accent-teal-500" />
+        </label>
+        <label className="rounded-xl bg-white p-3 text-[10px] font-semibold text-navy-600 shadow-sm">
+          {t({ en: 'Timeline Deadline', te: 'సమయ గడువు' })}: <b className="text-sky-700">{months} {t({ en: 'Months', te: 'నెలలు' })}</b>
+          <input type="range" min="3" max="24" step="1" value={months} onChange={e => setMonths(Number(e.target.value))} className="mt-2 w-full accent-sky-500" />
+        </label>
+      </div>
+      <div className="mt-3 rounded-xl bg-navy-700 p-3 text-center text-white">
+        <span className="text-[10px] text-teal-200">{t({ en: 'Required Monthly Allocation', te: 'నెలకు కేటాయించాల్సిన మొత్తం' })}</span>
+        <b className="block text-2xl font-black text-white">{formatINR(monthly)} / mo</b>
+        <span className="text-[10px] text-navy-200">{formatINR(target)} ÷ {months} {t({ en: 'months', te: 'నెలలు' })} · {t({ en: 'Consistent discipline beats sudden pressure!', te: 'నిరంతర క్రమశిక్షణ ఒత్తిడిని నివారిస్తుంది!' })}</span>
+      </div>
+    </div>
+  );
+}
+
+function EmergencyCushionLab() {
+  const t = useT();
+  const [monthlyExpense, setMonthlyExpense] = useState(15000);
+  const [cushionMonths, setCushionMonths] = useState(4);
+  const totalReserve = monthlyExpense * cushionMonths;
+
+  return (
+    <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4">
+      <div className="mb-3">
+        <h4 className="text-sm font-bold text-navy-700">{t({ en: 'Emergency Runway Simulator', te: 'అత్యవసర రక్షణ రన్‌వే సిమ్యులేటర్' })}</h4>
+        <p className="text-[10px] text-navy-500">{t({ en: 'Calculate 3 to 6 months of essential living expenses for safe emergency liquidity.', te: 'కనీస జీవన ఖర్చుల ఆధారంగా 3 నుండి 6 నెలల రక్షణ నిధిని లెక్కించండి.' })}</p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className="rounded-xl bg-white p-3 text-[10px] font-semibold text-navy-600 shadow-sm">
+          {t({ en: 'Essential Monthly Expenses', te: 'నెలవారీ కనీస ఖర్చులు' })}: <b className="text-emerald-700">{formatINR(monthlyExpense)}</b>
+          <input type="range" min="5000" max="30000" step="1000" value={monthlyExpense} onChange={e => setMonthlyExpense(Number(e.target.value))} className="mt-2 w-full accent-emerald-500" />
+        </label>
+        <label className="rounded-xl bg-white p-3 text-[10px] font-semibold text-navy-600 shadow-sm">
+          {t({ en: 'Runway Cushion Target', te: 'రక్షణ నిధి వ్యవధి' })}: <b className="text-teal-700">{cushionMonths} {t({ en: 'Months', te: 'నెలలు' })}</b>
+          <input type="range" min="3" max="6" step="1" value={cushionMonths} onChange={e => setCushionMonths(Number(e.target.value))} className="mt-2 w-full accent-teal-500" />
+        </label>
+      </div>
+      <div className="mt-3 rounded-xl bg-white p-3 border border-emerald-200">
+        <div className="flex items-center justify-between text-xs font-bold text-navy-700">
+          <span>{t({ en: 'Target Safety Fund', te: 'లక్ష్య రక్షణ నిధి' })}</span>
+          <span className="text-lg font-black text-emerald-700">{formatINR(totalReserve)}</span>
+        </div>
+        <p className="mt-1 text-[10px] text-navy-500">{t({ en: 'Keep this capital in a Savings Bank Account or Liquid Fund with immediate 24/7 ATM/UPI access. Never lock it in volatile stocks or 5-year illiquid schemes.', te: 'ఈ నిధిని సురక్షితమైన సేవింగ్స్ ఖాతా లేదా లిక్విడ్ ఫండ్‌లో ఉంచండి. మార్కెట్ ఒడుదొడుకుల్లో పెట్టవద్దు.' })}</p>
+      </div>
+    </div>
+  );
+}
+
+function InflationGrowthLab() {
+  const t = useT();
+  const [years, setYears] = useState(10);
+  const principal = 10000;
+  const inflationRate = 0.06;
+  const cashRealValue = Math.round(principal / Math.pow(1 + inflationRate, years));
+  const fdRealValue = Math.round(principal * Math.pow(1.01, years));
+  const equityRealValue = Math.round(principal * Math.pow(1.06, years));
+  const maxVal = Math.max(cashRealValue, fdRealValue, equityRealValue);
+
+  return (
+    <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
+      <div className="mb-3">
+        <h4 className="text-sm font-bold text-navy-700">{t({ en: 'Inflation Gap & Real Growth Explorer', te: 'ద్రవ్యోల్బణం మరియు అసలైన వృద్ధి' })}</h4>
+        <p className="text-[10px] text-navy-500">{t({ en: 'See how ₹10,000 real purchasing power changes over time across Cash, FD, and Equity (assuming 6% inflation).', te: '6% ద్రవ్యోల్బణం ఉన్నప్పుడు ₹10,000 కొనుగోలు శక్తి ఎలా మారుతుందో చూడండి.' })}</p>
+      </div>
+      <label className="block text-xs font-semibold text-navy-600">
+        {t({ en: 'Time Horizon', te: 'కాల వ్యవధి' })}: <b className="text-amber-700">{years} {t({ en: 'Years', te: 'సంవత్సరాలు' })}</b>
+        <input type="range" min="3" max="20" step="1" value={years} onChange={e => setYears(Number(e.target.value))} className="mt-2 w-full accent-amber-500" />
+      </label>
+      <div className="mt-3 space-y-2">
+        <div>
+          <div className="flex justify-between text-[10px] font-semibold text-navy-600">
+            <span>{t({ en: 'Paper Cash at Home (0% Nominal)', te: 'ఇంట్లో ఉంచిన నగదు' })}</span>
+            <b className="text-coral-600">{formatINR(cashRealValue)} {t({ en: 'Real Value', te: 'నిజ విలువ' })}</b>
+          </div>
+          <div className="mt-1 h-3 rounded-full bg-white overflow-hidden">
+            <div className="h-full bg-coral-400 transition-all duration-300" style={{ width: `${(cashRealValue / maxVal) * 100}%` }} />
+          </div>
+        </div>
+        <div>
+          <div className="flex justify-between text-[10px] font-semibold text-navy-600">
+            <span>{t({ en: 'Fixed Deposit (7% Nominal)', te: 'ఫిక్స్‌డ్ డిపాజిట్' })}</span>
+            <b className="text-sky-700">{formatINR(fdRealValue)} {t({ en: 'Real Value', te: 'నిజ విలువ' })}</b>
+          </div>
+          <div className="mt-1 h-3 rounded-full bg-white overflow-hidden">
+            <div className="h-full bg-sky-400 transition-all duration-300" style={{ width: `${(fdRealValue / maxVal) * 100}%` }} />
+          </div>
+        </div>
+        <div>
+          <div className="flex justify-between text-[10px] font-semibold text-navy-600">
+            <span>{t({ en: 'Broad Index Equity (12% Nominal)', te: 'ఇండెక్స్ ఈక్విటీ' })}</span>
+            <b className="text-teal-700">{formatINR(equityRealValue)} {t({ en: 'Real Value', te: 'నిజ విలువ' })}</b>
+          </div>
+          <div className="mt-1 h-3 rounded-full bg-white overflow-hidden">
+            <div className="h-full bg-teal-500 transition-all duration-300" style={{ width: `${(equityRealValue / maxVal) * 100}%` }} />
+          </div>
+        </div>
+      </div>
+      <p className="mt-2 text-[10px] text-navy-500">{t({ en: 'Illustrative real values discounted at 6% inflation. Equity carries short-term volatility risk and does not guarantee fixed returns.', te: 'ద్రవ్యోల్బణం మినహాయించిన ఉదాహరణ విలువలు. ఈక్విటీలో మార్కెట్ రిస్క్ ఉంటుంది.' })}</p>
+    </div>
+  );
+}
+
+function UpiSafetyCheckpointLab() {
+  const t = useT();
+  const [scenarioIdx, setScenarioIdx] = useState(0);
+  const [verdict, setVerdict] = useState<string | null>(null);
+
+  const scenarios = [
+    {
+      prompt: {
+        en: 'Buyer on OLX: "I sent you a QR code on WhatsApp. Scan it and enter your PIN to claim the ₹2,000 for your old textbook!"',
+        te: 'OLX కొనుగోలుదారు: "వాట్సాప్‌లో QR కోడ్ పంపాను. స్కాన్ చేసి పిన్ నొక్కి ₹2,000 తీసుకోండి!"',
+      },
+      correctAction: 'reject',
+      explanation: {
+        en: '🛡️ Correct! NEVER scan a QR code or enter your PIN to receive money. Receiving money is automatic via bank credit.',
+        te: '🛡️ సరైన నిర్ణయం! డబ్బు తీసుకోవడానికి ఎప్పుడూ QR స్కాన్ చేయకూడదు లేదా పిన్ ఎంటర్ చేయకూడదు.',
+      },
+    },
+    {
+      prompt: {
+        en: 'College Canteen: You are paying ₹80 for your lunch meal using Google Pay by scanning the merchant QR at the counter.',
+        te: 'కాలేజ్ క్యాంటీన్: భోజనం కోసం ₹80 చెల్లించడానికి కౌంటర్‌లోని QR స్కాన్ చేసి పిన్ ఎంటర్ చేస్తున్నారు.',
+      },
+      correctAction: 'enter_pin',
+      explanation: {
+        en: '✅ Correct! Entering your PIN is required when YOU are initiating a payment to send money out.',
+        te: '✅ సరైనది! మీరు ఇతరులకు డబ్బు పంపుతున్నప్పుడు మాత్రమే పిన్ ఎంటర్ చేయాలి.',
+      },
+    },
+    {
+      prompt: {
+        en: 'SMS alert: "You won ₹50,000 reward! Install AnyDesk app and click this link to verify your student account."',
+        te: 'SMS: "మీకు ₹50,000 గిఫ్ట్ వచ్చింది! AnyDesk యాప్ ఇన్‌స్టాల్ చేసి వెరిఫై చేసుకోండి."',
+      },
+      correctAction: 'reject',
+      explanation: {
+        en: '🛡️ Correct! Installing remote screen apps allows fraudsters to see your screen and steal credentials. Reject and block immediately!',
+        te: '🛡️ సరైన నిర్ణయం! స్క్రీన్ షేరింగ్ యాప్‌లను ఎప్పుడూ డౌన్‌లోడ్ చేయవద్దు.',
+      },
+    },
+  ];
+
+  const current = scenarios[scenarioIdx];
+
+  const handleAction = (action: 'enter_pin' | 'reject') => {
+    if (action === current.correctAction) {
+      setVerdict('correct');
+    } else {
+      setVerdict('wrong');
+    }
+  };
+
+  const nextScenario = () => {
+    setVerdict(null);
+    setScenarioIdx((scenarioIdx + 1) % scenarios.length);
+  };
+
+  return (
+    <div className="rounded-2xl border border-rose-200 bg-rose-50/60 p-4">
+      <div className="mb-3">
+        <h4 className="text-sm font-bold text-navy-700">{t({ en: 'UPI PIN Defense Checkpoint', te: 'UPI పిన్ రక్షణ చెక్‌పాయింట్' })}</h4>
+        <p className="text-[10px] text-navy-500">{t({ en: 'Test your reflexes against real-world payment scenarios.', te: 'నిజజీవిత పేమెంట్ పరిస్థితుల్లో సరైన నిర్ణయం తీసుకోండి.' })}</p>
+      </div>
+      <div className="rounded-xl bg-white p-3 border border-navy-100 shadow-sm">
+        <span className="text-[9px] font-bold uppercase tracking-wider text-navy-400">{t({ en: `Scenario ${scenarioIdx + 1} of ${scenarios.length}`, te: `${scenarios.length}లో పరిస్థితి ${scenarioIdx + 1}` })}</span>
+        <p className="mt-1 text-xs font-semibold text-navy-700">{t(current.prompt)}</p>
+      </div>
+      <div className="mt-3 flex gap-2">
+        <button type="button" onClick={() => handleAction('enter_pin')} className="btn-secondary flex-1 py-2 text-xs">{t({ en: 'Enter PIN ⚠️', te: 'పిన్ ఎంటర్ చేయండి' })}</button>
+        <button type="button" onClick={() => handleAction('reject')} className="btn-primary flex-1 py-2 text-xs bg-emerald-600 hover:bg-emerald-700">{t({ en: 'Reject & Shield 🛡️', te: 'తిరస్కరించండి & బ్లాక్' })}</button>
+      </div>
+      {verdict && (
+        <div className={`mt-3 rounded-xl p-3 text-xs font-semibold ${verdict === 'correct' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-red-100 text-red-900 border border-red-300'}`}>
+          <p>{verdict === 'correct' ? t(current.explanation) : t({ en: '❌ Danger! That action would give the fraudster access or drain your funds. Remember: Never enter PIN to receive money!', te: '❌ ప్రమాదం! డబ్బు తీసుకోవడానికి ఎప్పుడూ పిన్ ఎంటర్ చేయవద్దు!' })}</p>
+          <button type="button" onClick={nextScenario} className="btn-ghost mt-2 text-[10px] font-bold text-navy-700">{t({ en: 'Try Next Scenario →', te: 'తదుపరి ప్రశ్న →' })}</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function GoldenHourProtocolLab() {
+  const t = useT();
+  const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+
+  const steps: LocalCopy[] = [
+    { en: '1. Sever All Contact & Document UTR Reference Number', te: '1. సంభాషణ ఆపి 12-అంకెల UTR నంబర్ భద్రపరచండి' },
+    { en: '2. Freeze Cards & Block UPI in Bank App', te: '2. బ్యాంక్ యాప్‌లో కార్డులు మరియు UPI ని బ్లాక్ చేయండి' },
+    { en: '3. Dial 1930 National Cyber Helpline (Within 60 Mins)', te: '3. 60 నిమిషాల్లోపు 1930 హెల్ప్‌లైన్‌కు కాల్ చేయండి' },
+    { en: '4. File Formal Complaint on cybercrime.gov.in', te: '4. cybercrime.gov.in లో అధికారిక ఫిర్యాదు నమోదు చేయండి' },
+  ];
+
+  const toggleStep = (idx: number) => {
+    if (completedSteps.includes(idx)) {
+      setCompletedSteps(completedSteps.filter(s => s !== idx));
+    } else {
+      setCompletedSteps([...completedSteps, idx]);
+    }
+  };
+
+  const allComplete = completedSteps.length === steps.length;
+
+  return (
+    <div className="rounded-2xl border border-blue-200 bg-blue-50/60 p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <div>
+          <h4 className="text-sm font-bold text-navy-700">{t({ en: 'The 60-Minute Golden Hour Protocol', te: '60 నిమిషాల గోల్డెన్ అవర్ ప్రోటోకాల్' })}</h4>
+          <p className="text-[10px] text-navy-500">{t({ en: 'Execute the mandatory 4-step emergency sequence to stop stolen fund withdrawal.', te: 'మోసపూరిత నగదు విత్‌డ్రా కాకుండా 4 అత్యవసర దశలను పూర్తి చేయండి.' })}</p>
+        </div>
+        <span className="rounded-full bg-navy-700 px-2.5 py-1 text-xs font-bold text-white">{completedSteps.length} / 4</span>
+      </div>
+      <div className="space-y-2">
+        {steps.map((step, idx) => {
+          const checked = completedSteps.includes(idx);
+          return (
+            <button
+              type="button"
+              key={idx}
+              onClick={() => toggleStep(idx)}
+              className={`w-full flex items-center justify-between rounded-xl border p-2.5 text-left text-xs font-semibold transition-all ${checked ? 'border-teal-300 bg-teal-50 text-teal-800' : 'border-white bg-white text-navy-600 hover:border-teal-200'}`}
+            >
+              <span>{t(step)}</span>
+              <span className={`h-5 w-5 rounded-md flex items-center justify-center text-xs ${checked ? 'bg-teal-500 text-white' : 'border border-navy-300 bg-white'}`}>{checked ? '✓' : ''}</span>
+            </button>
+          );
+        })}
+      </div>
+      {allComplete && (
+        <div className="mt-3 rounded-xl bg-emerald-100 border border-emerald-300 p-3 text-center text-xs font-bold text-emerald-900">
+          {t({ en: '🛡️ Emergency Protocol Complete! Inter-bank lien freeze request dispatched to National Cyber Crime portal.', te: '🛡️ అత్యవసర ప్రోటోకాల్ పూర్తయింది! మోసపూరిత ఖాతాను ఫ్రీజ్ చేయడానికి చర్యలు ప్రారంభమయ్యాయి.' })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function LessonMiniLab({ lessonId }: { lessonId: string }) {
   if (!miniLabLessons.has(lessonId)) return null;
   switch (lessonId) {
@@ -160,6 +509,12 @@ export function LessonMiniLab({ lessonId }: { lessonId: string }) {
     case 'mutual-fund-structure': return <NavLabMini />;
     case 'fund-types': return <FundTypeLab />;
     case 'active-vs-passive': return <FeeDragLab />;
+    case 'money-foundations': return <CashFlowBalanceLab />;
+    case 'savings-goals': return <SmartGoalMilestoneLab />;
+    case 'saving-basics': return <EmergencyCushionLab />;
+    case 'saving-vs-investing': return <InflationGrowthLab />;
+    case 'digital-safety': return <UpiSafetyCheckpointLab />;
+    case 'incident-steps': return <GoldenHourProtocolLab />;
     default: return null;
   }
 }

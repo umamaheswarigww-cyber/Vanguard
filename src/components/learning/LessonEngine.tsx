@@ -338,6 +338,19 @@ export function LessonEngine({ lesson, onComplete }: LessonEngineProps) {
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-teal-200 bg-teal-50"><Award size={30} className="text-teal-600" /></div>
           <div><span className="badge badge-teal">{t({ en: 'Lesson complete', te: 'పాఠం పూర్తయింది' })}</span><h2 id="lesson-finished-title" className="mt-1 text-2xl font-bold text-navy-700">{t(lesson.title)}</h2></div>
         </div>
+
+        {/* Gamified XP Reward Banner */}
+        <div className="mb-5 p-4 rounded-2xl bg-gradient-to-r from-teal-500/15 via-emerald-500/15 to-navy-500/10 border border-teal-300 flex items-center justify-between gap-4 shadow-sm">
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">🏆</span>
+            <div>
+              <span className="font-extrabold text-sm text-navy-900 block">{t({ en: 'Quest Mastered!', te: 'క్వెస్ట్ విజయవంతం!' })}</span>
+              <span className="text-xs text-teal-800">{t({ en: 'You earned +100 XP towards your Financial Mastery Rank.', te: 'మీరు +100 XP సంపాదించారు.' })}</span>
+            </div>
+          </div>
+          <span className="badge badge-teal text-xs font-black px-3 py-1">+100 XP ⚡</span>
+        </div>
+
         <p className="max-w-2xl text-sm leading-relaxed text-navy-500">{t({ en: 'You reached the end of this lesson. The objectives below show which ideas you demonstrated in the knowledge check.', te: 'మీరు ఈ పాఠాన్ని పూర్తి చేశారు. క్రింది లక్ష్యాలు జ్ఞాన పరీక్షలో మీరు చూపిన అవగాహనను సూచిస్తాయి.' })}</p>
         <div className="mt-5 rounded-2xl bg-cream-50 p-4">
           <h3 className="mb-3 text-xs font-bold uppercase tracking-wide text-navy-500">{t({ en: 'Learning objectives', te: 'అభ్యాస లక్ష్యాలు' })}</h3>
