@@ -4,7 +4,7 @@ import { useT } from '@/context/AppContext';
 import {
   Wallet, PiggyBank, TrendingUp, Shield, BookOpen,
   Sparkles, ArrowRight, CheckCircle2, ShieldCheck, HeartHandshake,
-  BarChart3, PieChart, Coins, Lock, Award, Users, FlaskConical
+  BarChart3, PieChart, Coins, Lock, Award, Users, FlaskConical, ShieldAlert
 } from 'lucide-react';
 import { PILLARS } from '@/content/curriculum/pillars';
 import { GLOSSARY } from '@/content/glossary/glossary';
@@ -439,7 +439,113 @@ export function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* 4. LIVE MINI INTERACTIVE PREVIEW */}
+      {/* 4. PROMINENT FINANCIAL GLOSSARY & VISUAL EXPLAINERS */}
+      {/* ============================================================ */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2">
+          <div>
+            <span className="badge badge-navy">
+              {t({ en: 'BILINGUAL KNOWLEDGE GRAPH', te: 'ద్విభాషా నిఘంటువు' })}
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-navy-900 font-display mt-1">
+              {t({ en: 'Financial Terms Explained Simply', te: 'సరళంగా వివరించబడిన ఆర్థిక పదాలు' })}
+            </h2>
+            <p className="text-xs sm:text-sm text-navy-600 font-medium mt-0.5">
+              {t({
+                en: 'Tap any concept to view interactive visual diagrams, illustrations and plain-language definitions.',
+                te: 'విజువల్ డయాగ్రమ్‌లు మరియు వివరణలు చూడటానికి ఏదైనా భావనపై క్లిక్ చేయండి.',
+              })}
+            </p>
+          </div>
+          <Link to="/explore/glossary" className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1">
+            {t({ en: 'View All 47+ Terms with Visuals →', te: 'అన్ని 47+ పదాలు చూడండి →' })}
+          </Link>
+        </div>
+
+        {/* Clean, Non-Cluttered Home Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {GLOSSARY.slice(0, 6).map(g => (
+            <Link
+              key={g.id}
+              to={`/explore/glossary/${g.slug}`}
+              className="p-4 bg-white border border-navy-100 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-teal-400 card-interactive transition-all block group"
+            >
+              <div className="flex items-center justify-between gap-2 mb-1.5">
+                <span className="font-bold text-sm text-navy-900 group-hover:text-teal-600 transition-colors">{t(g.term)}</span>
+                <span className="badge badge-teal text-[10px] uppercase">{g.pillarId}</span>
+              </div>
+              <p className="text-xs text-navy-600 font-medium line-clamp-2 leading-relaxed">
+                {t(g.shortDefinition)}
+              </p>
+              <div className="mt-3 pt-2 border-t border-navy-50 flex items-center justify-between text-[11px] text-teal-600 font-semibold">
+                <span>{t({ en: 'View Visual Model', te: 'విజువల్ మోడల్ చూడండి' })}</span>
+                <ArrowRight size={12} />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 5. SPOT THE MUTUAL FUND SCAM — FEATURE SPOTLIGHT */}
+      {/* ============================================================ */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-r from-[#0c182a] via-[#102540] to-[#1a0f1d] rounded-3xl p-7 sm:p-10 text-white border border-rose-500/30 shadow-xl relative overflow-hidden card-interactive">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div className="lg:col-span-8 space-y-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-bold uppercase tracking-wider border border-rose-500/40">
+                <ShieldAlert size={14} />
+                {t({ en: 'INTERACTIVE SAFETY SIMULATOR: SPOT THE SCAM', te: 'ఇంటరాక్టివ్ సేఫ్టీ సిమ్యులేటర్: స్కామ్‌ను గుర్తించండి' })}
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl font-black font-display leading-tight text-white">
+                {t({
+                  en: 'Spot the Mutual Fund Scam: Test Your Fraud Defense',
+                  te: 'మ్యూచువల్ ఫండ్ మోసాలను గుర్తించండి: మీ రక్షణను పరీక్షించుకోండి',
+                })}
+              </h2>
+
+              <p className="text-navy-100 text-xs sm:text-sm leading-relaxed max-w-2xl font-normal">
+                {t({
+                  en: 'Analyze simulated WhatsApp and Telegram chat traps, discover the 7 red flags of investment fraud, take the regulatory quiz, and earn the official Scam Spotter 🛡️ badge.',
+                  te: 'వాట్సాప్ మరియు టెలిగ్రామ్ చాట్ ట్రాప్‌లను విశ్లేషించండి, 7 హెచ్చరిక సంకేతాలను తెలుసుకోండి మరియు స్కామ్ స్పాటర్ బ్యాడ్జ్‌ను గెలుచుకోండి.',
+                })}
+              </p>
+
+              <div className="flex flex-wrap gap-3 pt-1">
+                <Link
+                  to="/spot-the-scam"
+                  className="bg-coral-500 hover:bg-coral-600 text-white text-sm font-bold py-3 px-6 rounded-2xl shadow-lg shadow-coral-500/25 transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <span>{t({ en: 'Launch Scam Simulator', te: 'సిమ్యులేటర్‌ను ప్రారంభించండి' })}</span>
+                  <ArrowRight size={16} />
+                </Link>
+                <Link
+                  to="/spot-the-scam"
+                  className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-sm font-semibold py-3 px-5 rounded-2xl transition-all cursor-pointer"
+                >
+                  {t({ en: 'Explore 7 Red Flags', te: '7 హెచ్చరిక సంకేతాలు' })}
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="rounded-2xl overflow-hidden border-2 border-rose-400/40 shadow-2xl w-full max-w-sm group">
+                <img
+                  src="/images/cyber_safety.jpg"
+                  alt="Cyber Safety & Fraud Detection"
+                  className="w-full h-48 sm:h-56 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 6. LIVE MINI INTERACTIVE PREVIEW */}
       {/* ============================================================ */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-[#0c1a2e] via-[#10243e] to-[#081220] rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-teal-500/30 card-interactive">
@@ -524,43 +630,6 @@ export function HomePage() {
               {t({ en: 'Launch Full Budget Lab', te: 'పూర్తి బడ్జెట్ ల్యాబ్ తెరవండి' })}
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* ============================================================ */}
-      {/* 5. GLOSSARY SNEAK PEEK */}
-      {/* ============================================================ */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2">
-          <div>
-            <span className="badge badge-navy">
-              {t({ en: 'BILINGUAL KNOWLEDGE GRAPH', te: 'ద్విభాషా నిఘంటువు' })}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-navy-900 font-display mt-1">
-              {t({ en: 'Financial Terms Explained Simply', te: 'సరళంగా వివరించబడిన ఆర్థిక పదాలు' })}
-            </h2>
-          </div>
-          <Link to="/explore/glossary" className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1">
-            {t({ en: 'View All 47+ Terms →', te: 'అన్ని 47+ పదాలను చూడండి →' })}
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {GLOSSARY.slice(0, 6).map(g => (
-            <Link
-              key={g.id}
-              to={`/explore/glossary/${g.slug}`}
-              className="p-4 bg-white border border-navy-100 rounded-2xl shadow-sm hover:shadow-card-hover hover:border-teal-400 card-interactive transition-all block"
-            >
-              <div className="flex items-center justify-between gap-2 mb-1.5">
-                <span className="font-bold text-sm text-navy-900">{t(g.term)}</span>
-                <span className="badge badge-teal text-[10px]">{g.pillarId}</span>
-              </div>
-              <p className="text-xs text-navy-600 font-medium line-clamp-2 leading-relaxed">
-                {t(g.shortDefinition)}
-              </p>
-            </Link>
-          ))}
         </div>
       </section>
 

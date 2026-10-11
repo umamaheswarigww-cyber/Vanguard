@@ -11,8 +11,8 @@ export function Footer() {
       <div className="bg-navy-700 px-4 py-3 text-center text-xs text-navy-200 border-b border-navy-500">
         <Shield size={12} className="inline mr-1.5 text-teal-400" />
         {t({
-          en: 'FinQuest India is an educational platform. All simulations use fictional data and hypothetical assumptions. Nothing here is investment advice or a product recommendation.',
-          te: 'FinQuest India ఒక విద్యాపర వేదిక. అన్ని సిమ్యులేషన్‌లు కల్పిత డేటాను ఉపయోగిస్తాయి. ఇక్కడ ఏదీ పెట్టుబడి సలహా లేదా ఉత్పత్తి సిఫార్సు కాదు.',
+          en: 'Vanguard India is an educational platform. All simulations use fictional data and hypothetical assumptions. Nothing here is investment advice or a product recommendation.',
+          te: 'Vanguard India ఒక విద్యాపర వేదిక. అన్ని సిమ్యులేషన్‌లు కల్పిత డేటాను ఉపయోగిస్తాయి. ఇక్కడ ఏదీ పెట్టుబడి సలహా లేదా ఉత్పత్తి సిఫార్సు కాదు.',
         })}
       </div>
 
@@ -22,9 +22,9 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-navy-400 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm font-display">FQ</span>
+                <span className="text-white font-bold text-sm font-display">VG</span>
               </div>
-              <span className="font-bold text-xl font-display">FinQuest <span className="text-teal-400">India</span></span>
+              <span className="font-bold text-xl font-display">Vanguard <span className="text-teal-400">India</span></span>
             </div>
             <p className="text-navy-300 text-sm leading-relaxed max-w-xs">
               {t({
@@ -96,8 +96,8 @@ export function Footer() {
         <div className="mt-8 pt-6 border-t border-navy-500 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-navy-400">
           <p>
             {t({
-              en: '© 2026 FinQuest India. Built for the Vanguard India Financial Literacy Hackathon. Not affiliated with or endorsed by Vanguard.',
-              te: '© 2026 FinQuest India. Vanguard India Financial Literacy Hackathon కోసం నిర్మించబడింది.',
+              en: '© 2026 Vanguard India. Empowering the Next Generation Through Financial Literacy.',
+              te: '© 2026 Vanguard India. ఆర్థిక అక్షరాస్యత ద్వారా తదుపరి తరాన్ని శక్తివంతం చేయడం.',
             })}
           </p>
           <p className="flex items-center gap-1">

@@ -360,7 +360,7 @@ export function LessonEngine({ lesson, onComplete }: LessonEngineProps) {
   return (
     <div className="mx-auto my-5 max-w-7xl px-3 sm:px-5 lg:px-8">
       <header className="mb-4 rounded-2xl border border-navy-100 bg-white px-4 py-3 shadow-sm sm:flex sm:items-center sm:justify-between sm:gap-4">
-        <div className="min-w-0"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-700">{t({ en: 'FinQuest learning lab', te: 'ఫిన్‌క్వెస్ట్ అభ్యాస ప్రయోగశాల' })}</p><h1 className="truncate text-lg font-bold text-navy-700">{t(lesson.title)}</h1></div>
+        <div className="min-w-0"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-700">{t({ en: 'Vanguard learning lab', te: 'వాన్‌గార్డ్ అభ్యాస ప్రయోగశాల' })}</p><h1 className="truncate text-lg font-bold text-navy-700">{t(lesson.title)}</h1></div>
         <div className="mt-2 flex flex-wrap items-center gap-2 text-[10px] text-navy-500 sm:mt-0"><span className="rounded-full bg-cream-50 px-2.5 py-1">{lesson.estimatedMinutes} {t({ en: 'min', te: 'నిమి' })}</span><span className="rounded-full bg-cream-50 px-2.5 py-1 capitalize">{lesson.level}</span><span className="rounded-full bg-teal-50 px-2.5 py-1 font-semibold text-teal-800">{t({ en: `${lesson.learningObjectives.length} learning goals`, te: `${lesson.learningObjectives.length} అభ్యాస లక్ష్యాలు` })}</span></div>
       </header>
 

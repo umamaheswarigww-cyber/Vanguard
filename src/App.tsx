@@ -16,6 +16,7 @@ import { PillarPage } from '@/pages/PillarPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
 import { InvestingMadeSimplePage } from '@/pages/InvestingMadeSimplePage';
+import { SpotTheScamPage } from '@/pages/SpotTheScamPage';
 
 export default function App() {
   const location = useLocation();
@@ -38,6 +39,8 @@ export default function App() {
         <Routes location={location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/investing-made-simple" element={<InvestingMadeSimplePage />} />
+          <Route path="/spot-the-scam" element={<SpotTheScamPage />} />
+          <Route path="/learn/stay-financially-safe/spot-the-scam" element={<SpotTheScamPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/learn" element={<LearnPage />} />
           <Route path="/learn/:pillarSlug" element={<PillarPage />} />

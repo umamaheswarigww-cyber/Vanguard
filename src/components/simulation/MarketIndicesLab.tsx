@@ -84,7 +84,7 @@ export function MarketIndicesLab() {
 
       {/* Live index display */}
       <div className={`rounded-2xl p-6 text-center shadow-card ${indexChange >= 0 ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
-        <p className="text-sm font-semibold text-gray-500 mb-1">FinQuest Index (Base: 1,000)</p>
+        <p className="text-sm font-semibold text-gray-500 mb-1">Vanguard Index (Base: 1,000)</p>
         <p className={`text-5xl font-extrabold ${indexChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
           {indexValue.toFixed(2)}
         </p>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import {
   Menu, X, Globe, BookOpen, FlaskConical, Compass,
-  Dumbbell, BarChart3, LayoutDashboard, Sparkles, ArrowRight
+  Dumbbell, BarChart3, LayoutDashboard, Sparkles, ArrowRight, ShieldAlert
 } from 'lucide-react';
 import { useApp, useT } from '@/context/AppContext';
 import clsx from 'clsx';
@@ -47,14 +47,14 @@ export function Navigation() {
           <Link
             to="/"
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 rounded-xl px-1 py-1 shrink-0"
-            aria-label="FinQuest India — Home"
+            aria-label="Vanguard India — Home"
           >
             <div className="w-9 h-9 bg-gradient-to-br from-teal-400 to-navy-600 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
-              <span className="text-white font-extrabold text-sm font-display tracking-tight">FQ</span>
+              <span className="text-white font-extrabold text-sm font-display tracking-tight">VG</span>
             </div>
             <div className="flex items-baseline whitespace-nowrap">
               <span className="font-extrabold text-lg sm:text-xl font-display text-navy-800 tracking-tight">
-                FinQuest
+                Vanguard
               </span>
               <span className="font-bold text-lg sm:text-xl font-display text-teal-600 ml-1">
                 India
@@ -99,6 +99,16 @@ export function Navigation() {
               <Globe size={15} className="text-teal-500" />
               <span>{language === 'en' ? 'తెలుగు' : 'English'}</span>
             </button>
+
+            {/* Scam Spotter Quick Access */}
+            <Link
+              to="/spot-the-scam"
+              className="hidden xl:inline-flex h-10 px-3 rounded-xl bg-rose-50 text-rose-700 hover:bg-rose-100 border border-rose-200/80 font-bold text-xs items-center gap-1.5 transition-colors shrink-0 shadow-xs"
+              title="Interactive Fraud Defense Simulator"
+            >
+              <ShieldAlert size={15} className="text-rose-600" />
+              <span>{t({ en: 'Spot the Scam', te: 'స్కామ్ డిటెక్టర్' })}</span>
+            </Link>
 
             {/* Start Learning Primary CTA */}
             <Link
@@ -148,8 +158,28 @@ export function Navigation() {
               })}
             </div>
 
-            {/* Special Highlight for Investing Made Simple in Mobile Drawer */}
+            {/* Quick Link to Spot the Scam Simulator in Mobile Drawer */}
             <div className="px-1 pt-1">
+              <Link
+                to="/spot-the-scam"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-rose-600 to-navy-900 text-white shadow-sm mb-2"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                    <ShieldAlert size={16} className="text-rose-200" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-rose-200">Interactive Safety</div>
+                    <div className="text-sm font-bold">{t({ en: 'Spot the Mutual Fund Scam', te: 'మ్యూచువల్ ఫండ్ మోసాలు' })}</div>
+                  </div>
+                </div>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Special Highlight for Investing Made Simple in Mobile Drawer */}
+            <div className="px-1">
               <Link
                 to="/investing-made-simple"
                 onClick={() => setOpen(false)}

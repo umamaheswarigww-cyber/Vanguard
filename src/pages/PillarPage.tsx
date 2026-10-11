@@ -68,6 +68,43 @@ export function PillarPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column: Modules & Lessons */}
         <div className="lg:col-span-2 space-y-6">
+          {pillar.id === 'safe' && (
+            <div className="card p-6 bg-gradient-to-r from-navy-900 to-rose-950 text-white border border-rose-500/40 rounded-3xl shadow-xl space-y-3 card-interactive mb-6">
+              <div className="flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-xs font-bold border border-rose-500/30 uppercase">
+                  <Shield size={13} className="text-rose-400" />
+                  FEATURED SIMULATOR
+                </span>
+                <span className="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full font-bold border border-emerald-500/30">
+                  Interactive Lab
+                </span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+                Spot the Mutual Fund Scam
+              </h3>
+              <p className="text-xs sm:text-sm text-navy-100 leading-relaxed font-normal">
+                {t({
+                  en: 'Step into real-world Telegram and WhatsApp scam simulations. Learn to identify high-pressure fraud, fake OTP demands, verify SEBI credentials, and earn your official Scam Spotter 🛡️ badge.',
+                  te: 'వాస్తవిక టెలిగ్రామ్ మరియు వాట్సాప్ మోసాలను గుర్తించండి మరియు స్కామ్ స్పాటర్ బ్యాడ్జ్‌ను గెలుచుకోండి.',
+                })}
+              </p>
+              <div className="pt-2 flex flex-wrap gap-3">
+                <Link
+                  to="/spot-the-scam"
+                  className="btn-coral text-xs py-2.5 px-5 shadow-md shadow-coral-500/25 inline-flex items-center gap-1.5"
+                >
+                  <span>{t({ en: 'Launch Scam Simulator & Quiz →', te: 'సిమ్యులేటర్ & క్విజ్ ప్రారంభించండి →' })}</span>
+                </Link>
+                <Link
+                  to="/spot-the-scam#quiz"
+                  className="btn-secondary text-xs py-2.5 px-4 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                >
+                  <span>{t({ en: 'Take Fraud Quiz', te: 'క్విజ్ రాయండి' })}</span>
+                </Link>
+              </div>
+            </div>
+          )}
+
           <h2 className="text-xl font-bold text-navy-600 font-display">
             {t({ en: 'Modules & Interactive Lessons', te: 'మాడ్యూల్స్ మరియు పాఠాలు' })}
           </h2>
